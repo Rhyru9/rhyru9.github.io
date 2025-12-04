@@ -105,7 +105,6 @@ SELECT * FROM sys.column_encryption_keys
 SELECT * FROM sys.external_libraries
 SELECT * FROM sys.filetables
 SELECT * FROM sys.ledger_table_history
-
 ' OR 1=1ᅴ--
 ' OR 1=1℅--
 ' OR 1=1⁣--
