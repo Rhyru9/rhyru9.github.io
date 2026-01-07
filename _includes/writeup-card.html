@@ -1,0 +1,20 @@
+<a href="{{ include.url }}" class="writeup-card-link">
+    <article class="writeup-card">
+        <h2 class="writeup-title">{{ include.title }}</h2>
+        <div class="writeup-meta">
+            <span class="meta-date">{{ include.date | date: "%b %d, %Y" }}</span>
+            <span class="meta-separator">•</span>
+            <span class="meta-reading-time">{{ include.content | reading_time }}</span>
+        </div>
+        {% if include.tags %}
+        <div class="writeup-tags">
+            {% for tag in include.tags %}
+            <span class="writeup-tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if include.excerpt %}
+        <p class="writeup-excerpt">{{ include.excerpt | strip_html | truncatewords: 30 }}</p>
+        {% endif %}
+    </article>
+</a>

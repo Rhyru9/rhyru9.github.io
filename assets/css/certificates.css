@@ -1,0 +1,257 @@
+/* ===================================
+   CERTIFICATES
+   =================================== */
+
+.page-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid color-mix(in srgb, var(--c-content) 12%, transparent);
+}
+
+.page-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--c-content);
+    letter-spacing: -0.8px;
+}
+
+.page-subtitle {
+    font-size: 17px;
+    color: color-mix(in srgb, var(--c-content) 60%, transparent);
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cert-list-full {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.cert-item-full {
+    background: 
+        color-mix(in srgb, var(--c-glass) 12%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(10px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(10px) saturate(var(--saturation));
+    border-radius: 24px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    text-decoration: none;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 2px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cert-item-full:hover {
+    transform: translateX(8px);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 15%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 95%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 65%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 22%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+        0px 4px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+        0px 8px 32px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+}
+
+.cert-icon-large {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    border-radius: 18px;
+    flex-shrink: 0;
+    background: 
+        color-mix(in srgb, var(--c-glass) 18%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 75%), transparent),
+        inset 0px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 18%), transparent),
+        0px 2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cert-item-full:hover .cert-icon-large {
+    transform: scale(1.08);
+}
+
+.cert-info-full {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cert-name {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--c-content);
+    line-height: 1.3;
+}
+
+.cert-issuer {
+    font-size: 15px;
+    color: color-mix(in srgb, var(--c-content) 70%, transparent);
+    margin: 0;
+    font-weight: 500;
+}
+
+.cert-date {
+    font-size: 14px;
+    color: color-mix(in srgb, var(--c-content) 55%, transparent);
+    margin: 0;
+    font-weight: 400;
+}
+
+.cert-verify {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    color: var(--c-action);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 99em;
+    background: 
+        color-mix(in srgb, var(--c-glass) 10%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 75%), transparent),
+        inset 0px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 18%), transparent),
+        0px 2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 200ms ease;
+    width: fit-content;
+    opacity: 0;
+    transform: translateX(-4px);
+}
+
+.cert-item-full:hover .cert-verify {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cert-verify:hover {
+    transform: translateX(4px) scale(1.03);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 15%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset 0px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        0px 3px 10px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent);
+}
+
+/* ===================================
+   RESPONSIVE - CERTIFICATES
+   =================================== */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 34px;
+    }
+    
+    .page-subtitle {
+        font-size: 15px;
+    }
+    
+    .cert-list-full {
+        gap: 16px;
+    }
+    
+    .cert-item-full {
+        padding: 24px 24px;
+        gap: 18px;
+    }
+    
+    .cert-icon-large {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+    }
+    
+    .cert-name {
+        font-size: 17px;
+    }
+    
+    .cert-issuer {
+        font-size: 14px;
+    }
+    
+    .cert-date {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        margin-bottom: 36px;
+        padding-bottom: 20px;
+    }
+    
+    .page-title {
+        font-size: 28px;
+    }
+    
+    .page-subtitle {
+        font-size: 14px;
+    }
+    
+    .cert-list-full {
+        gap: 14px;
+    }
+    
+    .cert-item-full {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+        gap: 16px;
+    }
+    
+    .cert-icon-large {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        margin: 0 auto;
+    }
+    
+    .cert-info-full {
+        align-items: center;
+    }
+    
+    .cert-verify {
+        margin: 0 auto;
+    }
+    
+    .cert-item-full:hover .cert-verify {
+        opacity: 1;
+    }
+}

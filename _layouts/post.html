@@ -1,0 +1,48 @@
+---
+layout: default
+---
+<article class="post-content">
+  <header class="post-header">
+    <h1 class="section-title">{{ page.title }}</h1>
+    <div class="writeup-meta">
+      Published on {{ page.date | date: "%b %d, %Y" }} • {{ content | reading_time }}
+    </div>
+    {% if page.tags or page.previous.url or page.next.url %}
+    <div class="top-navigation-container">
+      <!-- LEFT: Tags & Style -->
+      <div class="tag-style-container">
+        {% if page.tags %}
+        <div class="tag-container">
+          {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% if page.style %}
+        <span class="style-badge">{{ page.style }}</span>
+        {% endif %}
+      </div>
+      <!-- RIGHT: Prev / Next -->
+      {% if page.previous.url or page.next.url %}
+      <nav class="post-navigation-top">
+        {% if page.previous.url %}
+        <a href="{{ page.previous.url }}" class="nav-link prev" data-title="{{ page.previous.title }}">
+          <span>←</span>
+          <span>Prev</span>
+        </a>
+        {% endif %}
+        {% if page.next.url %}
+        <a href="{{ page.next.url }}" class="nav-link next" data-title="{{ page.next.title }}">
+          <span>→</span>
+          <span>Next</span>
+        </a>
+        {% endif %}
+      </nav>
+      {% endif %}
+    </div>
+    {% endif %}
+  </header>
+  <div class="writeup-card" style="margin-top: 32px;">
+    {{ content }}
+  </div>
+</article>

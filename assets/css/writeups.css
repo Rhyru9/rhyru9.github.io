@@ -1,0 +1,765 @@
+/* ===================================
+   CARDS - WRITEUPS
+   =================================== */
+.writeup-card {
+    background: 
+        color-mix(in srgb, var(--c-glass) 12%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(10px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(10px) saturate(var(--saturation));
+    border-radius: 24px;
+    padding: 32px;
+    margin-bottom: 20px;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 2px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent),
+        0px 6px 20px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 6%), transparent);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.writeup-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 12%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 95%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 65%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 22%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+        0px 4px 12px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 10px 32px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent);
+}
+
+.writeup-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--c-content);
+    letter-spacing: -0.2px;
+}
+
+.writeup-meta {
+    font-size: 14px;
+    color: color-mix(in srgb, var(--c-content) 60%, transparent);
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.writeup-excerpt {
+    font-size: 16px;
+    color: color-mix(in srgb, var(--c-content) 85%, transparent);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.tag {
+    display: inline-block;
+    background: 
+        color-mix(in srgb, var(--c-glass) 18%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(6px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(6px) saturate(var(--saturation));
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: color-mix(in srgb, var(--c-content) 75%, transparent);
+    margin-right: 8px;
+    margin-top: 12px;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1px 1.5px 0px -0.5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -1px -1px 0px -0.5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 70%), transparent),
+        inset 0px 1px 2px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 15%), transparent),
+        0px 1px 3px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 6%), transparent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 250ms ease,
+                box-shadow 250ms ease,
+                border-color 250ms ease,
+                color 250ms ease !important;
+}
+
+/* ===================================
+   SCROLL TO TOP BUTTON
+   =================================== */
+.scroll-to-top {
+    position: fixed !important;
+    bottom: 40px !important;
+    right: 24px !important;
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50% !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 24px !important;
+    
+    /* Glass effect */
+    background: 
+        color-mix(in srgb, var(--c-glass) 12%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent) !important;
+    backdrop-filter: blur(8px) saturate(var(--saturation)) !important;
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation)) !important;
+    
+    color: var(--c-content) !important;
+    
+    /* Shadow */
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-light) * 12%), transparent),
+        inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-light) * 20%), transparent),
+        inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-light) * 20%), transparent),
+        inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-light) * 10%), transparent),
+        0px 1px 5px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-light) * 10%), transparent),
+        0px 6px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-light) * 8%), transparent) !important;
+    
+    /* Transitions */
+    transition: opacity 0.3s ease, 
+                visibility 0.3s ease, 
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    
+    /* Default state - HIDDEN */
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(20px) scale(0.9) !important;
+    
+    z-index: 99999 !important;
+    overflow: hidden !important;
+}
+
+/* Inner highlight */
+.scroll-to-top::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, 
+        color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 12%), transparent),
+        transparent 65%);
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 250ms ease;
+}
+
+/* ==================== SHOW STATE ==================== */
+.scroll-to-top.visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) scale(1) !important;
+    animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(20px) scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* ==================== HOVER STATE ==================== */
+.scroll-to-top:hover {
+    transform: translateY(-4px) scale(1.05) !important;
+    color: var(--c-action) !important;
+    
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 12%), transparent),
+        inset 2px 3.5px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 92%), transparent),
+        inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 82%), transparent),
+        inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 62%), transparent),
+        inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-light) * 14%), transparent),
+        inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-light) * 22%), transparent),
+        inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-light) * 22%), transparent),
+        inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-light) * 12%), transparent),
+        0px 2px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-light) * 12%), transparent),
+        0px 8px 20px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-light) * 10%), transparent),
+        0px 0px 30px 0px color-mix(in srgb, var(--c-action) 12%, transparent) !important;
+}
+
+.scroll-to-top:hover::before {
+    background: radial-gradient(circle at 30% 30%, 
+        color-mix(in srgb, var(--c-action) 8%, transparent),
+        transparent 65%);
+}
+
+/* Active/Click state */
+.scroll-to-top:active {
+    transform: translateY(-2px) scale(1.02) !important;
+    transition: all 100ms ease !important;
+}
+
+/* Icon styling */
+.scroll-to-top svg,
+.scroll-to-top i,
+.scroll-to-top span {
+    position: relative;
+    z-index: 1;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-to-top:hover svg,
+.scroll-to-top:hover i,
+.scroll-to-top:hover span {
+    transform: translateY(-2px);
+}
+
+/* Ripple effect */
+.scroll-to-top::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--c-action) 25%, transparent);
+    transform: scale(0);
+    opacity: 0;
+    z-index: 0;
+}
+
+.scroll-to-top:active::after {
+    animation: ripple 600ms ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 100px !important;
+        right: 20px !important;
+        width: 52px !important;
+        height: 52px !important;
+        font-size: 22px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        bottom: 90px !important;
+        right: 16px !important;
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 20px !important;
+    }
+}
+
+/* ===================================
+   POST HEADER
+   =================================== */
+.post-header {
+    margin-bottom: 28px;
+}
+
+.post-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--c-content);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: color-mix(in srgb, var(--c-content) 60%, transparent);
+    margin-bottom: 22px;
+}
+
+.post-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ===================================
+   TOP NAVIGATION CONTAINER
+   =================================== */
+.top-navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.tag-style-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.tag-container {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.style-badge {
+    padding: 5px 12px;
+    border-radius: 99em;
+    font-size: 13px;
+    font-weight: 500;
+    background: 
+        color-mix(in srgb, var(--c-glass) 18%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+    color: var(--c-content);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -5px 1px -4px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 200ms ease;
+}
+
+.post-navigation-top {
+    display: flex;
+    gap: 7px;
+}
+
+.post-navigation-top .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: 99em;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    position: relative;
+    background: 
+        color-mix(in srgb, var(--c-glass) 12%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+    color: var(--c-content);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -5px 1px -4px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 200ms ease;
+}
+
+.post-navigation-top .nav-link:hover {
+    color: var(--c-action);
+    transform: translateY(-2px);
+}
+
+.post-navigation-top .nav-link.prev {
+    flex-direction: row;
+}
+
+.post-navigation-top .nav-link.next {
+    flex-direction: row-reverse;
+}
+
+.post-navigation-top .nav-link::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%) translateY(3px);
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: 
+        color-mix(in srgb, var(--c-glass) 18%, transparent),
+        color-mix(in srgb, var(--c-bg) 98%, transparent);
+    backdrop-filter: blur(12px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(12px) saturate(var(--saturation));
+    color: var(--c-content);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 12%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        0px 4px 12px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 15%), transparent),
+        0px 8px 24px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+}
+
+.post-navigation-top .nav-link:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.post-navigation-top .nav-link::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid color-mix(in srgb, var(--c-bg) 98%, transparent);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 101;
+}
+
+.post-navigation-top .nav-link:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 14px;
+}
+
+.post-tags .tag {
+    display: inline-block;
+    padding: 5px 12px;
+    background: color-mix(in srgb, var(--c-action) 15%, transparent);
+    color: var(--c-action);
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* ===================================
+   POST CONTENT STYLING
+   =================================== */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    color: var(--c-content);
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.post-content h2 {
+    font-size: 28px;
+    margin-top: 32px;
+}
+
+.post-content h3 {
+    font-size: 22px;
+    margin-top: 24px;
+}
+
+.post-content h4 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.post-content p {
+    color: color-mix(in srgb, var(--c-content) 90%, transparent);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.post-content a {
+    color: var(--c-action);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--c-action) 30%, transparent);
+    transition: all 200ms ease;
+}
+
+.post-content a:hover {
+    border-bottom-color: var(--c-action);
+}
+
+.post-content ul,
+.post-content ol {
+    color: color-mix(in srgb, var(--c-content) 90%, transparent);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    padding-left: 22px;
+}
+
+.post-content li {
+    margin-bottom: 6px;
+}
+
+.post-content li::marker {
+    color: var(--c-action);
+}
+
+.post-content blockquote {
+    border-left: 4px solid var(--c-action);
+    padding-left: 18px;
+    margin: 20px 0;
+    font-style: italic;
+    color: color-mix(in srgb, var(--c-content) 80%, transparent);
+}
+
+.post-content code {
+    background: color-mix(in srgb, var(--c-dark) 15%, transparent);
+    color: var(--c-action);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.post-content pre {
+    background: color-mix(in srgb, var(--c-dark) 20%, transparent);
+    border: 1px solid color-mix(in srgb, var(--c-light) 10%, transparent);
+    border-radius: 12px;
+    padding: 18px;
+    overflow-x: auto;
+    margin: 20px 0;
+    box-shadow: 
+        inset 0 2px 4px color-mix(in srgb, var(--c-dark) 30%, transparent),
+        0 2px 8px color-mix(in srgb, var(--c-dark) 10%, transparent);
+    
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--c-action) 40%, transparent) 
+                     color-mix(in srgb, var(--c-dark) 10%, transparent);
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+    color: color-mix(in srgb, var(--c-content) 95%, transparent);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.post-content pre::-webkit-scrollbar {
+    height: 7px;
+}
+
+.post-content pre::-webkit-scrollbar-track {
+    background: color-mix(in srgb, var(--c-dark) 10%, transparent);
+    border-radius: 4px;
+}
+
+.post-content pre::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--c-action) 40%, transparent);
+    border-radius: 4px;
+}
+
+.post-content pre:hover::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--c-action) 60%, transparent);
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    margin: 24px auto;
+    display: block;
+    box-shadow: 
+        0 4px 16px color-mix(in srgb, var(--c-dark) 12%, transparent),
+        0 8px 32px color-mix(in srgb, var(--c-dark) 8%, transparent);
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.post-content img:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 20px color-mix(in srgb, var(--c-dark) 14%, transparent),
+        0 12px 40px color-mix(in srgb, var(--c-dark) 10%, transparent);
+}
+
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+.post-content table th,
+.post-content table td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid color-mix(in srgb, var(--c-light) 15%, transparent);
+}
+
+.post-content table th {
+    background: color-mix(in srgb, var(--c-action) 10%, transparent);
+    color: var(--c-content);
+    font-weight: 600;
+}
+
+.post-content table tr:hover {
+    background: color-mix(in srgb, var(--c-glass) 8%, transparent);
+}
+
+.post-content hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        color-mix(in srgb, var(--c-light) 30%, transparent),
+        transparent
+    );
+    margin: 32px 0;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+@media (max-width: 768px) {
+    .writeup-card {
+        padding: 24px;
+        border-radius: 20px;
+    }
+    
+    .post-title {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+    
+    .post-meta {
+        font-size: 13px;
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .top-navigation-container {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        margin-bottom: 24px;
+    }
+    
+    .post-content h2 {
+        font-size: 24px;
+        margin-top: 28px;
+    }
+    
+    .post-content h3 {
+        font-size: 20px;
+        margin-top: 22px;
+    }
+    
+    .post-content pre {
+        padding: 16px;
+        border-radius: 10px;
+        margin: 18px 0;
+    }
+    
+    .post-content img {
+        margin: 20px auto;
+    }
+    
+    .post-content hr {
+        margin: 28px 0;
+    }
+    
+    .scroll-to-top {
+        bottom: 90px !important;
+        right: 20px !important;
+        width: 52px !important;
+        height: 52px !important;
+        font-size: 22px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-title {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+    
+    .post-content {
+        font-size: 15px;
+    }
+    
+    .post-content h2 { 
+        font-size: 21px;
+        margin-top: 24px;
+    }
+    
+    .post-content h3 { 
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    
+    .post-content h1,
+    .post-content h2,
+    .post-content h3,
+    .post-content h4,
+    .post-content h5,
+    .post-content h6 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .post-content p {
+        margin-bottom: 14px;
+        line-height: 1.6;
+    }
+    
+    .post-content img {
+        margin: 18px auto;
+    }
+    
+    .scroll-to-top {
+        bottom: 80px !important;
+        right: 16px !important;
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 20px !important;
+    }
+}

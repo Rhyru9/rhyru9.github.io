@@ -1,0 +1,24 @@
+---
+layout: default
+title: Hall of Fame
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/hof.css' | relative_url }}">
+
+<section class="page-section">
+    <div class="page-header">
+        <h1 class="page-title">Hall of Fame</h1>
+        <p class="page-subtitle">Security vulnerabilities recognized by organizations worldwide</p>
+    </div>
+    
+    <div class="hof-grid-full">
+        {% for item in site.data.hall_of_fame %}
+        <a href="{{ item.url }}" class="hof-item-full" target="_blank" rel="noopener">
+            <div class="company-logo-large">{{ item.logo }}</div>
+            <div class="company-name-large">{{ item.company }}</div>
+            <div class="hof-year-large">{{ item.year }}</div>
+            <div class="hof-link">View Recognition →</div>
+        </a>
+        {% endfor %}
+    </div>
+</section>

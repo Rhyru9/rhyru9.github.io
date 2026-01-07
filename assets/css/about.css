@@ -1,0 +1,566 @@
+/* ===================================
+   ABOUT PAGE
+   =================================== */
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+.about-hero {
+    margin-bottom: 64px;
+    text-align: center;
+}
+
+.about-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--c-content);
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    transition: color 250ms ease;
+}
+
+.about-subtitle {
+    font-size: 24px;
+    color: var(--c-action);
+    font-weight: 600;
+    margin-bottom: 24px;
+    transition: color 250ms ease;
+}
+
+.about-description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: color-mix(in srgb, var(--c-content) 80%, transparent);
+    max-width: 700px;
+    margin: 0 auto;
+    transition: color 250ms ease;
+}
+
+/* ===================================
+   SECTION SPACING
+   =================================== */
+.about-section {
+    margin-bottom: 64px;
+}
+
+.about-section .section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--c-content);
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
+    transition: color 250ms ease;
+}
+
+/* ===================================
+   SKILLS GRID
+   =================================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: 
+        color-mix(in srgb, var(--c-glass) 12%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(10px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(10px) saturate(var(--saturation));
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 2px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 15%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 95%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 65%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 22%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+        0px 4px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent);
+}
+
+.skill-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.skill-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--c-content);
+    margin-bottom: 8px;
+    transition: color 250ms ease;
+}
+
+.skill-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--c-content) 75%, transparent);
+    margin: 0;
+    transition: color 250ms ease;
+}
+
+/* ===================================
+   TIMELINE
+   =================================== */
+.timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        color-mix(in srgb, var(--c-action) 40%, transparent) 10%,
+        color-mix(in srgb, var(--c-action) 40%, transparent) 90%,
+        transparent
+    );
+    transition: background 250ms ease;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -44px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--c-action);
+    box-shadow: 
+        0 0 0 4px var(--c-bg),
+        0 0 0 6px color-mix(in srgb, var(--c-action) 30%, transparent);
+    transition: all 250ms ease;
+}
+
+.timeline-item:hover .timeline-marker {
+    transform: scale(1.2);
+    box-shadow: 
+        0 0 0 4px var(--c-bg),
+        0 0 0 8px color-mix(in srgb, var(--c-action) 40%, transparent);
+}
+
+.timeline-content {
+    background: 
+        color-mix(in srgb, var(--c-glass) 10%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 8%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 75%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 18%), transparent),
+        0px 2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 6%), transparent);
+    transition: all 250ms ease;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateX(4px);
+}
+
+.timeline-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--c-content);
+    margin-bottom: 8px;
+    transition: color 250ms ease;
+}
+
+.timeline-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: color-mix(in srgb, var(--c-content) 65%, transparent);
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    transition: color 250ms ease;
+}
+
+.timeline-company {
+    color: var(--c-action);
+    font-weight: 500;
+    transition: color 250ms ease;
+}
+
+.timeline-separator {
+    color: color-mix(in srgb, var(--c-content) 40%, transparent);
+}
+
+.timeline-period {
+    transition: color 250ms ease;
+}
+
+.timeline-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--c-content) 80%, transparent);
+    margin-bottom: 12px;
+    transition: color 250ms ease;
+}
+
+.timeline-achievements {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-achievements li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--c-content) 75%, transparent);
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 6px;
+    transition: color 250ms ease;
+}
+
+.timeline-achievements li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--c-action);
+    font-size: 12px;
+    transition: color 250ms ease;
+}
+
+/* ===================================
+   CERTIFICATIONS GRID
+   =================================== */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.cert-card {
+    background: 
+        color-mix(in srgb, var(--c-glass) 10%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(10px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(10px) saturate(var(--saturation));
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 2px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cert-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 15%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 95%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 65%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 22%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+        0px 4px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent);
+}
+
+.cert-badge {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.cert-badge svg {
+    transition: all 250ms ease;
+}
+
+.cert-card:hover .cert-badge svg {
+    transform: scale(1.1);
+}
+
+.cert-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--c-content);
+    margin-bottom: 8px;
+    transition: color 250ms ease;
+}
+
+.cert-issuer {
+    font-size: 14px;
+    color: color-mix(in srgb, var(--c-content) 70%, transparent);
+    margin-bottom: 4px;
+    transition: color 250ms ease;
+}
+
+.cert-date {
+    font-size: 13px;
+    color: color-mix(in srgb, var(--c-content) 60%, transparent);
+    transition: color 250ms ease;
+}
+
+/* ===================================
+   CONTACT SECTION
+   =================================== */
+.contact-card {
+    background: 
+        color-mix(in srgb, var(--c-glass) 12%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(10px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(10px) saturate(var(--saturation));
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 2px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 250ms ease;
+}
+
+.contact-intro {
+    font-size: 16px;
+    line-height: 1.7;
+    color: color-mix(in srgb, var(--c-content) 80%, transparent);
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: color 250ms ease;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: 
+        color-mix(in srgb, var(--c-glass) 18%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+    color: var(--c-action);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 250ms ease;
+    border: 1px solid color-mix(in srgb, var(--c-action) 20%, transparent);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 8%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 75%), transparent),
+        inset 0px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 18%), transparent),
+        0px 2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 6%), transparent);
+}
+
+.contact-link:hover {
+    background: 
+        color-mix(in srgb, var(--c-glass) 28%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    border-color: color-mix(in srgb, var(--c-action) 40%, transparent);
+    transform: translateY(-2px);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset 0px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        0px 4px 10px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent);
+}
+
+.contact-icon {
+    font-size: 18px;
+}
+
+.contact-label {
+    font-weight: 500;
+}
+
+/* ===================================
+   RESPONSIVE - TABLET
+   =================================== */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 36px;
+    }
+    
+    .about-subtitle {
+        font-size: 20px;
+    }
+    
+    .about-description {
+        font-size: 16px;
+    }
+    
+    .about-section .section-title {
+        font-size: 28px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline {
+        padding-left: 32px;
+    }
+    
+    .timeline-marker {
+        left: -36px;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .contact-card {
+        padding: 32px 24px;
+    }
+}
+
+/* ===================================
+   MOBILE
+   =================================== */
+@media (max-width: 480px) {
+    .about-hero {
+        margin-bottom: 48px;
+    }
+    
+    .about-title {
+        font-size: 28px;
+    }
+    
+    .about-subtitle {
+        font-size: 18px;
+    }
+    
+    .about-description {
+        font-size: 15px;
+    }
+    
+    .about-section {
+        margin-bottom: 48px;
+    }
+    
+    .about-section .section-title {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+    
+    .skill-card {
+        padding: 24px;
+    }
+    
+    .timeline {
+        padding-left: 28px;
+    }
+    
+    .timeline-marker {
+        left: -32px;
+        width: 10px;
+        height: 10px;
+    }
+    
+    .timeline-content {
+        padding: 20px;
+    }
+    
+    .timeline-item {
+        padding-bottom: 32px;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-card {
+        padding: 28px 20px;
+    }
+    
+    .contact-links {
+        flex-direction: column;
+    }
+    
+    .contact-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ===================================
+   REDUCED MOTION
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+    .skill-card,
+    .timeline-marker,
+    .timeline-content,
+    .cert-card,
+    .contact-link {
+        transition: none !important;
+    }
+    
+    .skill-card:hover,
+    .cert-card:hover {
+        transform: none;
+    }
+    
+    .timeline-item:hover .timeline-marker {
+        transform: none;
+    }
+    
+    .timeline-item:hover .timeline-content {
+        transform: none;
+    }
+    
+    .contact-link:hover {
+        transform: none;
+    }
+}

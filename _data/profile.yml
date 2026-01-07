@@ -1,0 +1,86 @@
+name: "Rhyru9"
+role: "Security Researcher & Bug Bounty Hunter"
+bio: "Passionate about finding vulnerabilities and securing applications. I specialize in web application security, API testing, and helping companies improve their security posture through responsible disclosure."
+
+# Skills Section
+skills:
+  - name: "Web Application Security"
+    description: "Expert in finding and exploiting web vulnerabilities including SQL injection, XSS, IDOR, and authentication flaws."
+    icon: "🔒"
+  - name: "API Security Testing"
+    description: "Experienced in testing REST, GraphQL, and SOAP APIs for security vulnerabilities and business logic flaws."
+    icon: "🔌"
+  - name: "Penetration Testing"
+    description: "Conducting comprehensive security assessments and penetration tests for web applications and infrastructure."
+    icon: "🎯"
+  - name: "Security Research"
+    description: "Researching new attack vectors, developing PoCs, and contributing to the security community."
+    icon: "🔬"
+  - name: "Responsible Disclosure"
+    description: "Working with organizations to responsibly disclose vulnerabilities and improve their security programs."
+    icon: "📝"
+  - name: "Security Tools"
+    description: "Proficient with Burp Suite, OWASP ZAP, sqlmap, and custom automation scripts for security testing."
+    icon: "🛠️"
+
+
+experience:
+  - title: "Independent Security Researcher"
+    company: "Bug Bounty Programs & Open Source Projects"
+    period: "2022 - Present"
+    description: "Focused on improving security of open source projects and participating in bug bounty programs."
+    achievements:
+      - "Discovered 50+ security vulnerabilities in Web applications"
+      - "Maintained a consistent presence in bug bounty platforms"
+      - "Published technical writeups and security research findings"
+
+  - title: "Security Research & Self-Development"
+    company: "CTF Competitions & Learning Platforms"
+    period: "2020 - 2022"
+    description: "Building technical skills through hands-on practice and continuous learning."
+    achievements:
+      - "Participated in 20+ CTF competitions (HackTheBox, TryHackMe, etc.)"
+      - "Completed advanced web security courses and certifications"
+      - "Built custom tools and scripts for security automation"
+
+  - title: "Technical Foundations"
+    company: "Self-Study & Personal Projects"
+    period: "2018 - 2020"
+    description: "Developed core technical skills in web development and networking."
+    achievements:
+      - "Learned full-stack web development (HTML/PHP/JS, Python, SQL)"
+      - "Built multiple web applications to understand development process"
+      - "Studied networking fundamentals and system administration"
+      - "Started learning security basics through online resources"
+
+
+
+# Social Links
+socials:
+  - platform: "Twitter"
+    url: "https://twitter.com/rhyru9"
+    icon: "🐦"
+    description: "Security insights and occasional memes"
+  - platform: "GitHub"
+    url: "https://github.com/rhyru9"
+    icon: "💻"
+    description: "Security tools and research code"
+  - platform: "LinkedIn"
+    url: "https://www.linkedin.com/in/rhyru-2714a5277/"
+    icon: "💼"
+    description: "Professional network"
+  - platform: "Email"
+    url: "mailto:reyhansyah4@gmail.com"
+    icon: "📧"
+    description: "For security disclosures and collaboration"
+
+certifications:
+  - name: "eLearnSecurity Web Application Penetration Tester (eWPT)"
+    year: "2023"
+    status: "In Progress"
+  - name: "TryHackMe Complete Beginner Path"
+    year: "2022"
+    status: "Completed"
+  - name: "PortSwigger Web Security Academy"
+    year: "2021-Present"
+    status: "Ongoing Learning"

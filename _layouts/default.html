@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+    {% include head.html %}
+</head>
+<body>
+    <!-- SVG Filters -->
+    <svg class="filters">
+        <defs>
+            <filter id="noise">
+                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" />
+                <feColorMatrix type="saturate" values="0" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Sidebar Navigation -->
+    {% include sidebar.html %}
+
+    <!-- Main Content Wrapper -->
+    <div class="scroll-wrapper">
+        <div class="container">
+            <main class="main-content">
+                {{ content }}
+            </main>
+        </div>
+    </div>
+
+    <!-- Theme Switcher -->
+    {% include theme-switcher.html %}
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav">
+        <a href="{{ '/' | relative_url }}" class="nav-item {% if page.url == '/' %}active{% endif %}">Home</a>
+        <a href="{{ '/blog/' | relative_url }}" class="nav-item {% if page.url contains '/blog' or page.url contains '/writeups' %}active{% endif %}">Writeups</a>
+        <a href="{{ '/about/' | relative_url }}" class="nav-item {% if page.url contains '/about' %}active{% endif %}">About</a>
+    </nav>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
+
+    <!-- Main JavaScript -->
+    <script src="{{ '/assets/js/default.js' | relative_url }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<head>
+    <!-- ============================================
+         Anti-Flash Script
+         MUST BE FIRST - Blocking execution
+         MUST STAY INLINE to prevent flash
+         ============================================ -->
+    <script>
+        (function() {
+            'use strict';
+            var savedTheme = localStorage.getItem('theme');
+            var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var isDarkMode = savedTheme === 'dark' || (!savedTheme && systemPrefersDark);
+            var html = document.documentElement;
+            
+            if (isDarkMode) {
+                html.classList.add('dark-mode');
+                html.style.backgroundColor = '#1b1b1d';
+            } else {
+                html.classList.remove('dark-mode');
+                html.style.backgroundColor = '#e8e8e9';
+            }
+        })();
+    </script>
+    
+    <!-- ============================================
+         Inline CSS for Anti-FOUC
+         MUST STAY INLINE to prevent flash
+         ============================================ -->
+    <style>
+        html {
+            background-color: #1b1b1d !important;
+        }
+        html:not(.dark-mode) {
+            background-color: #e8e8e9 !important;
+        }
+        body {
+            background-color: inherit !important;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html.theme-changing,
+        html.theme-changing *,
+        body.theme-changing,
+        body.theme-changing * {
+            transition: none !important;
+            animation: none !important;
+        }
+        
+        body {
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+        
+        .sidebar {
+            opacity: 1 !important;
+        }
+        
+        body:not(.fonts-loaded) {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .filters {
+            position: absolute;
+            width: 0;
+            height: 0;
+            z-index: -1;
+        }
+        
+        html::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            z-index: -9999;
+            pointer-events: none;
+        }
+    </style>
+    
+    <!-- ============================================
+         META TAGS
+         ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Theme Color untuk mobile browser -->
+    <meta name="theme-color" content="#1b1b1d" id="theme-color-meta">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <!-- SEO -->
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+    <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <meta property="og:image" content="{{ '/assets/images/og-image.jpg' | absolute_url }}">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <meta property="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+    <meta property="twitter:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <meta property="twitter:image" content="{{ '/assets/images/og-image.jpg' | absolute_url }}">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    
+    <!-- ============================================
+         PRELOAD & DNS PREFETCH
+         ============================================ -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style">
+    <link rel="preload" href="{{ '/assets/js/default.js' | relative_url }}" as="script">
+    <link rel="preload" href="{{ '/assets/js/head.js' | relative_url }}" as="script">
+    
+    <!-- ============================================
+         FONTS
+         ============================================ -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ============================================
+         EXTERNAL SCRIPTS
+         ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+    
+    <!-- ============================================
+         CSS
+         ============================================ -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/writeups.css' | relative_url }}">
+    
+    {% if page.url contains 'about' %}
+    <link rel="stylesheet" href="{{ '/assets/css/about.css' | relative_url }}">
+    {% endif %}
+    
+    <!-- ============================================
+         FAVICONS
+         ============================================ -->
+    <link rel="shortcut icon" href="{{ '/assets/images/favicon.png' | relative_url }}">
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+    <link rel="manifest" href="{{ '/assets/images/site.webmanifest' | relative_url }}">
+    
+    <meta name="msapplication-TileColor" content="#0052f5">
+    <meta name="msapplication-TileImage" content="{{ '/assets/images/favicon-144x144.png' | relative_url }}">
+    
+    <!-- ============================================
+         RSS & SEO
+         ============================================ -->
+    {% feed_meta %}
+    {% seo %}
+    
+    <!-- ============================================
+         PAGE LOAD OPTIMIZATION
+         ============================================ -->
+    <script src="{{ '/assets/js/head.js' | relative_url }}"></script>
+</head>

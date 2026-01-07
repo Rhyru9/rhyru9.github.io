@@ -1,0 +1,66 @@
+# Site settings
+title: Security Researcher Portfolio
+email: reyhansyah4@gmail.com
+description: >-
+  Personal portfolio and blog of a security researcher specializing in 
+  web application security, bug bounty hunting, and vulnerability research.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Author settings
+author:
+  name: Rhyru9
+  role: Security Researcher
+  twitter: rhyru9
+  github: rhyru9
+  linkedin: rhyru-2714a5277
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Rhyru9"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
+
+# Keep files
+keep_files:
+  - assets
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+
+# Timezone
+timezone: Asia/Jakarta

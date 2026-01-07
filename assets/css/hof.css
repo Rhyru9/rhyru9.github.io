@@ -1,0 +1,190 @@
+/* ===================================
+   HALL OF FAME - FULL PAGE
+   =================================== */
+
+.page-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid color-mix(in srgb, var(--c-content) 12%, transparent);
+}
+
+.page-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--c-content);
+    letter-spacing: -0.8px;
+}
+
+.page-subtitle {
+    font-size: 17px;
+    color: color-mix(in srgb, var(--c-content) 60%, transparent);
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* HOF Grid - Full Page */
+.hof-grid-full {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+    padding: 20px 0;
+}
+
+.hof-item-full {
+    background: 
+        color-mix(in srgb, var(--c-glass) 12%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(10px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(10px) saturate(var(--saturation));
+    border-radius: 24px;
+    padding: 36px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 2px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hof-item-full:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 15%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 95%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 65%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 22%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+        0px 6px 20px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 15%), transparent),
+        0px 12px 40px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent);
+}
+
+.company-logo-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    background: 
+        color-mix(in srgb, var(--c-glass) 18%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    color: color-mix(in srgb, var(--c-content) 60%, transparent);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 75%), transparent),
+        inset 0px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 18%), transparent),
+        0px 2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hof-item-full:hover .company-logo-large {
+    transform: scale(1.08);
+}
+
+.company-name-large {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--c-content);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.hof-year-large {
+    font-size: 15px;
+    color: color-mix(in srgb, var(--c-content) 60%, transparent);
+    font-weight: 500;
+}
+
+.hof-link {
+    color: var(--c-action);
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 6px;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hof-item-full:hover .hof-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===================================
+   RESPONSIVE - HOF
+   =================================== */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 34px;
+    }
+    
+    .page-subtitle {
+        font-size: 15px;
+    }
+    
+    .hof-grid-full {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    
+    .hof-item-full {
+        padding: 28px 20px;
+    }
+    
+    .company-logo-large {
+        width: 80px;
+        height: 80px;
+        font-size: 16px;
+    }
+    
+    .company-name-large {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        margin-bottom: 36px;
+        padding-bottom: 20px;
+    }
+    
+    .page-title {
+        font-size: 28px;
+    }
+    
+    .page-subtitle {
+        font-size: 14px;
+    }
+    
+    .hof-grid-full {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .hof-item-full {
+        padding: 24px 18px;
+    }
+}

@@ -1,0 +1,31 @@
+---
+layout: default
+title: Certificates & Recognition
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/certificates.css' | relative_url }}">
+
+<section class="page-section">
+    <div class="page-header">
+        <h1 class="page-title">Certificates & Recognition</h1>
+        <p class="page-subtitle">Professional certifications and security achievements</p>
+    </div>
+    
+    <div class="cert-list-full">
+        {% for cert in site.data.certificates %}
+        <div class="cert-item-full">
+            <div class="cert-icon-large"></div>
+            <div class="cert-info-full">
+                <h3 class="cert-name">{{ cert.name }}</h3>
+                <p class="cert-issuer">{{ cert.issuer }}</p>
+                <p class="cert-date">Issued: {{ cert.year }}</p>
+                {% if cert.url %}
+                <a href="{{ cert.url }}" class="cert-verify" target="_blank" rel="noopener">
+                    Verify Certificate →
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

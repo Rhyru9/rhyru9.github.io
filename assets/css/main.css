@@ -1,0 +1,1042 @@
+/* ===================================
+   RESET & BASE
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    background-color: #1b1b1d !important;
+}
+
+html:not(.dark-mode) {
+    background-color: #e8e8e9 !important;
+}
+
+html.dark-mode {
+    --c-content: #e1e1e1;
+    --c-action: #03d5ff;
+    --c-bg: #1b1b1d;
+    --glass-reflex-dark: 2;
+    --glass-reflex-light: 0.3;
+}
+
+body {
+    background: var(--c-bg) !important;
+}
+
+html.theme-changing,
+html.theme-changing *,
+html.theme-changing *::before,
+html.theme-changing *::after,
+body.theme-changing,
+body.theme-changing *,
+body.theme-changing *::before,
+body.theme-changing *::after {
+    transition: none !important;
+    animation: none !important;
+}
+
+html::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -9999;
+    pointer-events: none;
+}
+
+/* ===================================
+   CSS VARIABLES
+   =================================== */
+:root {
+    --c-glass: #bbbbbc;
+    --c-light: #fff;
+    --c-dark: #000;
+    --c-content: #224;
+    --c-action: #0052f5;
+    --c-bg: #e8e8e9;
+    --glass-reflex-dark: 1;
+    --glass-reflex-light: 1;
+    --saturation: 150%;
+    --sidebar-width: 340px;
+}
+
+/* ===================================
+   SMOOTH SCROLL
+   =================================== */
+html {
+    height: 100%;
+    overflow: hidden;
+    background: var(--c-bg);
+    scroll-behavior: auto !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: var(--c-bg) !important;
+    color: var(--c-content);
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* ===================================
+   SIDEBAR
+   =================================== */
+.sidebar {
+    width: var(--sidebar-width);
+    padding: 60px 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    background: 
+        color-mix(in srgb, var(--c-glass) 12%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+    border-right: 1px solid color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 2px 4px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -3px -10px 2px -7px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px -1px 5px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+        inset -2px 3px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px 4px 5px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 3px -8px 2px -5px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        2px 0px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        4px 0px 20px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: background-color 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+    z-index: 10;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--c-glass) 30%, transparent);
+    border-radius: 10px;
+}
+
+/* ===================================
+   SECTION HEADER WITH VIEW ALL
+   =================================== */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid color-mix(in srgb, var(--c-content) 15%, transparent);
+}
+
+.section-header .section-title {
+    margin: 0;
+}
+
+.view-all {
+    color: var(--c-action);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: 99em;
+    background: 
+        color-mix(in srgb, var(--c-glass) 10%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 75%), transparent),
+        inset 0px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 18%), transparent),
+        0px 2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 200ms ease;
+}
+
+.view-all:hover {
+    transform: translateX(4px) scale(1.03);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 15%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset 0px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        0px 3px 10px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent);
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding-bottom: 12px;
+    }
+    
+    .view-all {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+}
+
+/* ===================================
+   SCROLL WRAPPER
+   =================================== */
+.scroll-wrapper {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    scroll-behavior: auto !important;
+}
+
+.scroll-wrapper::before,
+.scroll-wrapper::after {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: var(--c-bg);
+    z-index: -1;
+    pointer-events: none;
+    transition: background-color 200ms ease;
+}
+
+.scroll-wrapper::before {
+    top: -500px;
+    height: 500px;
+}
+
+.scroll-wrapper::after {
+    bottom: -500px;
+    height: 500px;
+}
+
+/* ===================================
+   LAYOUT CONTAINER
+   =================================== */
+.container {
+    min-height: 100vh;
+    position: relative;
+    background: var(--c-bg);
+    display: block;
+}
+
+.scroll-wrapper,
+.container,
+.sidebar,
+.main-content {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* ===================================
+   PROFILE
+   =================================== */
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 auto 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    background: 
+        color-mix(in srgb, var(--c-glass) 20%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 3px 5px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -3px -3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -4px -12px 2px -8px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -1px -2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+        inset -3px 4px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px 5px 6px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 4px -10px 2px -6px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 2px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 8px 24px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    color: color-mix(in srgb, var(--c-content) 40%, transparent);
+    transition: all 250ms ease;
+}
+
+.profile-name {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--c-content);
+}
+
+.profile-role {
+    text-align: center;
+    color: color-mix(in srgb, var(--c-content) 70%, transparent);
+    font-size: 16px;
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: var(--c-content);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 99em;
+    background: 
+        color-mix(in srgb, var(--c-glass) 18%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -5px 1px -4px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 200ms ease;
+}
+
+.social-links a:hover {
+    color: var(--c-action);
+    transform: scale(1.05);
+}
+
+/* ===================================
+   MAIN CONTENT
+   =================================== */
+.main-content {
+    padding: 60px 70px;
+    max-width: 1200px;
+    background: transparent;
+}
+
+.section {
+    margin-bottom: 70px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    color: var(--c-content);
+    letter-spacing: -0.5px;
+}
+
+/* ===================================
+   HALL OF FAME
+   =================================== */
+.hof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.hof-item {
+    background: 
+        color-mix(in srgb, var(--c-glass) 12%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(10px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(10px) saturate(var(--saturation));
+    border-radius: 20px;
+    padding: 28px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 2px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hof-item:hover {
+    transform: translateY(-3px);
+}
+
+.company-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 16px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
+    background: 
+        color-mix(in srgb, var(--c-glass) 18%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    color: color-mix(in srgb, var(--c-content) 60%, transparent);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 75%), transparent),
+        inset 0px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 18%), transparent),
+        0px 2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.company-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 16px;
+    color: var(--c-content);
+}
+
+.hof-year {
+    font-size: 14px;
+    color: color-mix(in srgb, var(--c-content) 60%, transparent);
+    font-weight: 400;
+}
+
+/* ===================================
+   CERTIFICATES
+   =================================== */
+.cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cert-item {
+    background: 
+        color-mix(in srgb, var(--c-glass) 12%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(10px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(10px) saturate(var(--saturation));
+    border-radius: 20px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 2px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cert-item:hover {
+    transform: translateX(6px);
+}
+
+.cert-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    flex-shrink: 0;
+    background: 
+        color-mix(in srgb, var(--c-glass) 18%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 75%), transparent),
+        inset 0px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 18%), transparent),
+        0px 2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cert-info h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--c-content);
+}
+
+.cert-info p {
+    font-size: 14px;
+    color: color-mix(in srgb, var(--c-content) 60%, transparent);
+    font-weight: 400;
+}
+
+/* ===================================
+   BOTTOM NAVIGATION
+   =================================== */
+.bottom-nav {
+    position: fixed;
+    z-index: 100;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 70px;
+    padding: 8px 12px 10px;
+    border-radius: 99em;
+    background: 
+        color-mix(in srgb, var(--c-glass) 12%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.8px 3px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -2px 0px -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.3px -1px 4px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+        inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 1px 5px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 6px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: background-color 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.bottom-nav::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    display: block;
+    width: var(--indicator-width, 100px);
+    height: calc(100% - 16px);
+    border-radius: 99em;
+    background: 
+        color-mix(in srgb, var(--c-glass) 36%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    z-index: 0;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 2px 1px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -1.5px -1px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -6px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -1px 2px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -4px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 3px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    translate: var(--indicator-position, 0) 0;
+    transition: background-color 250ms ease, box-shadow 250ms ease, translate 250ms cubic-bezier(0.4, 0, 0.2, 1), width 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    animation: scaleIndicator 300ms ease;
+}
+
+@keyframes scaleIndicator {
+    0%, 100% { scale: 1 1; }
+    50% { scale: 1.05 1; }
+}
+
+.bottom-nav .nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+    border-radius: 99em;
+    text-decoration: none;
+    color: var(--c-content);
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 150ms ease;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.bottom-nav .nav-item:hover {
+    color: var(--c-action);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.bottom-nav .nav-item.active {
+    color: var(--c-content);
+    cursor: default;
+}
+
+/* ===================================
+   THEME SWITCHER
+   =================================== */
+.theme-switcher {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    background: 
+        color-mix(in srgb, var(--c-glass) 15%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(12px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(12px) saturate(var(--saturation));
+    border-radius: 24px 0 0 24px;
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 2px 3px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -7px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -0.5px 2px 4px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -3px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        -3px 0px 12px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        -6px 0px 24px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 250ms ease;
+}
+
+.theme-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: 
+        color-mix(in srgb, var(--c-glass) 10%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+    color: color-mix(in srgb, var(--c-content) 60%, transparent);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.5px 2px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 85%), transparent),
+        inset -1.5px -1.5px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 75%), transparent),
+        inset 0px 1.5px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 18%), transparent),
+        0px 2px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    transition: all 150ms ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+    color: var(--c-action);
+}
+
+.theme-btn.active {
+    background: 
+        color-mix(in srgb, var(--c-glass) 36%, transparent),
+        color-mix(in srgb, var(--c-bg) 95%, transparent);
+    color: var(--c-content);
+    box-shadow: 
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 2px 1px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -1.5px -1px 0px -1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -2px -6px 1px -5px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -1px 2px 3px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0px -4px 1px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0px 3px 6px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+}
+
+/* ===================================
+   SCROLLBAR
+   =================================== */
+.scroll-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===================================
+   BLOG LIST
+   =================================== */
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.blog-item {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===================================
+   MOBILE NAVBAR 
+   =================================== */
+
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 0px;
+        --navbar-height: 100px;
+    }
+    
+    .sidebar {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--navbar-height);
+        padding: 16px 24px;
+        border-right: none;
+        border-bottom: 1px solid color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent);
+        z-index: 100;
+        overflow-y: visible;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    .profile-pic {
+        width: 68px;
+        height: 68px;
+        margin: 0;
+        font-size: 30px;
+        flex-shrink: 0;
+        order: 1;
+    }
+    
+    .profile-name {
+        position: absolute;
+        top: 20px;
+        left: 110px;
+        text-align: left;
+        font-size: 16px;
+        margin-bottom: 0;
+        white-space: nowrap;
+        order: 2;
+    }
+    
+    .profile-role {
+        position: absolute;
+        top: 42px;
+        left: 110px;
+        text-align: left;
+        font-size: 12px;
+        margin-bottom: 0;
+        white-space: nowrap;
+        order: 3;
+    }
+    
+    .social-links {
+        order: 4;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-end;
+        margin-left: auto;
+        max-width: 45%;
+    }
+    
+    .social-links a {
+        padding: 8px 14px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+    
+    .scroll-wrapper {
+        position: fixed !important;
+        top: var(--navbar-height) !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .main-content {
+        padding: 40px 24px 100px !important;
+    }
+    
+    .bottom-nav {
+        bottom: 16px;
+        max-width: calc(100% - 32px);
+        height: 60px;
+        padding: 6px 10px 8px;
+        gap: 4px;
+    }
+    
+    .bottom-nav .nav-item {
+        padding: 0 14px;
+        font-size: 13px;
+    }
+    
+    .bottom-nav::before {
+        left: 6px;
+        top: 6px;
+        height: calc(100% - 12px);
+    }
+    
+    .theme-switcher {
+        position: fixed;
+        top: calc(var(--navbar-height) + 16px) !important;
+        right: 24px !important;
+        bottom: auto !important;
+        transform: none !important;
+        flex-direction: column;
+        border-radius: 24px !important;
+        padding: 10px !important;
+        gap: 8px !important;
+    }
+    
+    .theme-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .container {
+        min-height: auto !important;
+        display: block !important;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --navbar-height: 70px;
+    }
+    
+    .sidebar {
+        padding: 10px 16px;
+        gap: 12px;
+    }
+    
+    .profile-pic {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+    
+    .profile-name {
+        top: 14px;
+        left: 76px;
+        font-size: 14px;
+    }
+    
+    .profile-role {
+        top: 34px;
+        left: 76px;
+        font-size: 11px;
+    }
+    
+    .social-links {
+        max-width: 50%;
+        gap: 6px;
+    }
+    
+    .social-links a {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .main-content {
+        padding: 32px 16px 100px !important;
+    }
+    
+    .bottom-nav {
+        bottom: 12px;
+        max-width: calc(100% - 24px);
+        height: 56px;
+        padding: 5px 8px 7px;
+        gap: 3px;
+    }
+    
+    .bottom-nav .nav-item {
+        padding: 0 10px;
+        font-size: 12px;
+    }
+    
+    .theme-switcher {
+        top: calc(var(--navbar-height) + 12px) !important;
+        right: 16px !important;
+        padding: 8px !important;
+        gap: 6px !important;
+    }
+    
+    .theme-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    
+    html, body {
+        height: auto !important;
+        overflow: auto !important;
+        overflow-x: hidden !important;
+    }
+    
+    .scroll-wrapper {
+        position: fixed !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --navbar-height: 60px;
+    }
+    
+    .sidebar {
+        padding: 8px 12px;
+    }
+    
+    .profile-role {
+        display: none;
+    }
+    
+    .profile-name {
+        top: 50%;
+        transform: translateY(-50%);
+        left: 70px;
+        font-size: 13px;
+    }
+    
+    .profile-pic {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+    
+    .social-links {
+        max-width: 55%;
+        gap: 4px;
+    }
+    
+    .social-links a {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+    
+    .theme-switcher {
+        top: calc(var(--navbar-height) + 10px) !important;
+        right: 12px !important;
+        padding: 6px !important;
+        gap: 5px !important;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    .scroll-wrapper {
+        height: -webkit-fill-available !important;
+    }
+}
+
+/* fade navbar
+@media (max-width: 768px) {
+    .sidebar {
+        animation: slideDown 300ms ease;
+    }
+    
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+*/
+
+@media (max-width: 768px) and (orientation: landscape) {
+    :root {
+        --navbar-height: 70px;
+    }
+    
+    .sidebar {
+        padding: 8px 20px;
+    }
+    
+    .profile-pic {
+        width: 54px;
+        height: 54px;
+        font-size: 24px;
+    }
+    
+    .profile-name {
+        font-size: 14px;
+        top: 16px;
+        left: 84px;
+    }
+    
+    .profile-role {
+        font-size: 11px;
+        top: 36px;
+        left: 84px;
+    }
+    
+    .social-links a {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .theme-switcher {
+        top: calc(var(--navbar-height) + 12px) !important;
+        right: 20px !important;
+        padding: 8px !important;
+        gap: 6px !important;
+    }
+}
+
+/* ===================================
+   REDUCED MOTION
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    /* Disable Lenis smooth scroll for reduced motion */
+    .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===================================
+   SVG FILTERS
+   =================================== */
+.filters {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: -1;
+}
