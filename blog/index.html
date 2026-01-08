@@ -11,7 +11,7 @@ permalink: /blog/
             <article class="writeup-card">
                 <h3 class="writeup-title">{{ post.title }}</h3>
                 <div class="writeup-meta">
-                    Published on {{ post.date | date: "%b %d, %Y" }} • {{ post.excerpt | strip_html | number_of_words | divided_by: 180 }} min read
+                    Published on {{ post.date | date: "%b %d, %Y" }} • {% assign words = post.content | strip_html | number_of_words %}{% assign reading_time = words | divided_by: 180 %}{% if reading_time == 0 %}1{% else %}{{ reading_time }}{% endif %} min read
                 </div>
                 <p class="writeup-excerpt">
                     {{ post.excerpt | strip_html | truncatewords: 40 }}
