@@ -7,6 +7,10 @@ description: >-
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
+# Excerpt settings
+excerpt_separator: "\n\n"
+show_excerpts: true
+
 # Author settings
 author:
   name: Rhyru9

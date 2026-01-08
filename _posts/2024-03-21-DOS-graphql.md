@@ -6,10 +6,10 @@ tags: [Api, DOS, High]
 excerpt: "A journey from basic subdomain enumeration to discovering a critical GraphQL denial-of-service vulnerability. What started as routine reconnaissance with subfinder and httpx evolved into custom tool development, systematic fuzzing, and ultimately finding a server-crushing query complexity exploit that earned a bounty."
 ---
 
+A journey from basic subdomain enumeration to discovering a critical GraphQL DoS vulnerability through systematic fuzzing and custom tooling.
+
 *Me: "Just checking some subdomains"*  
 *GraphQL: "I'm about to end this server's whole career"*
-
----
 
 ## TL;DR
 
