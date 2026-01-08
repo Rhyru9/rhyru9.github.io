@@ -3,17 +3,15 @@ layout: default
 title: Blog
 permalink: /blog/
 ---
-
 <section class="section">
     <h2 class="section-title">All Blog Posts</h2>
-    
     <div class="blog-list">
         {% for post in site.posts %}
         <a href="{{ post.url | relative_url }}" class="blog-item">
             <article class="writeup-card">
                 <h3 class="writeup-title">{{ post.title }}</h3>
                 <div class="writeup-meta">
-                    Published on {{ post.date | date: "%b %d, %Y" }} • {{ post.content | number_of_words | divided_by: 180 }} min read
+                    Published on {{ post.date | date: "%b %d, %Y" }} • {{ post.excerpt | strip_html | number_of_words | divided_by: 180 }} min read
                 </div>
                 <p class="writeup-excerpt">
                     {{ post.excerpt | strip_html | truncatewords: 40 }}
