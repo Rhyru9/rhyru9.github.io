@@ -13,7 +13,13 @@
   year: 2025
   url: https://www.airship.com/legal/full-disclosure-security-policy/
 
+- company: Ferrari
+  logo: FERRAI
+  year: 2026
+  url: https://www.ferrari.com/en-SG/hall-of-fame-responsible-disclosure-programme
+
 - company: Vidio
   logo: VIDIO
   year: 2024
   url: https://www.vidio.com/pages/vidio-bug-bounty-program
+
