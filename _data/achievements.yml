@@ -1,0 +1,142 @@
+platforms:
+  - title: "HackerOne"
+    username: "rhyru9"
+    profile_url: "https://hackerone.com/rhyru9"
+    description: "Active bug bounty hunter on HackerOne platform, discovering and reporting security vulnerabilities across various programs."
+    tags: [bug-bounty, platform]
+
+  - title: "YesWeHack"
+    username: "rhyru9"
+    profile_url: "https://yeswehack.com/hunters/rhyru9"
+    description: "Certified Bug Bounty Hunter on YesWeHack platform with track record in responsible vulnerability disclosure."
+    tags: [bug-bounty, platform]
+
+awards:
+  # Hall of Fame
+  - title: "Hall of Fame — Belgium Government"
+    date: "2026"
+    venue: "CCB Belgium"
+    description: "Recognized for responsible disclosure of security vulnerabilities in Belgian government systems."
+    tags: [hall-of-fame, government, international]
+    url: "https://ccb.belgium.be/nl/cert/bekendmaking-van-kwetsbaarheden-aan-het-ccb/wall-of-fame"
+
+  - title: "Hall of Fame — BlackBerry"
+    date: "2026"
+    venue: "BlackBerry Security"
+    description: "Acknowledged for discovering and reporting security vulnerabilities in BlackBerry products."
+    tags: [hall-of-fame, mobile, security]
+    url: "https://www.blackberry.com/us/en/services/blackberry-product-security-incident-response"
+
+  - title: "Hall of Fame — Airship"
+    date: "2025"
+    venue: "Airship Security"
+    description: "Recognized for responsible disclosure of security vulnerabilities in Airship platform."
+    tags: [hall-of-fame, cloud, platform]
+    url: "https://www.airship.com/legal/full-disclosure-security-policy/"
+
+  - title: "Hall of Fame — Ferrari"
+    date: "2026"
+    venue: "Ferrari Responsible Disclosure Programme"
+    description: "Acknowledged for discovering security vulnerabilities in Ferrari's digital systems."
+    tags: [hall-of-fame, automotive, luxury]
+    url: "https://www.ferrari.com/en-SG/hall-of-fame-responsible-disclosure-programme"
+
+  - title: "Hall of Fame — Vidio"
+    date: "2024"
+    venue: "Vidio Bug Bounty Program"
+    description: "Recognized for finding and reporting security vulnerabilities in Vidio streaming platform."
+    tags: [hall-of-fame, streaming, indonesia]
+    url: "https://www.vidio.com/pages/vidio-bug-bounty-program"
+
+  # Certifications
+  - title: "Bug Bounty Hunter Certification"
+    date: "2023 - Present"
+    venue: "YesWeHack"
+    description: "Certified Bug Bounty Hunter dengan track record penemuan kerentanan keamanan pada berbagai platform."
+    tags: [certification, bug-bounty]
+    url: "https://www.yeswehack.com/rhyru9"
+
+  - title: "Bug Bounty Hunter Certification"
+    date: "2023 - Present"
+    venue: "HackerOne"
+    description: "Certified Bug Bounty Hunter pada platform HackerOne dengan reputasi dalam menemukan kerentanan kritis."
+    tags: [certification, bug-bounty]
+    url: "https://www.hackerone.com/rhyru9"
+
+  # Achievement Certificates
+  - title: "Security Disclosure Certificate — Institut Teknologi Bandung"
+    date: "February 3, 2026"
+    venue: "CSIRT ITB"
+    description: "Awarded certificate for responsible disclosure of security vulnerabilities in ITB's digital infrastructure."
+    tags: [certificate, education, indonesia]
+    url: "https://spsi.itb.ac.id/verifikasi/577a2f9e-2c96-48be-a5d8-e53cb7d76455"
+
+  - title: "Security Disclosure Certificate — Institut Teknologi Bandung"
+    date: "October 3, 2025"
+    venue: "CSIRT ITB"
+    description: "Awarded certificate for responsible disclosure of security vulnerabilities in ITB's digital infrastructure."
+    tags: [certificate, education, indonesia]
+    url: "https://spsi.itb.ac.id/verifikasi/3510200b-ad32-4ced-825f-a3784c827d97"
+
+  - title: "Security Assessment Certificate — Pemerintah Kota Bekasi"
+    date: "July 11, 2025"
+    venue: "BekasiKota-CSIRT"
+    description: "Recognized for security vulnerability assessment and disclosure for Bekasi City Government systems."
+    tags: [certificate, government, indonesia]
+    url: "https://k-cloud.bekasikota.go.id/s/prypnp7sgwcoenB"
+
+  - title: "Vulnerability Report Certificate — Pemerintah DIY"
+    date: "November 12, 2025"
+    venue: "Diskominfo DIY"
+    description: "Certificate for security vulnerability discovery and responsible disclosure for Yogyakarta Special Region Government."
+    tags: [certificate, government, indonesia]
+    url: "https://sadewa.jogjaprov.go.id/pdf?id=U2FsdGVkX19TOfAcz0VzZFePZ0Ep1L2u3SkDRsr2v5C3EoFSx4SMTpOHRtgsPbwhQbEo0cPbXDJARYGWSWn7DtJp1L2u3SS82we1Q2u3A4le1Q2u3A4l&document_type=targetedtte"
+
+  - title: "Security Assessment Certificate — Pemerintah DIY"
+    date: "February 5, 2025"
+    venue: "Diskominfo DIY"
+    description: "Certificate for comprehensive security assessment and vulnerability disclosure for DIY Government systems."
+    tags: [certificate, government, indonesia]
+    url: "https://sadewa.jogjaprov.go.id/pdf?id=U2FsdGVkX19tT6op1L2u3SypvOfAzRds1L2a3S4h8cvDB6R79Y63XbjOWWR283KeXoohuWqMOi7eq1LiJbTQ1GvoAZH3n6XvYvJQe1Q2u3A4le1Q2u3A4l&document_type=targetedtte"
+
+  - title: "Security Disclosure Certificate — Bali Provincial Government"
+    date: "July 11, 2025"
+    venue: "Kominfo Bali Provincial Government"
+    description: "Awarded for responsible disclosure of security vulnerabilities in Bali Provincial Government infrastructure."
+    tags: [certificate, government, indonesia]
+    url: "https://kanal.baliprov.go.id/short/1zN29DYrV7-ROLB"
+
+  - title: "Vulnerability Assessment Certificate — Bali Provincial Government"
+    date: "November 7, 2024"
+    venue: "Kominfo Bali Provincial Government"
+    description: "Certificate for security vulnerability assessment and remediation guidance for Bali Government systems."
+    tags: [certificate, government, indonesia]
+    url: "https://kanal.baliprov.go.id/short/YBNE2xg24G-nt1u"
+
+  - title: "Security Report Certificate — Bali Provincial Government"
+    date: "November 1, 2024"
+    venue: "Kominfo Bali Provincial Government"
+    description: "Certificate for comprehensive security report on vulnerabilities found in provincial systems."
+    tags: [certificate, government, indonesia]
+    url: "https://kanal.baliprov.go.id/short/WaV7EvZ341-wCNQ"
+
+  - title: "Security Assessment Certificate — Bali Provincial Government"
+    date: "November 1, 2025"
+    venue: "Kominfo Bali Provincial Government"
+    description: "Certificate for follow-up security assessment and vulnerability disclosure."
+    tags: [certificate, government, indonesia]
+    url: "https://kanal.baliprov.go.id/short/gk4xM1L9ey-aERc"
+
+  - title: "Security Disclosure Certificate — Kabupaten Jombang"
+    date: "July 17, 2025"
+    venue: "Diskominfo Kabupaten Jombang"
+    description: "Awarded for responsible disclosure of security vulnerabilities in Jombang Regency Government systems."
+    tags: [certificate, government, indonesia]
+    url: "https://srikandi.arsip.go.id/result-scan/3MiVttzgzPDqdYoCn9jMBA"
+
+  - title: "Security Assessment Certificate — Pemerintah Kutai Kartanegara"
+    date: "July 22, 2025"
+    venue: "Kominfo KUKAR"
+    description: "Certificate for security vulnerability discovery and disclosure for Kutai Kartanegara Government."
+    tags: [certificate, government, indonesia]
+    url: "https://drive.google.com/file/d/1WF1p3tYBODpBGiHkxDcomxcEeZICY_-x/view?usp=sharing"

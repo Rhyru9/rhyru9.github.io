@@ -1,0 +1,78 @@
+title: "Rhyru9"
+description: "Bug Bounty Hunter · Security Researcher · Penetration Tester"
+author: "Rhyru9"
+email: "reyhansyah4@gmail.com"
+url: "https://rhyru9.github.io"
+baseurl: ""
+
+# Profile
+profile_image: "/assets/images/profile.jpg"
+location: "Jakarta, Indonesia"
+bio: "Bug Bounty Hunter · Security Researcher<br>Based in Jakarta, Indonesia"
+
+# Social
+github_username: rhyru9
+linkedin_username: rhyru9
+twitter_username: rhyru9
+# HackerOne/Bugcrowd profile (optional)
+hackerone_username: rhyru9
+# bugcrowd_username: rhyru9
+
+# Google Scholar (optional)
+# google_scholar: "https://scholar.google.com/citations?user=XXXXX"
+
+# Google Analytics (optional)
+# google_analytics: "G-XXXXXXXXXX"
+
+# Navigation
+navigation:
+  - title: "About"
+    url: "/"
+  - title: "Blog"
+    url: "/blog/"
+  - title: "Achievements"
+    url: "/achievements/"
+  - title: "CV"
+    url: "/cv/"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Collections - PENTING: ini membuat Jekyll mengenali folder _pages
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# Defaults untuk pages
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Include _pages directory
+include:
+  - _pages
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+  - fix.sh
+  - vendor
