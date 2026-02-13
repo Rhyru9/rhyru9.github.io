@@ -127,9 +127,8 @@ permalink: /achievements/
 
 Find me on various bug bounty platforms:
 
-- **HackerOne**: [@rhyru9](https://hackerone.com/rhyru9) — Top 10 Researcher
-- **Bugcrowd**: [@rhyru9](https://bugcrowd.com/rhyru9) — Elite Researcher
-- **Intigriti**: [@rhyru9](https://intigriti.com/researcher/rhyru9)
-- **YesWeHack**: [@rhyru9](https://yeswehack.com/hunters/rhyru9)
+- **HackerOne**: [@rhyru9](https://hackerone.com/rhyru9) — Active Researcher
+- **YesWeHack**: [@rhyru9](https://yeswehack.com/hunters/rhyru9) — Certified Hunter
+- **Bugcrowd**: [@rhyru9](https://bugcrowd.com/rhyru9) — Security Researcher
 
 Total bounties earned: **$xx.xxx+** across all platforms.
