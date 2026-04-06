@@ -119,10 +119,38 @@
   }
 
   // ===================================
+  // THEME SWITCHER
+  // ===================================
+  var THEMES = ['light', 'dark', 'gruvbox-light', 'gruvbox-dim', 'gruvbox-dark'];
+
+  function applyTheme(theme) {
+    if (THEMES.indexOf(theme) === -1) theme = 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    try { localStorage.setItem('theme', theme); } catch(e) {}
+    document.querySelectorAll('.swatch').forEach(function (s) {
+      var isActive = s.getAttribute('data-theme') === theme;
+      s.classList.toggle('active', isActive);
+      s.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+  }
+
+  document.querySelectorAll('.swatch').forEach(function (s) {
+    s.addEventListener('click', function () {
+      applyTheme(this.getAttribute('data-theme'));
+    });
+  });
+
+  // ===================================
   // INIT
   // ===================================
   document.addEventListener('DOMContentLoaded', function () {
     setActiveNav();
+    // Sync swatch active state with current theme
+    var current;
+    try { current = localStorage.getItem('theme') || 'light'; } catch(e) { current = 'light'; }
+    applyTheme(current);
+    // Enable smooth transitions after first paint
+    setTimeout(function () { document.body.classList.add('theme-ready'); }, 50);
   });
 
 })();

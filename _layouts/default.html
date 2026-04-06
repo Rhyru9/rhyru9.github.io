@@ -14,6 +14,9 @@
 
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👤</text></svg>">
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}}());
+  </script>
 
   {% if site.google_analytics and jekyll.environment == 'production' %}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
@@ -49,6 +52,17 @@
       </li>
       {% endfor %}
     </ul>
+    <div class="theme-switcher" aria-label="Theme switcher">
+      <span class="theme-label">Theme</span>
+      <div class="theme-swatches">
+        <button class="swatch swatch-light"         data-theme="light"          title="Light"         aria-label="Light theme"         type="button"></button>
+        <button class="swatch swatch-dark"          data-theme="dark"           title="Dark"          aria-label="Dark theme"          type="button"></button>
+        <button class="swatch swatch-gruvbox-light" data-theme="gruvbox-light"  title="Gruvbox Light" aria-label="Gruvbox Light theme" type="button"></button>
+        <button class="swatch swatch-gruvbox-dim"   data-theme="gruvbox-dim"    title="Gruvbox Dim"   aria-label="Gruvbox Dim theme"   type="button"></button>
+        <button class="swatch swatch-gruvbox-dark"  data-theme="gruvbox-dark"   title="Gruvbox Dark"  aria-label="Gruvbox Dark theme"  type="button"></button>
+      </div>
+    </div>
+
     <div class="mobile-social">
       {% if site.github_username %}
       <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">
@@ -103,6 +117,18 @@
           {% endfor %}
         </ul>
       </nav>
+
+      <!-- Theme Switcher -->
+      <div class="theme-switcher" aria-label="Theme switcher">
+        <span class="theme-label">Theme</span>
+        <div class="theme-swatches">
+          <button class="swatch swatch-light"         data-theme="light"          title="Light"         aria-label="Light theme"         type="button"></button>
+          <button class="swatch swatch-dark"          data-theme="dark"           title="Dark"          aria-label="Dark theme"          type="button"></button>
+          <button class="swatch swatch-gruvbox-light" data-theme="gruvbox-light"  title="Gruvbox Light" aria-label="Gruvbox Light theme" type="button"></button>
+          <button class="swatch swatch-gruvbox-dim"   data-theme="gruvbox-dim"    title="Gruvbox Dim"   aria-label="Gruvbox Dim theme"   type="button"></button>
+          <button class="swatch swatch-gruvbox-dark"  data-theme="gruvbox-dark"   title="Gruvbox Dark"  aria-label="Gruvbox Dark theme"  type="button"></button>
+        </div>
+      </div>
 
       <!-- Social Links -->
       <div class="social-links">

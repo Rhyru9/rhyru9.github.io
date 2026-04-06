@@ -40,12 +40,211 @@
   --link-hov:     #0f3d7a;
   --border:       #e0ddd6;
   --border-2:     #cac6bc;
-  --accent:       #1a56a0;
-  --accent-warm:  #b5763a;
+  --accent:            #1a56a0;
+  --accent-warm:       #b5763a;
+  --mark-bg:           rgba(26,86,160,0.10);
+  --accent-focus-ring: rgba(26,86,160,0.10);
+  --shadow:            rgba(0,0,0,0.07);
+  --shadow-md:         rgba(0,0,0,0.09);
+  --accent-red:        #9d0006;
+
+  /* Syntax Highlighting */
+  --syn-keyword:        #1a56a0;
+  --syn-string:         #22863a;
+  --syn-string-special: #b5763a;
+  --syn-comment:        #7a7a72;
+  --syn-function:       #6f42c1;
+  --syn-class:          #6f42c1;
+  --syn-tag:            #22863a;
+  --syn-attr:           #005cc5;
+  --syn-builtin:        #005cc5;
+  --syn-number:         #8f3f71;
+  --syn-operator:       #1c1c1a;
+  --syn-variable:       #e36209;
+  --syn-decorator:      #e36209;
+  --syn-preproc:        #6f42c1;
+  --syn-deleted:        #9d0006;
+  --syn-inserted:       #22863a;
+  --syn-error:          #9d0006;
 
   /* Typography */
   --font-serif: 'EB Garamond', Georgia, 'Times New Roman', serif;
   --font-mono:  'DM Mono', 'Menlo', 'Monaco', monospace;
+}
+
+/* ===================================
+   THEMES
+=================================== */
+
+/* ===================================
+   COLOR SCHEME (native browser elements)
+=================================== */
+:root,
+[data-theme="light"],
+[data-theme="gruvbox-light"] { color-scheme: light; }
+
+[data-theme="dark"],
+[data-theme="gruvbox-dark"],
+[data-theme="gruvbox-dim"]   { color-scheme: dark; }
+
+/* --- Dark --- */
+[data-theme="dark"] {
+  --bg:                #18181b;
+  --bg-subtle:         #212126;
+  --bg-hover:          #2a2a30;
+  --text:              #e4e2dc;
+  --text-2:            #b8b5ae;
+  --text-3:            #878480;
+  --text-4:            #565450;
+  --heading:           #f0ede5;
+  --link:              #6fa8dc;
+  --link-hov:          #8bbfe8;
+  --border:            #2e2d30;
+  --border-2:          #404040;
+  --accent:            #6fa8dc;
+  --accent-warm:       #c9924a;
+  --mark-bg:           rgba(111,168,220,0.15);
+  --accent-focus-ring: rgba(111,168,220,0.15);
+  --shadow:            rgba(0,0,0,0.30);
+  --shadow-md:         rgba(0,0,0,0.40);
+  --accent-red:        #f44747;
+  --syn-keyword:        #cc99cd;
+  --syn-string:         #7ec699;
+  --syn-string-special: #f08d49;
+  --syn-comment:        #999999;
+  --syn-function:       #f8c555;
+  --syn-class:          #67cdcc;
+  --syn-tag:            #e06c75;
+  --syn-attr:           #d19a66;
+  --syn-builtin:        #61aeee;
+  --syn-number:         #f08d49;
+  --syn-operator:       #abb2bf;
+  --syn-variable:       #abb2bf;
+  --syn-decorator:      #c678dd;
+  --syn-preproc:        #c678dd;
+  --syn-deleted:        #f44747;
+  --syn-inserted:       #7ec699;
+  --syn-error:          #f44747;
+}
+
+/* --- Gruvbox Dark --- */
+[data-theme="gruvbox-dark"] {
+  --bg:                #282828;
+  --bg-subtle:         #32302f;
+  --bg-hover:          #3c3836;
+  --text:              #ebdbb2;
+  --text-2:            #d5c4a1;
+  --text-3:            #bdae93;
+  --text-4:            #928374;
+  --heading:           #fbf1c7;
+  --link:              #83a598;
+  --link-hov:          #8ec07c;
+  --border:            #3c3836;
+  --border-2:          #504945;
+  --accent:            #83a598;
+  --accent-warm:       #d79921;
+  --mark-bg:           rgba(131,165,152,0.20);
+  --accent-focus-ring: rgba(131,165,152,0.20);
+  --shadow:            rgba(0,0,0,0.30);
+  --shadow-md:         rgba(0,0,0,0.40);
+  --accent-red:        #fb4934;
+  --syn-keyword:        #fabd2f;
+  --syn-string:         #b8bb26;
+  --syn-string-special: #fe8019;
+  --syn-comment:        #928374;
+  --syn-function:       #83a598;
+  --syn-class:          #8ec07c;
+  --syn-tag:            #fb4934;
+  --syn-attr:           #fabd2f;
+  --syn-builtin:        #8ec07c;
+  --syn-number:         #d3869b;
+  --syn-operator:       #fe8019;
+  --syn-variable:       #ebdbb2;
+  --syn-decorator:      #fb4934;
+  --syn-preproc:        #fe8019;
+  --syn-deleted:        #fb4934;
+  --syn-inserted:       #b8bb26;
+  --syn-error:          #fb4934;
+}
+
+/* --- Gruvbox Dim (soft dark) --- */
+[data-theme="gruvbox-dim"] {
+  --bg:                #32302f;
+  --bg-subtle:         #3c3836;
+  --bg-hover:          #45403d;
+  --text:              #d5c4a1;
+  --text-2:            #c7b89a;
+  --text-3:            #a89984;
+  --text-4:            #7c6f64;
+  --heading:           #ebdbb2;
+  --link:              #83a598;
+  --link-hov:          #8ec07c;
+  --border:            #45403d;
+  --border-2:          #504945;
+  --accent:            #83a598;
+  --accent-warm:       #d79921;
+  --mark-bg:           rgba(131,165,152,0.20);
+  --accent-focus-ring: rgba(131,165,152,0.20);
+  --shadow:            rgba(0,0,0,0.28);
+  --shadow-md:         rgba(0,0,0,0.38);
+  --accent-red:        #fb4934;
+  --syn-keyword:        #fabd2f;
+  --syn-string:         #b8bb26;
+  --syn-string-special: #fe8019;
+  --syn-comment:        #928374;
+  --syn-function:       #83a598;
+  --syn-class:          #8ec07c;
+  --syn-tag:            #fb4934;
+  --syn-attr:           #fabd2f;
+  --syn-builtin:        #8ec07c;
+  --syn-number:         #d3869b;
+  --syn-operator:       #fe8019;
+  --syn-variable:       #d5c4a1;
+  --syn-decorator:      #fb4934;
+  --syn-preproc:        #fe8019;
+  --syn-deleted:        #fb4934;
+  --syn-inserted:       #b8bb26;
+  --syn-error:          #fb4934;
+}
+
+/* --- Gruvbox Light --- */
+[data-theme="gruvbox-light"] {
+  --bg:                #fbf1c7;
+  --bg-subtle:         #f2e5bc;
+  --bg-hover:          #ebdbb2;
+  --text:              #3c3836;
+  --text-2:            #504945;
+  --text-3:            #665c54;
+  --text-4:            #7c6f64;
+  --heading:           #1d2021;
+  --link:              #076678;
+  --link-hov:          #427b58;
+  --border:            #e8d8af;
+  --border-2:          #d5c4a1;
+  --accent:            #076678;
+  --accent-warm:       #b57614;
+  --mark-bg:           rgba(7,102,120,0.12);
+  --accent-focus-ring: rgba(7,102,120,0.12);
+  --shadow:            rgba(0,0,0,0.07);
+  --shadow-md:         rgba(0,0,0,0.09);
+  --accent-red:        #9d0006;
+  --syn-keyword:        #9d0006;
+  --syn-string:         #79740e;
+  --syn-string-special: #af3a03;
+  --syn-comment:        #928374;
+  --syn-function:       #076678;
+  --syn-class:          #427b58;
+  --syn-tag:            #9d0006;
+  --syn-attr:           #b57614;
+  --syn-builtin:        #427b58;
+  --syn-number:         #8f3f71;
+  --syn-operator:       #3c3836;
+  --syn-variable:       #af3a03;
+  --syn-decorator:      #af3a03;
+  --syn-preproc:        #af3a03;
+  --syn-deleted:        #9d0006;
+  --syn-inserted:       #79740e;
+  --syn-error:          #9d0006;
 }
 
 /* ===================================
@@ -126,7 +325,7 @@ a:hover { color: var(--link-hov); text-decoration: underline; text-underline-off
   display: flex;
   flex-direction: column;
   /* Optimasi rendering - menghilangkan flicker */
-  will-change: contents;
+  will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -301,7 +500,7 @@ a:hover { color: var(--link-hov); text-decoration: underline; text-underline-off
   border-bottom: 1px solid var(--border);
   padding: var(--sp-4) var(--sp-5) var(--sp-5);
   z-index: 199;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+  box-shadow: 0 8px 24px var(--shadow);
 }
 
 .mobile-drawer.open { display: block; }
@@ -623,7 +822,7 @@ a:hover { color: var(--link-hov); text-decoration: underline; text-underline-off
 .search-input:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(26,86,160,0.08);
+  box-shadow: 0 0 0 3px var(--accent-focus-ring);
 }
 
 .search-input::placeholder { color: var(--text-4); font-style: italic; }
@@ -632,7 +831,7 @@ a:hover { color: var(--link-hov); text-decoration: underline; text-underline-off
   position: absolute; top: calc(100% + 4px); left: 0; right: 0;
   background: var(--bg); border: 1px solid var(--border); border-radius: 5px;
   max-height: 360px; overflow-y: auto; display: none;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.09); z-index: 10;
+  box-shadow: 0 8px 24px var(--shadow-md); z-index: 10;
 }
 
 .search-results.active { display: block; }
@@ -693,7 +892,7 @@ footer {
 *:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 mark {
-  background: rgba(26,86,160,0.1);
+  background: var(--mark-bg);
   color: var(--heading);
   padding: 0.1em 0.25em;
   border-radius: 2px;
@@ -732,6 +931,171 @@ mark {
 @media (max-width: 480px) {
   .stats-row { grid-template-columns: 1fr; }
   h1 { font-size: 1.75rem; }
+}
+
+/* ===================================
+   SYNTAX HIGHLIGHTING (Rouge)
+=================================== */
+
+/* Container */
+.highlight {
+  border-radius: 5px;
+  overflow: hidden;
+  margin: var(--sp-6) 0;
+  border: 1px solid var(--border);
+}
+.highlight pre {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: var(--bg-subtle);
+  padding: var(--sp-5);
+  line-height: 1.6;
+  overflow-x: auto;
+}
+.highlight pre code { background: none; border: none; padding: 0; color: var(--text); }
+
+/* Comments */
+.highlight .c,  .highlight .c1, .highlight .cm,
+.highlight .cs  { color: var(--syn-comment); font-style: italic; }
+.highlight .cp  { color: var(--syn-preproc); }
+
+/* Keywords */
+.highlight .k,  .highlight .kd, .highlight .kn,
+.highlight .kp, .highlight .kr, .highlight .kt { color: var(--syn-keyword); font-weight: 600; }
+
+/* Strings */
+.highlight .s,  .highlight .s1, .highlight .s2,
+.highlight .sb, .highlight .sh, .highlight .sl,
+.highlight .ss, .highlight .sx { color: var(--syn-string); }
+.highlight .sd  { color: var(--syn-string); font-style: italic; }
+.highlight .se, .highlight .si,
+.highlight .sr  { color: var(--syn-string-special); }
+
+/* Functions / methods */
+.highlight .nf, .highlight .fm { color: var(--syn-function); }
+
+/* Classes / namespaces */
+.highlight .nc, .highlight .nn { color: var(--syn-class); }
+
+/* HTML/XML tags */
+.highlight .nt  { color: var(--syn-tag); font-weight: 600; }
+
+/* Attributes */
+.highlight .na  { color: var(--syn-attr); }
+
+/* Built-ins */
+.highlight .nb  { color: var(--syn-builtin); }
+
+/* Variables */
+.highlight .nv, .highlight .vc,
+.highlight .vg, .highlight .vi { color: var(--syn-variable); }
+
+/* Decorators (@decorator) */
+.highlight .nd  { color: var(--syn-decorator); }
+
+/* Exceptions */
+.highlight .ne  { color: var(--syn-error); font-weight: 600; }
+
+/* Numbers */
+.highlight .m,  .highlight .mb, .highlight .mf,
+.highlight .mh, .highlight .mi, .highlight .mo { color: var(--syn-number); }
+
+/* Operators */
+.highlight .o,  .highlight .ow { color: var(--syn-operator); }
+
+/* Generic: diff */
+.highlight .gd  { color: var(--syn-deleted); background: rgba(0,0,0,0.06); display: block; }
+.highlight .gi  { color: var(--syn-inserted); background: rgba(0,0,0,0.04); display: block; }
+.highlight .gh  { color: var(--syn-function); font-weight: 600; }
+.highlight .gu  { color: var(--syn-comment);  font-weight: 600; }
+
+/* Errors */
+.highlight .err { color: var(--syn-error); }
+
+/* Gruvbox themes: use --accent-red for page-label */
+[data-theme="gruvbox-dark"] .page-label,
+[data-theme="gruvbox-dim"]  .page-label,
+[data-theme="gruvbox-light"] .page-label { color: var(--accent-red); }
+
+/* ===================================
+   THEME SWITCHER
+=================================== */
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-2) var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+
+.theme-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  flex-shrink: 0;
+}
+
+.theme-swatches {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  outline: 2.5px solid transparent;
+  outline-offset: 2px;
+  transition: transform 0.15s, outline-color 0.15s;
+  flex-shrink: 0;
+}
+
+.swatch:hover { transform: scale(1.25); }
+.swatch.active { outline-color: var(--text-3); }
+
+.swatch-light         { background: #fafaf8; box-shadow: 0 0 0 1px #cac6bc; }
+.swatch-dark          { background: #18181b; box-shadow: 0 0 0 1px #404040; }
+.swatch-gruvbox-light { background: #fbf1c7; box-shadow: 0 0 0 1px #bdae93; }
+.swatch-gruvbox-dim   { background: #32302f; box-shadow: 0 0 0 1px #665c54; }
+.swatch-gruvbox-dark  { background: #282828; box-shadow: 0 0 0 1px #504945; }
+
+/* Avatar SVG — adapts to theme */
+.avatar-bg { fill: var(--bg-subtle); }
+.avatar-fg { fill: var(--border-2); }
+
+/* Sidebar: group theme switcher with social links at bottom */
+.sidebar .theme-switcher {
+  margin-top: auto;
+  margin-bottom: 0;
+  border-top: 1px solid var(--border);
+  padding-top: var(--sp-4);
+}
+
+.sidebar .social-links {
+  margin-top: 0;
+  border-top: none;
+  padding-top: var(--sp-2);
+}
+
+/* Smooth theme transition — enabled after initial load */
+.theme-ready,
+.theme-ready .sidebar,
+.theme-ready .topbar,
+.theme-ready .mobile-drawer,
+.theme-ready code,
+.theme-ready pre,
+.theme-ready .search-input,
+.theme-ready .search-results,
+.theme-ready .stat-card,
+.theme-ready .post-nav-link {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 /* ===================================
