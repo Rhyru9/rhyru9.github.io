@@ -120,7 +120,7 @@ I've been recognized in Hall of Fame programs by:
 
 Interested in security collaboration or have questions about vulnerability disclosure? Feel free to reach out:
 
-- **Email**: reyhansyah4@gmail.com
+- **Email**: rhyfk0z@gmail.com
 - **Twitter**: [@rhyru9](https://twitter.com/rhyru9)
 - **GitHub**: [rhyru9](https://github.com/rhyru9)
 - **HackerOne**: [rhyru9](https://hackerone.com/rhyru9)

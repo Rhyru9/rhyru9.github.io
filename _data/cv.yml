@@ -50,13 +50,43 @@ experience:
 # Technical Skills
 skills:
   - category: "Security Testing"
-    items: [OWASP Top 10, Web Application Security, API Security, Mobile Security, Authentication Testing, Authorization Flaws]
+    items:
+      [
+        OWASP Top 10,
+        Web Application Security,
+        API Security,
+        Mobile Security,
+        Authentication Testing,
+        Authorization Flaws,
+      ]
 
   - category: "Vulnerabilities"
-    items: [SQL Injection, XSS, SSRF, RCE, IDOR, CSRF, XXE, Deserialization, Business Logic Flaws]
+    items:
+      [
+        SQL Injection,
+        XSS,
+        SSRF,
+        RCE,
+        IDOR,
+        CSRF,
+        XXE,
+        Deserialization,
+        Business Logic Flaws,
+      ]
 
   - category: "Tools & Frameworks"
-    items: [Burp Suite, OWASP ZAP, SQLmap, Nmap, Metasploit, Nuclei, ffuf, Subfinder, Gobuster]
+    items:
+      [
+        Burp Suite,
+        OWASP ZAP,
+        SQLmap,
+        Nmap,
+        Metasploit,
+        Nuclei,
+        ffuf,
+        Subfinder,
+        Gobuster,
+      ]
 
   - category: "Programming"
     items: [Python, JavaScript, Go, PHP, SQL]
@@ -82,5 +112,5 @@ socials:
     description: "Professional network"
 
   - platform: "Email"
-    url: "mailto:reyhansyah4@gmail.com"
+    url: "mailto:rhyfk0z@gmail.com"
     description: "For security disclosures and collaboration"
