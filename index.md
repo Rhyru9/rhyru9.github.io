@@ -106,6 +106,7 @@ Working with security teams, Writing comprehensive reports, Following coordinate
 ## Recognition
 
 I've been recognized in Hall of Fame programs by:
+- **National Aeronautics and Space Administration (NASA)** — Letter Of Appreciation By NASA
 - **Belgium Government** — CCB Belgium
 - **BlackBerry** — Security Acknowledgment
 - **Ferrari** — Responsible Disclosure Programme
