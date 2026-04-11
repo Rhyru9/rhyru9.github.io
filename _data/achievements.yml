@@ -13,6 +13,19 @@ platforms:
 
 awards:
   # Hall of Fame
+  - title: "Letter of Appreciation — National Aeronautics and Space Administration (NASA)"
+    date: "2026-03-31"
+    venue: "NASA Vulnerability Disclosure Program (VDP)"
+    description: "Received an official Letter of Appreciation from NASA's Senior Agency Information Security Officer (SAISO) for independently identifying and responsibly disclosing an unknown security vulnerability through NASA's Vulnerability Disclosure Policy (VDP), contributing to the protection of NASA's information systems."
+    tags:
+      [
+        "Bug Bounty",
+        "Vulnerability Disclosure",
+        "Web Security",
+        "Responsible Disclosure",
+      ]
+    url: "/assets/documents/NASALetterOfAppreciation.pdf"
+
   - title: "Hall of Fame — Belgium Government"
     date: "2026"
     venue: "CCB Belgium"
