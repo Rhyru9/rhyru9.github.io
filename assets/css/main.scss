@@ -1,40 +1,38 @@
 ---
 # Front-matter required so Jekyll runs this through the SCSS converter.
-# Each partial is a standalone CSS module — no shared Sass variables or
-# mixins — so @use behaves as a drop-in replacement for the deprecated
-# @import directive. Output order follows the @use statement order.
+# Partials are standalone modules with no shared Sass state — order matters.
 ---
 
 // ───── Base ─────
-@use "base/tokens";
-@use "base/reset";
-@use "base/base";
-@use "base/typography";
+@import "base/tokens";
+@import "base/reset";
+@import "base/base";
+@import "base/typography";
 
 // ───── Themes ─────
-@use "themes/themes";
+@import "themes/themes";
 
 // ───── Layout ─────
-@use "layout/shell";
-@use "layout/sidebar";
-@use "layout/topbar";
-@use "layout/right-rail";
-@use "layout/main";
-@use "layout/mobile";
+@import "layout/shell";
+@import "layout/sidebar";
+@import "layout/topbar";
+@import "layout/right-rail";
+@import "layout/main";
+@import "layout/mobile";
 
 // ───── Components ─────
-@use "components/hero";
-@use "components/section-label";
-@use "components/card";
-@use "components/stats";
-@use "components/button";
-@use "components/tag";
-@use "components/item-list";
-@use "components/dl";
-@use "components/theme-switcher";
-@use "components/search";
-@use "components/post";
-@use "components/code";
+@import "components/hero";
+@import "components/section-label";
+@import "components/card";
+@import "components/stats";
+@import "components/button";
+@import "components/tag";
+@import "components/item-list";
+@import "components/dl";
+@import "components/theme-switcher";
+@import "components/search";
+@import "components/post";
+@import "components/code";
 
 // ───── Utils ─────
-@use "utils/a11y";
+@import "utils/a11y";
