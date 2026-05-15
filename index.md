@@ -55,7 +55,7 @@ the platforms I follow. Bug classes shift over time, so staying current is part 
 
 <dl class="contact-list">
   <dt>email</dt>
-  <dd><a href="mailto:rhyfk0z@gmail.com">rhyfk0z@gmail.com</a></dd>
+  <dd><a href="mailto:contact@rhyru9.xyz">contact@rhyru9.xyz</a></dd>
 
   <dt>twitter</dt>
   <dd><a href="https://twitter.com/rhyru9" target="_blank" rel="noopener">@rhyru9</a></dd>
