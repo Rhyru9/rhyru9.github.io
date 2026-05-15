@@ -1,0 +1,41 @@
+// Theme swatches. Compact variant fits inside the thin sidebar rail.
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.theme-switcher__swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  padding: 0;
+  border: 0;
+  outline: 2.5px solid transparent;
+  outline-offset: 2px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.15s, outline-color 0.15s;
+
+  &:hover { transform: scale(1.25); }
+  &.is-active { outline-color: var(--text-3); }
+
+  &--light         { background: #f5efe1; box-shadow: 0 0 0 1px rgba(26, 26, 26, 0.28); }
+  &--dark          { background: #1a1a1a; box-shadow: 0 0 0 1px #404040; }
+  &--gruvbox-light { background: #fbf1c7; box-shadow: 0 0 0 1px #bdae93; }
+  &--gruvbox-dim   { background: #32302f; box-shadow: 0 0 0 1px #665c54; }
+  &--gruvbox-dark  { background: #282828; box-shadow: 0 0 0 1px #504945; }
+}
+
+.theme-switcher--compact {
+  gap: 5px;
+  justify-content: center;
+
+  .theme-switcher__swatch {
+    width: 10px;
+    height: 10px;
+    outline-offset: 1px;
+  }
+}

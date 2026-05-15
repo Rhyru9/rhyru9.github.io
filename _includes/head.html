@@ -1,0 +1,35 @@
+<!--
+  Document head: meta, fonts, stylesheet, theme bootstrap.
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta name="author" content="{{ site.author }}">
+
+{% seo %}
+{% feed_meta %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&family=IBM+Plex+Mono:wght@400;500;600&family=VT323&display=swap">
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'><rect width='16' height='16' fill='%23f5efe1'/><rect x='3' y='3' width='2' height='2' fill='%231a1a1a'/><rect x='5' y='3' width='2' height='2' fill='%231a1a1a'/><rect x='3' y='5' width='2' height='2' fill='%231a1a1a'/><rect x='7' y='5' width='2' height='2' fill='%23f5c84a'/><rect x='9' y='7' width='2' height='2' fill='%231a1a1a'/><rect x='3' y='9' width='2' height='2' fill='%231a1a1a'/><rect x='5' y='11' width='2' height='2' fill='%231a1a1a'/></svg>">
+
+<script>
+  (function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}}());
+</script>
+
+{% if site.google_analytics and jekyll.environment == 'production' %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics }}');
+</script>
+{% endif %}

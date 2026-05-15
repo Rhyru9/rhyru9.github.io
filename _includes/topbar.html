@@ -1,0 +1,16 @@
+<!--
+  Slim top breadcrumb bar (desktop only).
+  Breadcrumb on left, build date on right.
+-->
+<header class="topbar">
+  <div class="topbar__crumb">
+    <a href="{{ '/' | relative_url }}">home</a>
+    {% if page.url != '/' and page.url != '/index.html' %}
+      <span class="topbar__sep">/</span>
+      <span class="topbar__current">{{ page.title | default: page.name | downcase }}</span>
+    {% endif %}
+  </div>
+  <div class="topbar__meta">
+    <span class="topbar__date">{{ 'now' | date: '%Y.%m.%d' }}</span>
+  </div>
+</header>

@@ -1,0 +1,29 @@
+// Outlined tag chip. Hover fills with accent yellow.
+
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1.5px solid var(--border-2);
+  border-radius: 4px;
+  font-family: var(--font-pixel);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-2);
+  background: transparent;
+  text-decoration: none;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    background: var(--accent);
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  &.is-active {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+  }
+}

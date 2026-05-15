@@ -1,0 +1,40 @@
+---
+# Front-matter required so Jekyll runs this through the SCSS converter.
+# Each partial is a standalone CSS module — no shared Sass variables or
+# mixins — so @use behaves as a drop-in replacement for the deprecated
+# @import directive. Output order follows the @use statement order.
+---
+
+// ───── Base ─────
+@use "base/tokens";
+@use "base/reset";
+@use "base/base";
+@use "base/typography";
+
+// ───── Themes ─────
+@use "themes/themes";
+
+// ───── Layout ─────
+@use "layout/shell";
+@use "layout/sidebar";
+@use "layout/topbar";
+@use "layout/right-rail";
+@use "layout/main";
+@use "layout/mobile";
+
+// ───── Components ─────
+@use "components/hero";
+@use "components/section-label";
+@use "components/card";
+@use "components/stats";
+@use "components/button";
+@use "components/tag";
+@use "components/item-list";
+@use "components/dl";
+@use "components/theme-switcher";
+@use "components/search";
+@use "components/post";
+@use "components/code";
+
+// ───── Utils ─────
+@use "utils/a11y";

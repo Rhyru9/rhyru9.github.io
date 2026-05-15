@@ -1,0 +1,64 @@
+// Buttons. Dark "submit" style by default, with yellow hover.
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1;
+  padding: 10px 18px;
+  border: 2px solid var(--border-2);
+  border-radius: 6px;
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.05s;
+
+  &:hover {
+    background: var(--accent);
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--text);
+
+    &:hover {
+      background: var(--accent);
+      color: var(--text);
+    }
+  }
+
+  &--accent {
+    background: var(--accent);
+    color: var(--text);
+
+    &:hover {
+      background: var(--accent-2);
+      color: var(--text);
+    }
+  }
+}
+
+.section-cta {
+  font-family: var(--font-pixel);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin: var(--sp-6) 0 0;
+  text-align: center;
+
+  a {
+    color: var(--accent-2);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent-2);
+    padding-bottom: 2px;
+
+    &:hover { background: var(--mark-bg); }
+  }
+}

@@ -1,0 +1,44 @@
+<!--
+  Thin pixel sidebar (desktop only).
+  Horizontal brand · readable nav · social rail · theme swatches.
+-->
+<aside class="sidebar" aria-label="Primary">
+  <a class="sidebar__brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}">
+    {{ site.title | upcase | replace: ' ', '' }}
+  </a>
+
+  <nav class="sidebar__nav" aria-label="Main navigation">
+    <ul>
+      {% for item in site.navigation %}
+      {% assign label = item.title | downcase | truncate: 7, '' %}
+      <li>
+        <a href="{{ item.url | relative_url }}"
+           title="{{ item.title }}"
+           data-nav-url="{{ item.url | relative_url }}"
+           {% if page.url == item.url %}class="is-active"{% endif %}>
+          {{ label }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="sidebar__social" aria-label="Social">
+    {% if site.github_username %}
+    <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener" title="GitHub">GH</a>
+    {% endif %}
+    {% if site.linkedin_username %}
+    <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener" title="LinkedIn">LI</a>
+    {% endif %}
+    {% if site.twitter_username %}
+    <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener" title="Twitter">TW</a>
+    {% endif %}
+    {% if site.email %}
+    <a href="mailto:{{ site.email }}" title="Email">&#9993;</a>
+    {% endif %}
+  </div>
+
+  <div class="sidebar__theme" aria-label="Theme">
+    {% include theme-switcher.html compact=true %}
+  </div>
+</aside>

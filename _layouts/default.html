@@ -1,178 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="author" content="{{ site.author }}">
-
-  {% seo %}
-  {% feed_meta %}
-
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👤</text></svg>">
-  <script>
-    (function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}}());
-  </script>
-
-  {% if site.google_analytics and jekyll.environment == 'production' %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}');
-  </script>
-  {% endif %}
+  {% include head.html %}
 </head>
-<body>
+<body class="theme-boot">
 
-  <!-- ======== TOPBAR (mobile) ======== -->
-  <header class="topbar" id="topbar">
-    <div class="topbar-title">
-      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
+  {% include sidebar.html %}
+  {% include right-rail.html %}
+  {% include topbar.html %}
+  {% include mobile-nav.html %}
 
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer" id="drawer" role="menu">
-    <ul class="nav-menu">
-      {% for item in site.navigation %}
-      <li>
-        <a href="{{ item.url | relative_url }}"
-           {% if page.url == item.url %}class="active"{% endif %}>
-          {{ item.title }}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-    <div class="theme-switcher" aria-label="Theme switcher">
-      <span class="theme-label">Theme</span>
-      <div class="theme-swatches">
-        <button class="swatch swatch-light"         data-theme="light"          title="Light"         aria-label="Light theme"         type="button"></button>
-        <button class="swatch swatch-dark"          data-theme="dark"           title="Dark"          aria-label="Dark theme"          type="button"></button>
-        <button class="swatch swatch-gruvbox-light" data-theme="gruvbox-light"  title="Gruvbox Light" aria-label="Gruvbox Light theme" type="button"></button>
-        <button class="swatch swatch-gruvbox-dim"   data-theme="gruvbox-dim"    title="Gruvbox Dim"   aria-label="Gruvbox Dim theme"   type="button"></button>
-        <button class="swatch swatch-gruvbox-dark"  data-theme="gruvbox-dark"   title="Gruvbox Dark"  aria-label="Gruvbox Dark theme"  type="button"></button>
-      </div>
-    </div>
-
-    <div class="mobile-social">
-      {% if site.github_username %}
-      <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">
-        {% include icons/github.html %} GitHub
-      </a>
-      {% endif %}
-      {% if site.linkedin_username %}
-      <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">
-        {% include icons/linkedin.html %} LinkedIn
-      </a>
-      {% endif %}
-      {% if site.email %}
-      <a href="mailto:{{ site.email }}">
-        {% include icons/email.html %} Email
-      </a>
-      {% endif %}
-    </div>
-  </div>
-
-  <div class="page-shell"><div class="main-wrapper">
-
-    <!-- ======== SIDEBAR ======== -->
-    <aside class="sidebar" aria-label="Sidebar">
-
-      <!-- Profile -->
-      <div class="profile-wrap">
-        <div class="profile-photo">
-          {% if site.profile_image %}
-            <img src="{{ site.profile_image | relative_url }}" alt="{{ site.author }}">
-          {% else %}
-            {% include icons/avatar.html %}
-          {% endif %}
-        </div>
-        <div class="profile-name">
-          <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-        </div>
-        <p class="profile-bio">{{ site.bio }}</p>
-      </div>
-
-      <hr>
-
-      <!-- Navigation -->
-      <nav aria-label="Main navigation">
-        <ul class="nav-menu">
-          {% for item in site.navigation %}
-          <li>
-            <a href="{{ item.url | relative_url }}"
-               {% if page.url == item.url %}class="active"{% endif %}>
-              {{ item.title }}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </nav>
-
-      <!-- Theme Switcher -->
-      <div class="theme-switcher" aria-label="Theme switcher">
-        <span class="theme-label">Theme</span>
-        <div class="theme-swatches">
-          <button class="swatch swatch-light"         data-theme="light"          title="Light"         aria-label="Light theme"         type="button"></button>
-          <button class="swatch swatch-dark"          data-theme="dark"           title="Dark"          aria-label="Dark theme"          type="button"></button>
-          <button class="swatch swatch-gruvbox-light" data-theme="gruvbox-light"  title="Gruvbox Light" aria-label="Gruvbox Light theme" type="button"></button>
-          <button class="swatch swatch-gruvbox-dim"   data-theme="gruvbox-dim"    title="Gruvbox Dim"   aria-label="Gruvbox Dim theme"   type="button"></button>
-          <button class="swatch swatch-gruvbox-dark"  data-theme="gruvbox-dark"   title="Gruvbox Dark"  aria-label="Gruvbox Dark theme"  type="button"></button>
-        </div>
-      </div>
-
-      <!-- Social Links -->
-      <div class="social-links">
-        {% if site.github_username %}
-        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">
-          {% include icons/github.html class="ico" %}
-          GitHub
-        </a>
-        {% endif %}
-
-        {% if site.linkedin_username %}
-        <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">
-          {% include icons/linkedin.html class="ico" %}
-          LinkedIn
-        </a>
-        {% endif %}
-
-        {% if site.twitter_username %}
-        <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener">
-          {% include icons/twitter.html class="ico" %}
-          Twitter
-        </a>
-        {% endif %}
-
-        {% if site.email %}
-        <a href="mailto:{{ site.email }}">
-          {% include icons/email.html class="ico" %}
-          Email
-        </a>
-        {% endif %}
-      </div>
-
-    </aside>
-
-    <!-- ======== MAIN ======== -->
-    <main class="main-content" id="main">
+  <main class="main" id="main">
+    <div class="main__inner">
       {{ content }}
-      <footer>
-        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author }}. Built with Jekyll.</p>
-      </footer>
-    </main>
+      {% include footer.html %}
+    </div>
+  </main>
 
-  </div></div>
-
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <script type="module" src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

@@ -1,0 +1,54 @@
+// Decorative right rail. Pure ornament — no interactive elements.
+
+.rail {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: var(--rail-w);
+  border-left: 2px solid var(--border-2);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--sp-3) 0;
+  z-index: 80;
+  pointer-events: none;
+}
+
+.rail__top,
+.rail__bot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.rail__mark {
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-4);
+  line-height: 1;
+}
+
+.rail__dot {
+  width: 6px;
+  height: 6px;
+  background: var(--border-soft);
+
+  &--on { background: var(--accent); }
+}
+
+.rail__mid {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-4);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.08em;
+  padding: var(--sp-4) 0;
+}

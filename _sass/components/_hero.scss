@@ -1,0 +1,63 @@
+// Hero block — kicker chip, large title, subtitle divider, intro paragraph.
+// All four are centered (poster-style entry); body content below stays left.
+
+.page-kicker,
+.page-label {
+  display: block;
+  width: fit-content;
+  margin: 0 auto var(--sp-4);
+  font-family: var(--font-pixel);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent-2);
+  letter-spacing: 0;
+  padding: 4px 12px;
+  background: var(--surface);
+  border: 2px solid var(--border-2);
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.page-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: var(--sp-4);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--heading);
+  text-align: center;
+}
+
+.page-subtitle {
+  font-family: var(--font-pixel);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-2);
+  margin: 0 auto var(--sp-5);
+  padding-bottom: var(--sp-5);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  max-width: 60ch;
+}
+
+.page-intro {
+  font-family: var(--font-pixel);
+  font-size: 1.0625rem;
+  color: var(--text-2);
+  line-height: 1.65;
+  margin: 0 auto var(--sp-10);
+  max-width: 60ch;
+  text-align: center;
+}
+
+.page-footnote {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-3);
+  margin-top: var(--sp-10);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--border);
+  letter-spacing: 0.01em;
+  text-align: center;
+}

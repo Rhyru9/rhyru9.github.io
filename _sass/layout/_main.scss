@@ -1,0 +1,18 @@
+// Main content area. Pinned between sidebar and rail.
+// .main__inner is the single column that establishes the shared left edge
+// for every block of content (hero, section labels, paragraphs, cards).
+
+.main {
+  margin-left: var(--sidebar-w);
+  margin-right: var(--rail-w);
+  padding: calc(var(--top-h) + var(--sp-10)) var(--sp-8) var(--sp-20);
+  min-height: 100vh;
+  position: relative;
+  animation: fadeIn 0.2s ease-in;
+}
+
+.main__inner {
+  max-width: var(--content-w);
+  width: 100%;
+  margin: 0 auto;
+}
