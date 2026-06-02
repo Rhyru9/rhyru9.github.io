@@ -16,9 +16,9 @@ function highlight(text, query) {
   return text.replace(new RegExp(`(${escapeRegex(query)})`, 'gi'), '<mark>$1</mark>');
 }
 
-function renderHits(hits, query) {
+function renderHits(hits, query, noResultsLabel) {
   if (!hits.length) {
-    return '<div class="search-result-item"><span class="res-meta">No results found</span></div>';
+    return `<div class="search-result-item"><span class="res-meta">${noResultsLabel}</span></div>`;
   }
   return hits.map(h => `
     <a href="${h.url}" class="search-result-item">
@@ -33,6 +33,8 @@ export function initSearch() {
   const results = document.getElementById(RESULTS_ID);
   if (!input || !results) return;
 
+  const noResultsLabel = input.dataset.noResults || 'No results found';
+  const lang = input.dataset.lang || 'en';
   let index = [];
   let timer;
 
@@ -48,11 +50,13 @@ export function initSearch() {
     }
     const lq = q.toLowerCase();
     const hits = index.filter(item =>
+      (!item.lang || item.lang === lang) && (
       item.title.toLowerCase().includes(lq) ||
       (item.content && item.content.toLowerCase().includes(lq)) ||
       (item.tags && item.tags.some(t => t.toLowerCase().includes(lq)))
+      )
     ).slice(0, MAX_HITS);
-    results.innerHTML = renderHits(hits, q);
+    results.innerHTML = renderHits(hits, q, noResultsLabel);
     results.classList.add(ACTIVE_CLASS);
   };
 

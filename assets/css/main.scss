@@ -1,38 +1,17 @@
 ---
-# Front-matter required so Jekyll runs this through the SCSS converter.
-# Partials are standalone modules with no shared Sass state — order matters.
 ---
-
-// ───── Base ─────
-@import "base/tokens";
-@import "base/reset";
-@import "base/base";
-@import "base/typography";
-
-// ───── Themes ─────
-@import "themes/themes";
-
-// ───── Layout ─────
-@import "layout/shell";
-@import "layout/sidebar";
-@import "layout/topbar";
-@import "layout/right-rail";
-@import "layout/main";
-@import "layout/mobile";
-
-// ───── Components ─────
-@import "components/hero";
-@import "components/section-label";
-@import "components/card";
-@import "components/stats";
-@import "components/button";
-@import "components/tag";
-@import "components/item-list";
-@import "components/dl";
-@import "components/theme-switcher";
-@import "components/search";
-@import "components/post";
-@import "components/code";
-
-// ───── Utils ─────
-@import "utils/a11y";
+@use "base/variables";
+@use "base/reset";
+@use "layout/header";
+@use "layout/main";
+@use "layout/footer";
+@use "layout/mobile";
+@use "components/hero";
+@use "components/tags";
+@use "components/cards";
+@use "components/search";
+@use "components/articles";
+@use "components/cv";
+@use "components/post";
+@use "utils/utilities";
+@use "base/responsive";

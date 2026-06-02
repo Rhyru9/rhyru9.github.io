@@ -1,22 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+{% assign lang = page.lang | default: site.default_lang | default: 'en' %}
+<html lang="{{ lang }}">
 <head>
   {% include head.html %}
 </head>
-<body class="theme-boot">
-
-  {% include sidebar.html %}
-  {% include right-rail.html %}
+<body>
   {% include topbar.html %}
   {% include mobile-nav.html %}
-
-  <main class="main" id="main">
-    <div class="main__inner">
-      {{ content }}
-      {% include footer.html %}
-    </div>
-  </main>
-
+  <main>{{ content }}</main>
+  {% include footer.html %}
   <script type="module" src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

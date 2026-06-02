@@ -1,31 +1,31 @@
-// Minimal reset.
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  text-rendering: optimizeLegibility;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+body {
+  margin: 0;
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  background: linear-gradient(180deg, var(--lavender) 0, #fff 420px);
+  -webkit-font-smoothing: antialiased;
 }
 
-button {
-  font: inherit;
+a {
   color: inherit;
-  background: none;
-  border: 0;
-  cursor: pointer;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--yellow);
+  color: var(--black);
 }

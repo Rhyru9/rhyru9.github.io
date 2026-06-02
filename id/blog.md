@@ -1,9 +1,9 @@
 ---
 layout: default
 title: "Blog"
-permalink: /blog/
-lang: en
-translation_url: /id/blog/
+permalink: /id/blog/
+lang: id
+translation_url: /blog/
 ---
 
 {% include pages/blog.html %}

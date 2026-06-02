@@ -4,6 +4,16 @@ title: "Framer Subdomain Takeover: A Complete Guide"
 date: 2025-02-02
 tags: [bug-bounty, recon, security, vulnerability]
 excerpt: "Learn how to identify and perform a takeover of unclaimed Framer subdomains, such as *.framer.website, to demonstrate a security vulnerability."
+lang: en
+translation_key: framer-subdomain-takeover
+translation_url: /id/blog/2025/02/02/framer-subdomain-takeover/
+translations:
+  en:
+    title: "Framer Subdomain Takeover: A Complete Guide"
+    excerpt: "Learn how to identify and perform a takeover of unclaimed Framer subdomains, such as *.framer.website, to demonstrate a security vulnerability."
+  id:
+    title: "Framer Subdomain Takeover: Panduan Lengkap"
+    excerpt: "Pelajari cara mengidentifikasi dan menguji takeover subdomain Framer yang belum diklaim, seperti *.framer.website, untuk mendemonstrasikan kerentanan keamanan."
 ---
 
 Subdomain takeover is a vulnerability that occurs when attackers can claim a subdomain that is no longer in use due to misconfigured DNS records. This guide demonstrates how to identify and responsibly test Framer subdomain vulnerabilities.

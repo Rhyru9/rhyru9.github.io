@@ -4,6 +4,16 @@ title: "From Subdomain Enum to GraphQL DoS: A Bug Hunter's Journey"
 date: 2024-03-21
 tags: [Api, DOS, High]
 excerpt: "A journey from basic subdomain enumeration to discovering a critical GraphQL denial-of-service vulnerability. What started as routine reconnaissance with subfinder and httpx evolved into custom tool development, systematic fuzzing, and ultimately finding a server-crushing query complexity exploit that earned a bounty."
+lang: en
+translation_key: dos-graphql
+translation_url: /id/blog/2024/03/21/dos-graphql/
+translations:
+  en:
+    title: "From Subdomain Enum to GraphQL DoS: A Bug Hunter's Journey"
+    excerpt: "A journey from basic subdomain enumeration to discovering a critical GraphQL denial-of-service vulnerability. What started as routine reconnaissance with subfinder and httpx evolved into custom tool development, systematic fuzzing, and ultimately finding a server-crushing query complexity exploit that earned a bounty."
+  id:
+    title: "Dari Subdomain Enum ke GraphQL DoS: Perjalanan Bug Hunter"
+    excerpt: "Perjalanan dari enumerasi subdomain sederhana sampai menemukan kerentanan denial-of-service GraphQL kritis melalui recon, tooling khusus, fuzzing sistematis, dan query complexity exploit."
 ---
 
 A journey from basic subdomain enumeration to discovering a critical GraphQL DoS vulnerability through systematic fuzzing and custom tooling.

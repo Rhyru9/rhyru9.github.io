@@ -1,0 +1,66 @@
+{% assign lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] %}
+{% assign cv = site.data.cv %}
+
+<div class="content-wrap">
+  <div class="sobre-big">
+    <span class="tag tag--header">{{ t.cv.label }}</span>
+    <h1 class="sobre-h1">{{ t.cv.title }}</h1>
+
+    <div class="sec-label">{{ t.cv.education }}</div>
+    <div class="cv-section">
+      {% for item in cv.education %}
+      <div class="cv-item">
+        <div class="cv-year">{{ item.period }}</div>
+        <div class="cv-content">
+          <h4>{{ item.degree }}</h4>
+          <p class="cv-institution">{{ item.institution }}</p>
+          {% assign d = item.description %}{% if lang == 'id' and item.description_id %}{% assign d = item.description_id %}{% endif %}
+          {% if d %}<p>{{ d }}</p>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% if cv.certifications %}
+    <div class="sec-label">{{ t.cv.certifications }}</div>
+    <div class="cv-section">
+      {% for cert in cv.certifications %}
+      <div class="cv-item">
+        <div class="cv-year">{{ cert.date }}</div>
+        <div class="cv-content"><h4>{{ cert.name }}</h4><p class="cv-institution">{{ cert.issuer }}</p></div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="sec-label">{{ t.cv.experience }}</div>
+    <div class="cv-section">
+      {% for item in cv.experience %}
+      <div class="cv-item">
+        <div class="cv-year">{{ item.period }}</div>
+        <div class="cv-content">
+          <h4>{{ item.title }}</h4>
+          <p class="cv-institution">{{ item.company }}</p>
+          {% assign d = item.description %}{% if lang == 'id' and item.description_id %}{% assign d = item.description_id %}{% endif %}
+          {% if d %}<p>{{ d }}</p>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="sec-label">{{ t.cv.skills }}</div>
+    <div class="cv-section">
+      {% for group in cv.skills %}
+      <div class="cv-item">
+        <div class="cv-year">{{ group.category }}</div>
+        <div class="cv-content">
+          <div class="tags-row">
+            {% for skill in group.items %}<span class="tag">{{ skill }}</span>{% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

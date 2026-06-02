@@ -1,64 +1,47 @@
 ---
 layout: default
 ---
-<article class="post-wrap">
+{% assign lang = page.lang | default: site.default_lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] | default: site.data.i18n.en %}
 
-  <header class="post-header">
-    <span class="page-label">{{ page.categories | first | default: "Blog" }}</span>
-    <h1>{{ page.title }}</h1>
-
-    <div class="post-meta">
-      <span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-1px;margin-right:2px;"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-      </span>
-      {% if page.read_time %}
-      <span class="meta-sep">&middot;</span>
-      <span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-1px;margin-right:2px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        {{ page.read_time }} min read
-      </span>
+<div class="content-wrap">
+  <div class="sobre-big">
+    <article>
+      <header class="post-header">
+        <span class="tag tag--header">{{ page.categories | first | default: "Blog" }}</span>
+        <h1>{{ page.title }}</h1>
+        <div class="post-meta">
+          <span><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></span>
+          {% if page.read_time %}&middot; {{ page.read_time }} {{ t.ui.min_read }}{% endif %}
+        </div>
+        {% if page.tags %}
+        <div class="tags-row">{% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>
+        {% endif %}
+      </header>
+      <div class="post-body">{{ content }}</div>
+      {% if page.references %}
+      <aside class="post-refs">
+        <div class="post-refs__heading">{{ t.ui.references }}</div>
+        <ul class="post-refs__list">{% for ref in page.references %}<li class="post-refs__item"><a href="{{ ref.url }}" target="_blank" rel="noopener" class="post-refs__link">{{ ref.title }}</a></li>{% endfor %}</ul>
+      </aside>
       {% endif %}
-    </div>
-
-    {% if page.tags %}
-    <div class="post-tags">
-      {% for tag in page.tags %}
-      <a href="{{ '/blog/' | relative_url }}#{{ tag | slugify }}" class="tag">{{ tag }}</a>
-      {% endfor %}
-    </div>
-    {% endif %}
-  </header>
-
-  <div class="post-body">
-    {{ content }}
+    </article>
   </div>
 
-  {% if page.references %}
-  <aside style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);">
-    <h3 style="margin-top:0;">References</h3>
-    <ul>
-      {% for ref in page.references %}
-      <li><a href="{{ ref.url }}" target="_blank" rel="noopener">{{ ref.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </aside>
-  {% endif %}
+  {% assign same_lang_posts = site.posts | where: "lang", lang %}
+  {% assign current_index = nil %}
+  {% for candidate in same_lang_posts %}{% if candidate.url == page.url %}{% assign current_index = forloop.index0 %}{% endif %}{% endfor %}
+  {% assign older_index = current_index | plus: 1 %}
+  {% assign newer_index = current_index | minus: 1 %}
+  {% assign older_post = same_lang_posts[older_index] %}
+  {% assign newer_post = same_lang_posts[newer_index] %}
 
   <nav class="post-nav">
-    {% if page.previous.url %}
-    <a href="{{ page.previous.url | relative_url }}" class="post-nav-link">
-      <span class="post-nav-label">&#8592; Previous</span>
-      <span class="post-nav-title">{{ page.previous.title }}</span>
-    </a>
+    {% if older_post %}
+    <a href="{{ older_post.url | relative_url }}" class="post-nav-link"><span class="post-nav-label">&#8592; {{ t.ui.previous }}</span><span class="post-nav-title">{{ older_post.title }}</span></a>
     {% else %}<div></div>{% endif %}
-
-    {% if page.next.url %}
-    <a href="{{ page.next.url | relative_url }}" class="post-nav-link post-nav-next">
-      <span class="post-nav-label">Next &#8594;</span>
-      <span class="post-nav-title">{{ page.next.title }}</span>
-    </a>
+    {% if newer_post %}
+    <a href="{{ newer_post.url | relative_url }}" class="post-nav-link post-nav-next"><span class="post-nav-label">{{ t.ui.next }} &#8594;</span><span class="post-nav-title">{{ newer_post.title }}</span></a>
     {% else %}<div></div>{% endif %}
   </nav>
-
-</article>
+</div>

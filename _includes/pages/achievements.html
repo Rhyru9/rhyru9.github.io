@@ -1,0 +1,40 @@
+{% assign lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] %}
+{% assign a = site.data.achievements %}
+
+<div class="content-wrap">
+  <div class="sobre-big">
+    <span class="tag tag--header">{{ t.achievements.label }}</span>
+    <h1 class="sobre-h1">{{ t.achievements.title }}</h1>
+    <p class="sobre-p">{{ t.achievements.intro }}</p>
+
+    {% if a.awards %}
+    <div class="sec-label">{{ t.achievements.awards }}</div>
+    {% for item in a.awards %}
+    <div class="dv-item">
+      <div class="item-title item-title--tight">
+        {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
+      </div>
+      <div class="art-date">{{ item.date }}{% if item.venue %} &middot; {{ item.venue }}{% endif %}</div>
+      {% assign d = item.description %}{% if lang == 'id' and item.description_id %}{% assign d = item.description_id %}{% endif %}
+      {% if d %}<p class="text-xs text-xs--award">{{ d }}</p>{% endif %}
+      {% if item.tags %}
+      <div class="tags-row">
+        {% for tag in item.tags %}<span class="tag tag-sm">{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if a.platforms %}
+    <div class="sec-label">{{ t.achievements.profiles }}</div>
+    {% for p in a.platforms %}
+    <div class="dv-item dv-item--sm">
+      <div class="item-title item-title--tight"><a href="{{ p.profile_url }}" target="_blank" rel="noopener">{{ p.title }}</a> <span class="meta-mono">@{{ p.username }}</span></div>
+      {% if p.description %}<p class="text-xs text-xs--award">{{ p.description }}</p>{% endif %}
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+</div>

@@ -1,9 +1,9 @@
 ---
 layout: default
 title: "CV"
-permalink: /cv/
-lang: en
-translation_url: /id/cv/
+permalink: /id/cv/
+lang: id
+translation_url: /cv/
 ---
 
 {% include pages/cv.html %}

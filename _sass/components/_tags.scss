@@ -1,0 +1,27 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 10px;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  background: var(--yellow);
+  box-shadow: var(--shadow-soft);
+  color: var(--black);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.tag:nth-child(2n) {
+  background: var(--mint);
+}
+
+.tag:nth-child(3n) {
+  background: var(--blue);
+}
+
+.tag:nth-child(4n) {
+  background: var(--rose);
+}

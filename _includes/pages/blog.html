@@ -1,0 +1,47 @@
+{% assign lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] %}
+
+<div class="content-wrap">
+  <div class="sobre-big">
+    <div class="sec-label">{{ t.ui.writing }}</div>
+    <h1 class="blog-heading">{{ t.ui.blog_posts }}</h1>
+    <p class="blog-intro">{{ t.blog.intro }}</p>
+
+    <div class="search-wrap">
+      <input type="search" class="search-input" placeholder="{{ t.ui.search_placeholder }}" aria-label="{{ t.ui.search_label }}" id="search-input" data-no-results="{{ t.ui.no_results }}" data-lang="{{ lang }}">
+      <div class="search-results" id="search-results"></div>
+    </div>
+
+    {% assign localized_posts = site.posts | where: "lang", lang %}
+    {% assign postsByYear = localized_posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+    {% for year in postsByYear %}
+    <div class="sec-label">{{ year.name }}</div>
+    {% for post in year.items %}
+    <a href="{{ post.url | relative_url }}" class="article-item">
+      <div class="art-thumb">
+        {% if post.tags contains 'XSS' %}{% include icons/shield.html %}
+        {% elsif post.tags contains 'DOS' %}{% include icons/alert.html %}
+        {% elsif post.tags contains 'bug-bounty' %}{% include icons/bug.html %}
+        {% else %}{% include icons/document.html %}
+        {% endif %}
+      </div>
+      <div>
+        <div class="art-date">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          {{ post.date | date: "%b %-d, %Y" }}
+          {% if post.read_time %}&middot; {{ post.read_time }} {{ t.ui.min_read }}{% endif %}
+        </div>
+        <div class="art-title">{{ post.title }}</div>
+        {% if post.excerpt %}<p class="art-desc">{{ post.excerpt | strip_html | truncate: 140 }}</p>{% endif %}
+        {% if post.tags %}
+        <div class="tags-row">
+          {% for tag in post.tags %}<span class="tag tag-sm">{{ tag }}</span>{% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </a>
+    {% endfor %}
+    {% endfor %}
+  </div>
+</div>

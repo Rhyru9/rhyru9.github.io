@@ -2,6 +2,7 @@
 name: "Rhyru9"
 role: "Security Researcher & Bug Bounty Hunter"
 bio: "Passionate about finding vulnerabilities and securing applications. I specialize in web application security, API testing, and helping companies improve their security posture through responsible disclosure."
+bio_id: "Berfokus pada pencarian kerentanan dan pengamanan aplikasi. Spesialisasi saya mencakup keamanan aplikasi web, pengujian API, dan membantu perusahaan meningkatkan postur keamanan melalui responsible disclosure."
 
 # Education & Certifications
 education:
@@ -9,16 +10,19 @@ education:
     institution: "eLearnSecurity"
     period: "2023"
     description: "Industry-recognized web application penetration testing certification focusing on practical exploitation techniques."
+    description_id: "Sertifikasi penetration testing aplikasi web yang diakui industri, berfokus pada teknik eksploitasi praktis."
 
   - degree: "TryHackMe Complete Beginner Path"
     institution: "HackTheBok"
     period: "2022"
     description: "Comprehensive hands-on cybersecurity training covering Linux, networking, web exploitation, and privilege escalation."
+    description_id: "Pelatihan cybersecurity hands-on yang komprehensif, mencakup Linux, networking, web exploitation, dan privilege escalation."
 
   - degree: "PortSwigger Web Security Academy"
     institution: "PortSwigger"
     period: "2021 - Present"
     description: "Advanced web security training platform covering OWASP Top 10 and modern web vulnerabilities with hands-on labs."
+    description_id: "Platform pelatihan keamanan web tingkat lanjut yang mencakup OWASP Top 10 dan kerentanan web modern melalui lab hands-on."
 
 # Professional Certifications
 certifications:
@@ -36,16 +40,19 @@ experience:
     company: "Bug Bounty Programs & Open Source Projects"
     period: "2022 - Present"
     description: "Focused on improving security of open source projects and participating in bug bounty programs. Discovered 50+ security vulnerabilities in web applications and maintained a consistent presence on bug bounty platforms. Published technical writeups and security research findings."
+    description_id: "Berfokus meningkatkan keamanan proyek open source dan berpartisipasi dalam program bug bounty. Menemukan 50+ kerentanan keamanan pada aplikasi web dan aktif secara konsisten di platform bug bounty. Menerbitkan writeup teknis dan hasil riset keamanan."
 
   - title: "Security Research & Self-Development"
     company: "CTF Competitions & Learning Platforms"
     period: "2020 - 2022"
     description: "Building technical skills through hands-on practice and continuous learning. Participated in 20+ CTF competitions (HackTheBox, TryHackMe, etc.), completed advanced web security courses, and built custom tools and scripts for security automation."
+    description_id: "Membangun kemampuan teknis melalui praktik hands-on dan pembelajaran berkelanjutan. Mengikuti 20+ kompetisi CTF (HackTheBox, TryHackMe, dan lainnya), menyelesaikan kursus keamanan web tingkat lanjut, serta membangun tool dan script khusus untuk otomasi keamanan."
 
   - title: "Technical Foundations"
     company: "Self-Study & Personal Projects"
     period: "2018 - 2020"
     description: "Developed core technical skills in web development and networking. Learned full-stack web development (HTML/PHP/JS, Python, SQL), built multiple web applications to understand development process, studied networking fundamentals and system administration, and started learning security basics through online resources."
+    description_id: "Mengembangkan kemampuan teknis dasar dalam web development dan networking. Mempelajari full-stack web development (HTML/PHP/JS, Python, SQL), membangun beberapa aplikasi web untuk memahami proses development, mempelajari fundamental networking dan administrasi sistem, lalu mulai belajar dasar keamanan melalui sumber online."
 
 # Technical Skills
 skills:
@@ -102,15 +109,19 @@ socials:
   - platform: "Twitter"
     url: "https://twitter.com/rhyru9"
     description: "Security insights and updates"
+    description_id: "Insight dan update keamanan"
 
   - platform: "GitHub"
     url: "https://github.com/rhyru9"
     description: "Security tools and research code"
+    description_id: "Tool keamanan dan kode riset"
 
   - platform: "LinkedIn"
     url: "https://www.linkedin.com/in/rhyru-2714a5277/"
     description: "Professional network"
+    description_id: "Jejaring profesional"
 
   - platform: "Email"
     url: "mailto:contact@rhyru9.xyz"
     description: "For security disclosures and collaboration"
+    description_id: "Untuk security disclosure dan kolaborasi"

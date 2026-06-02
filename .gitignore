@@ -31,6 +31,9 @@ Thumbs.db
 .env
 .env.local
 
+# Sensitive config
+gtag.txt
+
 # Logs
 *.log
 

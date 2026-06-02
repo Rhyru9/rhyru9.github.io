@@ -1,40 +1,20 @@
-<!--
-  Mobile-only top bar + slide-down drawer.
-  Hamburger toggles via assets/js/modules/menu.js.
--->
 <header class="mobile-bar" id="mobile-bar">
-  <a class="mobile-bar__title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-  <button class="mobile-bar__burger" id="js-burger" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  {% assign lang = page.lang | default: site.default_lang | default: 'en' %}
+  {% assign t = site.data.i18n[lang] | default: site.data.i18n.en %}
+  {% assign switch_url = page.translation_url | default: t.home_url %}
+  <a class="mobile-bar__title" href="{{ t.home_url | relative_url }}">{{ site.title }}</a>
+  <button class="mobile-bar__burger" id="js-burger" aria-label="{{ t.ui.menu }}" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
-
 <div class="drawer" id="js-drawer" role="menu">
   <ul class="drawer__nav">
-    {% for item in site.navigation %}
-    <li>
-      <a href="{{ item.url | relative_url }}"
-         {% if page.url == item.url %}class="is-active"{% endif %}>
-        {{ item.title }}
-      </a>
-    </li>
+    {% for item in t.nav %}
+    <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="is-active"{% endif %}>{{ item.title }}</a></li>
     {% endfor %}
   </ul>
-
-  <div class="drawer__theme">
-    <span class="drawer__theme-label">Theme</span>
-    {% include theme-switcher.html compact=false %}
-  </div>
-
+  <div class="drawer__language"><a href="{{ switch_url | relative_url }}">{{ t.alternate_lang }}</a></div>
   <div class="drawer__social">
-    {% if site.github_username %}
-    <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">{% include icons/github.html %} GitHub</a>
-    {% endif %}
-    {% if site.linkedin_username %}
-    <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">{% include icons/linkedin.html %} LinkedIn</a>
-    {% endif %}
-    {% if site.email %}
-    <a href="mailto:{{ site.email }}">{% include icons/email.html %} Email</a>
-    {% endif %}
+    {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+    {% if site.linkedin_username %}<a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+    {% if site.email %}<a href="mailto:{{ site.email }}">Email</a>{% endif %}
   </div>
 </div>

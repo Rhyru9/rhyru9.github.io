@@ -1,0 +1,19 @@
+{% assign lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] %}
+{% assign home = t.home %}
+
+<div class="content-wrap">
+  <div class="sobre-big">
+    <span class="tag tag--header">{{ home.contact_heading }}</span>
+    <h1 class="sobre-h1">{{ home.contact_heading }}</h1>
+    <p class="sobre-p">{{ home.footnote }}</p>
+
+    <dl class="contact-list contact-list--page">
+      <dt>{{ home.contact_labels.email }}</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+      <dt>{{ home.contact_labels.twitter }}</dt><dd><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener">@{{ site.twitter_username }}</a></dd>
+      <dt>{{ home.contact_labels.github }}</dt><dd><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">{{ site.github_username }}</a></dd>
+      <dt>{{ home.contact_labels.linkedin }}</dt><dd><a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener">{{ site.linkedin_username }}</a></dd>
+      <dt>{{ home.contact_labels.hackerone }}</dt><dd><a href="https://hackerone.com/{{ site.hackerone_username }}" target="_blank" rel="noopener">{{ site.hackerone_username }}</a></dd>
+    </dl>
+  </div>
+</div>

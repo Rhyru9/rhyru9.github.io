@@ -1,0 +1,74 @@
+{% assign lang = page.lang | default: 'en' %}
+{% assign t = site.data.i18n[lang] %}
+{% assign home = t.home %}
+
+<div class="home-wrap">
+
+  <div class="hero-section">
+    <div>
+      <p class="hero-subtitle">{{ home.kicker }}</p>
+      <div class="hero-tags">
+        {% for stat in home.stats %}
+        <span class="tag">{{ stat.number }} {{ stat.label }}</span>
+        {% endfor %}
+      </div>
+      <h1>{{ home.subtitle }}</h1>
+    </div>
+  </div>
+
+  <p class="home-intro">{{ home.intro }}</p>
+
+  <div class="stats-grid">
+    {% for stat in home.stats %}
+    <div class="stat-item">
+      <div class="stat-lbl">{{ stat.label }}</div>
+      <div class="stat-val">{{ stat.number }}</div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="sec-label">{{ home.about_heading }}</div>
+  <div class="big-card">
+    {% for paragraph in home.about %}
+    <p>{{ paragraph }}</p>
+    {% endfor %}
+  </div>
+
+  <div class="sec-label">{{ home.focus_heading }}</div>
+  <ul class="audience-list">
+    {% for item in home.focus %}
+    <li>
+      <strong>{{ item.title }}</strong>
+      <span>{{ item.description }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <div class="sec-label">{{ home.services_heading }}</div>
+  <div class="big-card">
+    {% for service in home.services %}
+    <div class="dv-item">
+      <div class="item-title">{{ service.title }}</div>
+      <p class="text-xs">{{ service.description }}</p>
+      <div class="meta-mono"><strong>{{ home.service_labels.deliverables }}</strong> &middot; {{ service.deliverables }}</div>
+      <div class="meta-mono"><strong>{{ home.service_labels.pricing }}</strong> &middot; {{ service.price }}</div>
+    </div>
+    {% endfor %}
+    {% if home.timeline %}<p class="text-xs muted">{{ home.timeline }}</p>{% endif %}
+  </div>
+
+  <div class="sec-label">{{ home.report_heading }}</div>
+  <div class="big-card">
+    {% if home.report_intro %}<p>{{ home.report_intro }}</p>{% endif %}
+    {% for item in home.report_items %}
+    <div class="dv-item">
+      <div class="item-title">{{ item.title }}</div>
+      <p class="text-xs">{{ item.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="sec-label">{{ home.highlights_heading }}</div>
+  {% if home.highlights_context %}<p class="highlights-context">{{ home.highlights_context }}</p>{% endif %}
+
+</div>

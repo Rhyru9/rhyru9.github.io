@@ -4,6 +4,8 @@ author: "Rhyru9"
 email: "contact@rhyru9.xyz"
 url: "https://rhyru9.github.io"
 baseurl: ""
+default_lang: "en"
+languages: ["en", "id"]
 
 # Profile
 profile_image: "/assets/images/profile.jpg"
@@ -34,6 +36,8 @@ navigation:
     url: "/achievements/"
   - title: "CV"
     url: "/cv/"
+  - title: "Contact"
+    url: "/contact/"
 
 # Build settings
 markdown: kramdown

@@ -1,35 +1,16 @@
-<!--
-  Document head: meta, fonts, stylesheet, theme bootstrap.
--->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+{% assign lang = page.lang | default: site.default_lang | default: 'en' %}
 <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 <meta name="author" content="{{ site.author }}">
-
-{% seo %}
-{% feed_meta %}
-
+<meta http-equiv="content-language" content="{{ lang }}">
+{% if page.translation_url %}<link rel="alternate" hreflang="{% if lang == 'id' %}en{% else %}id{% endif %}" href="{{ page.translation_url | absolute_url }}">{% endif %}
+{% seo %}{% feed_meta %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&family=IBM+Plex+Mono:wght@400;500;600&family=VT323&display=swap">
-
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'><rect width='16' height='16' fill='%23f5efe1'/><rect x='3' y='3' width='2' height='2' fill='%231a1a1a'/><rect x='5' y='3' width='2' height='2' fill='%231a1a1a'/><rect x='3' y='5' width='2' height='2' fill='%231a1a1a'/><rect x='7' y='5' width='2' height='2' fill='%23f5c84a'/><rect x='9' y='7' width='2' height='2' fill='%231a1a1a'/><rect x='3' y='9' width='2' height='2' fill='%231a1a1a'/><rect x='5' y='11' width='2' height='2' fill='%231a1a1a'/></svg>">
-
-<script>
-  (function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}}());
-</script>
-
-{% if site.google_analytics and jekyll.environment == 'production' %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ site.google_analytics }}');
-</script>
-{% endif %}
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23f5c842'/><text x='16' y='22' text-anchor='middle' font-family='monospace' font-size='16' font-weight='bold' fill='%231a1a1a'>R</text></svg>">
+{% if site.google_analytics and jekyll.environment == 'production' %}<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ site.google_analytics }}');</script>{% endif %}

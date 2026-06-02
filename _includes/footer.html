@@ -1,6 +1,11 @@
-<!--
-  Page footer — copyright + build date stamp.
--->
-<footer class="page-footer">
-  <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author }} &middot; built with jekyll &middot; v{{ 'now' | date: '%Y.%m.%d' }}</p>
+<footer>
+  <div class="footer-pills">
+    {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener" class="footer-pill">GitHub</a>{% endif %}
+    {% if site.linkedin_username %}<a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener" class="footer-pill">LinkedIn</a>{% endif %}
+    {% if site.twitter_username %}<a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener" class="footer-pill">Twitter</a>{% endif %}
+    {% if site.hackerone_username %}<a href="https://hackerone.com/{{ site.hackerone_username }}" target="_blank" rel="noopener" class="footer-pill">HackerOne</a>{% endif %}
+    {% if site.email %}<a href="mailto:{{ site.email }}" class="footer-pill">Email</a>{% endif %}
+  </div>
+  {% assign t = site.data.i18n[page.lang] | default: site.data.i18n.en %}
+  <p class="footer-credit">&copy; {{ 'now' | date: "%Y" }} {{ site.author }} &middot; <span>&#9829;</span> {{ t.ui.built_with }}</p>
 </footer>

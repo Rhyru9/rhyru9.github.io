@@ -1,63 +1,57 @@
-// Hero block — kicker chip, large title, subtitle divider, intro paragraph.
-// All four are centered (poster-style entry); body content below stays left.
-
-.page-kicker,
-.page-label {
-  display: block;
-  width: fit-content;
-  margin: 0 auto var(--sp-4);
-  font-family: var(--font-pixel);
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--accent-2);
-  letter-spacing: 0;
-  padding: 4px 12px;
-  background: var(--surface);
-  border: 2px solid var(--border-2);
-  border-radius: 4px;
-  text-decoration: none;
+.hero-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  margin: 0 0 18px;
+  padding: 26px;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow);
 }
 
-.page-title {
-  font-family: var(--font-pixel);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+.hero-subtitle,
+.stat-lbl,
+.art-date,
+.cv-year,
+.cv-institution,
+.post-meta,
+.post-nav-label,
+.footer-credit {
+  font-family: var(--mono);
+}
+
+.hero-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  color: var(--black);
+  font-size: 12px;
   font-weight: 700;
-  margin-bottom: var(--sp-4);
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-  color: var(--heading);
-  text-align: center;
 }
 
-.page-subtitle {
-  font-family: var(--font-pixel);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-2);
-  margin: 0 auto var(--sp-5);
-  padding-bottom: var(--sp-5);
-  border-bottom: 1px solid var(--border);
-  text-align: center;
-  max-width: 60ch;
+.hero-subtitle::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 1px 1px 0 var(--black);
 }
 
-.page-intro {
-  font-family: var(--font-pixel);
-  font-size: 1.0625rem;
-  color: var(--text-2);
-  line-height: 1.65;
-  margin: 0 auto var(--sp-10);
-  max-width: 60ch;
-  text-align: center;
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.12;
 }
 
-.page-footnote {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-3);
-  margin-top: var(--sp-10);
-  padding-top: var(--sp-5);
-  border-top: 1px solid var(--border);
-  letter-spacing: 0.01em;
-  text-align: center;
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 18px;
 }

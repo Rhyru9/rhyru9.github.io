@@ -1,0 +1,145 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 30px;
+}
+
+.stat-item,
+.big-card,
+.sobre-big,
+.search-result-item,
+.post-nav-link {
+  border: 1.5px solid var(--border-card);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.stat-item {
+  padding: 16px;
+}
+
+.stat-lbl {
+  color: var(--gray-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.stat-val {
+  margin-top: 3px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.sec-label {
+  margin: 28px 0 10px;
+  scroll-margin-top: 96px;
+  font-family: var(--mono);
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+}
+
+.big-card,
+.sobre-big {
+  padding: 24px;
+}
+
+.big-card p:last-child,
+.sobre-big p:last-child {
+  margin-bottom: 0;
+}
+
+.audience-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 0 0 30px;
+  list-style: none;
+}
+
+.audience-list li {
+  min-height: 150px;
+  padding: 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.audience-list strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.audience-list span,
+.sobre-p,
+.post-body p,
+.art-desc,
+.cv-content p {
+  color: var(--gray);
+}
+
+.contact-list {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 10px 14px;
+  padding: 20px;
+  margin: 0;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.contact-list dt {
+  color: var(--gray-light);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.contact-list dd {
+  min-width: 0;
+  margin: 0;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.contact-list a {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.sobre-h1,
+.sobre-big h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+.sobre-big h2 {
+  margin: 28px 0 10px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.sobre-big p,
+.sobre-big li {
+  font-size: 14px;
+}
+
+.sobre-big ul,
+.sobre-big ol {
+  padding-left: 22px;
+}

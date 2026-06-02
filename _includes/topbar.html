@@ -1,16 +1,53 @@
-<!--
-  Slim top breadcrumb bar (desktop only).
-  Breadcrumb on left, build date on right.
--->
-<header class="topbar">
-  <div class="topbar__crumb">
-    <a href="{{ '/' | relative_url }}">home</a>
-    {% if page.url != '/' and page.url != '/index.html' %}
-      <span class="topbar__sep">/</span>
-      <span class="topbar__current">{{ page.title | default: page.name | downcase }}</span>
-    {% endif %}
-  </div>
-  <div class="topbar__meta">
-    <span class="topbar__date">{{ 'now' | date: '%Y.%m.%d' }}</span>
+<header class="site-header">
+  <div class="site-header__bar">
+    <nav class="site-header__inner">
+      {% assign lang = page.lang | default: site.default_lang | default: 'en' %}
+      {% assign t = site.data.i18n[lang] | default: site.data.i18n.en %}
+      {% assign nav = t.nav | default: site.navigation %}
+      {% assign switch_url = page.translation_url | default: t.home_url %}
+
+      <a class="site-header__brand site-header__brand--logo" aria-label="{{ site.title }} - Home" href="{{ t.home_url | relative_url }}">
+        <span class="site-wordmark" aria-label="{{ site.title }}">
+          <span class="site-wordmark__line">{{ site.title | slice: 0, 4 | upcase }}</span>
+          <span class="site-wordmark__line"><span>{{ site.title | slice: 4, 6 | upcase }}</span><span class="site-wordmark__cursor" aria-hidden="true"></span></span>
+        </span>
+      </a>
+
+      <nav class="ds-tabs site-header__nav" aria-label="Main navigation">
+        <div class="ds-tabs__list" role="tablist" aria-label="Main navigation">
+          {% for item in nav %}
+          <a role="tab" aria-selected="{% if page.url == item.url %}true{% else %}false{% endif %}" class="ds-tabs__tab{% if page.url == item.url %} ds-tabs__tab--active{% else %} ds-tabs__tab--inactive{% endif %}" tabindex="{% if page.url == item.url %}0{% else %}-1{% endif %}" href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>
+            <span class="ds-tabs__tab-label">{{ item.title }}</span>
+          </a>
+          {% endfor %}
+        </div>
+      </nav>
+
+      <div class="site-header__meta">
+        <a class="site-header__lang" href="{{ switch_url | relative_url }}" aria-label="{{ t.alternate_label }}">{{ t.alternate_lang }}</a>
+      </div>
+    </nav>
   </div>
 </header>
+
+{% if page.url != '/' and page.url != '/id/' %}
+<div class="site-breadcrumb-shell">
+  <nav class="ds-breadcrumb" aria-label="Breadcrumb">
+    <ol class="ds-breadcrumb__list">
+      <li class="ds-breadcrumb__item">
+        <a class="ds-hyperlink ds-breadcrumb__link" href="{{ t.home_url | relative_url }}"><span class="ds-hyperlink__label">{{ t.ui.home | capitalize }}</span></a>
+        <span class="ds-breadcrumb__separator" aria-hidden="true">&#8250;</span>
+      </li>
+      {% if page.layout == 'post' %}
+      <li class="ds-breadcrumb__item">
+        <a class="ds-hyperlink ds-breadcrumb__link" href="{% if lang == 'id' %}{{ '/id/blog/' | relative_url }}{% else %}{{ '/blog/' | relative_url }}{% endif %}"><span class="ds-hyperlink__label">{{ t.ui.blog_posts }}</span></a>
+        <span class="ds-breadcrumb__separator" aria-hidden="true">&#8250;</span>
+      </li>
+      {% endif %}
+      <li class="ds-breadcrumb__item">
+        <span class="ds-hyperlink ds-hyperlink--disabled" aria-current="page"><span class="ds-hyperlink__label">{{ page.title | default: t.ui.blog_posts | truncate: 40 }}</span></span>
+      </li>
+    </ol>
+  </nav>
+</div>
+{% endif %}

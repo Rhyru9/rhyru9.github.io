@@ -6,6 +6,7 @@ layout: null
   {
     "title": {{ post.title | jsonify }},
     "url": {{ post.url | relative_url | jsonify }},
+    "lang": {{ post.lang | default: site.default_lang | jsonify }},
     "date": {{ post.date | date: "%B %-d, %Y" | jsonify }},
     "excerpt": {{ post.excerpt | strip_html | truncate: 200 | jsonify }},
     "tags": {{ post.tags | jsonify }},

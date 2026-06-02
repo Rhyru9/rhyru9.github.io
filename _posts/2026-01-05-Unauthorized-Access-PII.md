@@ -4,6 +4,16 @@ title: "Unauthorized Access to PII via User Search on BDF Website"
 date: 2026-01-05
 tags: [responsible-disclosure, broken-access-control, cve, javlo-cms]
 excerpt: "Discovered a critical broken access control vulnerability in bdf.belgium.be that exposed sensitive user information including emails and phone numbers of military personnel without authentication. The vulnerability was found through source code analysis of the open-source Javlo CMS."
+lang: en
+translation_key: unauthorized-access-pii
+translation_url: /id/blog/2026/01/05/unauthorized-access-pii/
+translations:
+  en:
+    title: "Unauthorized Access to PII via User Search on BDF Website"
+    excerpt: "Discovered a critical broken access control vulnerability in bdf.belgium.be that exposed sensitive user information including emails and phone numbers of military personnel without authentication. The vulnerability was found through source code analysis of the open-source Javlo CMS."
+  id:
+    title: "Akses Tidak Sah ke PII melalui User Search pada Website BDF"
+    excerpt: "Menemukan kerentanan broken access control kritis pada fitur pencarian pengguna yang mengekspos informasi sensitif tanpa autentikasi. Kerentanan ditemukan melalui analisis source code CMS open source."
 ---
 
 A critical broken access control vulnerability in bdf.belgium.be's user search functionality allowed unauthenticated access to sensitive military personnel data. By analyzing the open-source Javlo CMS repository, I identified missing authentication checks in the AJAX endpoint that exposed emails, phone numbers, and organizational details of Belgian Defence personnel.
