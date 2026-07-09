@@ -44,19 +44,6 @@
     {% endfor %}
   </ul>
 
-  <div class="sec-label">{{ home.services_heading }}</div>
-  <div class="big-card">
-    {% for service in home.services %}
-    <div class="dv-item">
-      <div class="item-title">{{ service.title }}</div>
-      <p class="text-xs">{{ service.description }}</p>
-      <div class="meta-mono"><strong>{{ home.service_labels.deliverables }}</strong> &middot; {{ service.deliverables }}</div>
-      <div class="meta-mono"><strong>{{ home.service_labels.pricing }}</strong> &middot; {{ service.price }}</div>
-    </div>
-    {% endfor %}
-    {% if home.timeline %}<p class="text-xs muted">{{ home.timeline }}</p>{% endif %}
-  </div>
-
   <div class="sec-label">{{ home.report_heading }}</div>
   <div class="big-card">
     {% if home.report_intro %}<p>{{ home.report_intro }}</p>{% endif %}
