@@ -16,7 +16,7 @@ bio: "Bug Bounty Hunter · Security Researcher<br>Based in Jakarta, Indonesia"
 github_username: rhyru9
 linkedin_username: rhyru9
 twitter_username: rhyru9
-# HackerOne/Bugcrowd profile (optional)
+# HackerOne/Bugcrowd profile
 hackerone_username: rhyru9
 # bugcrowd_username: rhyru9
 
@@ -53,13 +53,11 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-# Collections - PENTING: ini membuat Jekyll mengenali folder _pages
 collections:
   pages:
     output: true
     permalink: /:path/
 
-# Defaults untuk pages
 defaults:
   - scope:
       path: ""
