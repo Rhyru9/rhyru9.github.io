@@ -7,5 +7,5 @@
     {% if site.email %}<a href="mailto:{{ site.email }}" class="footer-pill">Email</a>{% endif %}
   </div>
   {% assign t = site.data.i18n[page.lang] | default: site.data.i18n.en %}
-  <p class="footer-credit">&copy; {{ 'now' | date: "%Y" }} {{ site.author }} &middot; <span>&#9829;</span> {{ t.ui.built_with }}</p>
+  <p class="footer-credit">&copy; {{ 'now' | date: "%Y" }} {{ site.author }} &middot; {{ t.ui.built_with }}</p>
 </footer>

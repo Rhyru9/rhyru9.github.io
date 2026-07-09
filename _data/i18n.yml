@@ -32,51 +32,21 @@ en:
   home:
     title: "{{ site.title }}"
     kicker: "// bug bounty · security research · jakarta, id"
-    subtitle: "Security testing for web apps, APIs, and business systems before attackers find the gaps."
-    intro: "Backed by disclosure work recognized by NASA, regional governments, and international companies."
+    subtitle: "Security researcher focused on web applications, APIs, and responsible vulnerability disclosure."
+    intro: "Recognized by NASA, Apple, Ferrari, Belgian Government, and international companies for responsible security research."
     about_heading: "About"
     about:
-      - "My work is simple to describe: I look for security weaknesses in websites, APIs, and business systems, then explain the risk in a way technical and non-technical teams can act on."
-      - "The testing approach comes from bug bounty and responsible disclosure work, where findings need to be proven, documented clearly, and reported without disrupting production systems."
-    focus_heading: "Who I Help"
-    focus:
-      - title: "Local businesses & startups"
-        description: "Need a practical security check before launch, after a major update, or before handling more customer data"
-      - title: "IT teams"
-        description: "Need a second pair of eyes on login flows, admin panels, APIs, cloud storage, or internal dashboards"
-      - title: "Recruiters & security teams"
-        description: "Need evidence of hands-on vulnerability research, clear reporting, and responsible disclosure experience"
-    services_heading: "Services"
-    service_labels:
-      deliverables: "Deliverables"
-      pricing: "Pricing"
-    services:
-      - title: "Web & API Security Review"
-        description: "Manual testing for authentication, authorization, exposed data, business logic flaws, and common web vulnerabilities."
-        deliverables: "Report with proof-of-concept, severity, impact, affected endpoints, and remediation guidance."
-        price: "Starts from Rp 3.000.000 for a limited scope."
-      - title: "Startup Security Check"
-        description: "Focused review for early-stage products that need to reduce obvious risk before launch or investor/customer demos."
-        deliverables: "Prioritized issue list, quick wins, and a plain-language risk summary for founders or managers."
-        price: "Starts from Rp 2.000.000 for a small product or landing-to-dashboard flow."
-      - title: "Vulnerability Verification"
-        description: "Validate suspected security issues from reports, scanners, logs, or external submissions."
-        deliverables: "Confirmed impact, reproduction steps, false-positive notes, and recommended next action."
-        price: "Starts from Rp 1.500.000 for 3-5 initial findings or one external submission."
-    timeline: "Estimated turnaround for most small scopes: 3-7 business days, depending on system complexity."
-    report_heading: "What You Receive"
-    report_intro: "A concise security report, written so owners can understand the risk and developers can fix it."
-    report_items:
-      - title: "Executive summary"
-        description: "Plain-language overview of what was tested, what matters most, and business impact."
-      - title: "Findings table"
-        description: "Severity, affected URL or feature, impact, reproduction status, and priority."
-      - title: "Proof of concept"
-        description: "Steps, request samples, screenshots when useful, and evidence with sensitive data masked."
-      - title: "Remediation guidance"
-        description: "Specific fixes, validation notes, and optional retest checklist."
-    highlights_heading: "Highlights"
-    highlights_context: "200+ valid vulnerabilities found across public and private programs, including systems used by government organizations and international companies."
+      - "I'm a self-taught security researcher and bug bounty hunter based in Jakarta, Indonesia. My work focuses on identifying vulnerabilities in web applications, APIs, and business-critical systems through manual testing and deep technical analysis."
+      - "I started with CTF competitions and self-study, building a foundation in web exploitation, networking, and programming. Over time, that foundation turned into a track record of responsible disclosures to organizations ranging from local governments to globally recognized companies."
+      - "Every disclosure is approached with care — findings are documented clearly, impact is scoped properly, and production systems are never disrupted. That discipline comes from years of working within responsible disclosure frameworks and public bug bounty programs."
+    expertise_heading: "Areas of Focus"
+    expertise:
+      - title: "Web Application Security"
+        items: ["Authentication & Authorization", "Business Logic Flaws", "OWASP Top 10", "Session Management"]
+      - title: "API & Backend Security"
+        items: ["REST & GraphQL APIs", "IDOR & Privilege Escalation", "Data Exposure", "Rate Limiting Bypass"]
+      - title: "Vulnerability Research"
+        items: ["Responsible Disclosure", "CVE Discovery", "PoC Development", "Security Writeups"]
     stats:
       - number: "200+"
         label: "valid bugs"
@@ -84,6 +54,8 @@ en:
         label: "hall of fame"
       - number: "10+"
         label: "gov certs"
+    highlights_heading: "Research Highlights"
+    highlights_context: "200+ valid vulnerabilities disclosed across public and private programs — including systems operated by government agencies, universities, and international companies."
     contact_heading: "Contact"
     contact_labels:
       email: "email"
@@ -91,13 +63,13 @@ en:
       github: "github"
       linkedin: "linkedin"
       hackerone: "hackerone"
-    footnote: "Send the system scope, target URL type, and goal of the test. I will reply with a practical testing plan and the next step."
+    footnote: "Open to collaboration, security research discussions, and responsible disclosure coordination."
   blog:
-    intro: "Technical case studies from security research work. Each writeup shows the kind of issue that can be found and fixed before it turns into business impact."
+    intro: "Technical writeups and case studies from security research work. Each post covers a real vulnerability — how it was found, how it works, and what it means for defenders."
   achievements:
     label: "Achievements"
     title: "Security Achievements"
-    intro: "A collection of vulnerabilities discovered, bounties earned, talks delivered, and contributions to the security community."
+    intro: "A record of vulnerabilities discovered, programs recognized, and contributions to the security community through responsible disclosure."
     awards: "Awards & Recognition"
     profiles: "Bug Bounty Profiles"
   cv:
@@ -141,51 +113,21 @@ id:
   home:
     title: "{{ site.title }}"
     kicker: "// bug bounty · riset keamanan · jakarta, id"
-    subtitle: "Pengujian keamanan untuk web app, API, dan sistem bisnis sebelum celahnya ditemukan orang lain."
-    intro: "Didukung track record disclosure ke NASA, pemerintah daerah, dan perusahaan internasional."
+    subtitle: "Security researcher yang berfokus pada aplikasi web, API, dan responsible vulnerability disclosure."
+    intro: "Diakui oleh NASA, Apple, Ferrari, Pemerintah Belgia, dan berbagai perusahaan internasional atas kontribusi riset keamanan."
     about_heading: "Tentang"
     about:
-      - "Pekerjaan saya sederhana untuk dijelaskan: mencari kelemahan keamanan pada website, API, dan sistem bisnis, lalu menjelaskan risikonya dengan bahasa yang bisa dipakai oleh tim teknis maupun non-teknis."
-      - "Pendekatannya berasal dari pengalaman bug bounty dan responsible disclosure, di mana setiap temuan harus bisa dibuktikan, didokumentasikan jelas, dan dilaporkan tanpa mengganggu sistem production."
-    focus_heading: "Untuk Siapa"
-    focus:
-      - title: "Bisnis lokal & startup"
-        description: "Butuh pemeriksaan keamanan praktis sebelum launch, setelah update besar, atau sebelum mengelola lebih banyak data pelanggan"
-      - title: "Tim IT"
-        description: "Butuh sudut pandang kedua untuk login flow, admin panel, API, cloud storage, atau dashboard internal"
-      - title: "Recruiter & tim security"
-        description: "Butuh bukti pengalaman vulnerability research, reporting yang jelas, dan responsible disclosure"
-    services_heading: "Layanan"
-    service_labels:
-      deliverables: "Output"
-      pricing: "Harga"
-    services:
-      - title: "Web & API Security Review"
-        description: "Pengujian manual untuk login, hak akses, paparan data, celah logika bisnis, dan kerentanan web umum."
-        deliverables: "Laporan berisi proof-of-concept, severity, impact, endpoint terdampak, dan panduan perbaikan."
-        price: "Mulai dari Rp 3.000.000 untuk scope terbatas."
-      - title: "Startup Security Check"
-        description: "Review terfokus untuk produk tahap awal yang perlu menurunkan risiko sebelum launch atau demo ke investor/pelanggan."
-        deliverables: "Daftar isu prioritas, quick wins, dan ringkasan risiko dalam bahasa bisnis."
-        price: "Mulai dari Rp 2.000.000 untuk produk kecil atau alur landing-to-dashboard."
-      - title: "Vulnerability Verification"
-        description: "Validasi dugaan celah dari laporan, scanner, log, atau submission eksternal."
-        deliverables: "Impact yang terkonfirmasi, langkah reproduksi, catatan false positive, dan rekomendasi tindakan berikutnya."
-        price: "Mulai dari Rp 1.500.000 untuk 3-5 temuan awal atau satu submission eksternal."
-    timeline: "Estimasi pengerjaan untuk sebagian besar scope kecil: 3-7 hari kerja, tergantung kompleksitas sistem."
-    report_heading: "Yang Diterima Klien"
-    report_intro: "Laporan keamanan ringkas, ditulis agar owner memahami risiko dan developer bisa langsung memperbaiki."
-    report_items:
-      - title: "Ringkasan eksekutif"
-        description: "Penjelasan sederhana tentang apa yang diuji, risiko paling penting, dan dampak bisnisnya."
-      - title: "Tabel temuan"
-        description: "Severity, URL atau fitur terdampak, impact, status reproduksi, dan prioritas."
-      - title: "Proof of concept"
-        description: "Langkah reproduksi, contoh request, screenshot jika berguna, dan bukti dengan data sensitif disensor."
-      - title: "Panduan perbaikan"
-        description: "Saran fix spesifik, catatan validasi, dan checklist retest opsional."
-    highlights_heading: "Sorotan"
-    highlights_context: "200+ kerentanan valid ditemukan di program publik dan privat, termasuk sistem yang digunakan organisasi pemerintah dan perusahaan internasional."
+      - "Saya adalah security researcher dan bug bounty hunter otodidak yang berbasis di Jakarta, Indonesia. Fokus pekerjaan saya adalah menemukan kerentanan pada aplikasi web, API, dan sistem bisnis kritis melalui pengujian manual dan analisis teknis mendalam."
+      - "Perjalanan saya dimulai dari kompetisi CTF dan belajar mandiri, membangun fondasi dalam web exploitation, networking, dan programming. Seiring waktu, fondasi itu berkembang menjadi track record responsible disclosure ke berbagai organisasi — dari pemerintah daerah hingga perusahaan yang dikenal secara global."
+      - "Setiap disclosure dilakukan dengan teliti — temuan didokumentasikan dengan jelas, dampak diidentifikasi secara akurat, dan sistem production tidak pernah terganggu. Disiplin ini lahir dari pengalaman bekerja dalam kerangka responsible disclosure dan program bug bounty publik selama bertahun-tahun."
+    expertise_heading: "Area Keahlian"
+    expertise:
+      - title: "Keamanan Aplikasi Web"
+        items: ["Autentikasi & Otorisasi", "Business Logic Flaw", "OWASP Top 10", "Manajemen Sesi"]
+      - title: "Keamanan API & Backend"
+        items: ["REST & GraphQL API", "IDOR & Privilege Escalation", "Paparan Data", "Rate Limiting Bypass"]
+      - title: "Riset Kerentanan"
+        items: ["Responsible Disclosure", "Penemuan CVE", "Pengembangan PoC", "Security Writeup"]
     stats:
       - number: "200+"
         label: "bug valid"
@@ -193,6 +135,8 @@ id:
         label: "hall of fame"
       - number: "10+"
         label: "sertifikat gov"
+    highlights_heading: "Sorotan Riset"
+    highlights_context: "200+ kerentanan valid yang diungkap di program publik dan privat — termasuk sistem yang dioperasikan oleh lembaga pemerintah, universitas, dan perusahaan internasional."
     contact_heading: "Kontak"
     contact_labels:
       email: "email"
@@ -200,13 +144,13 @@ id:
       github: "github"
       linkedin: "linkedin"
       hackerone: "hackerone"
-    footnote: "Kirim scope sistem, jenis target URL, dan tujuan pengujian. Saya akan balas dengan rencana testing praktis dan langkah berikutnya."
+    footnote: "Terbuka untuk kolaborasi, diskusi riset keamanan, dan koordinasi responsible disclosure."
   blog:
-    intro: "Studi kasus teknis dari pekerjaan riset keamanan. Setiap writeup menunjukkan jenis masalah yang bisa ditemukan dan diperbaiki sebelum berdampak ke bisnis."
+    intro: "Writeup teknis dan studi kasus dari pekerjaan riset keamanan. Setiap tulisan membahas kerentanan nyata — bagaimana ditemukan, bagaimana cara kerjanya, dan apa artinya bagi defender."
   achievements:
     label: "Pencapaian"
     title: "Pencapaian Keamanan"
-    intro: "Kumpulan kerentanan yang ditemukan, bounty yang diperoleh, presentasi, dan kontribusi untuk komunitas keamanan."
+    intro: "Catatan kerentanan yang ditemukan, program yang memberikan pengakuan, dan kontribusi terhadap komunitas keamanan melalui responsible disclosure."
     awards: "Penghargaan & Pengakuan"
     profiles: "Profil Bug Bounty"
   cv:
