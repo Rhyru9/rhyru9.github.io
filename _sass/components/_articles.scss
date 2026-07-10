@@ -1,9 +1,9 @@
 .article-item {
   display: grid;
-  grid-template-columns: 100px minmax(0, 1fr);
+  grid-template-columns: 120px minmax(0, 1fr);
   gap: 16px;
-  padding: 16px;
-  margin-bottom: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
   border: 1.5px solid var(--border);
   border-radius: 14px;
   background: var(--white);
@@ -25,38 +25,34 @@
   display: grid;
   place-items: center;
   width: 100%;
-  min-height: 80px;
+  min-height: 92px;
   border: 1.5px solid var(--border);
   border-radius: 10px;
   background: var(--lavender-mid);
-  color: var(--black);
+  color: var(--text);
 }
 
 .art-thumb .art-ico {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
 }
 
 .art-date,
 .post-meta {
   color: var(--gray-light);
-  font-family: var(--mono);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: .2px;
 }
 
 .art-title {
-  margin: 4px 0 6px;
-  font-size: 16px;
+  margin: 2px 0 5px;
+  font-size: 17px;
   font-weight: 800;
   line-height: 1.25;
-  letter-spacing: -.2px;
 }
 
 .art-desc {
   margin: 0;
   font-size: 13px;
-  color: var(--gray);
   line-height: 1.5;
 }

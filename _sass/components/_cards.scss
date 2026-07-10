@@ -1,4 +1,3 @@
-/* ── Stat grid (legacy, used in old home) ── */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -6,7 +5,6 @@
   margin: 0 0 30px;
 }
 
-/* ── Base card shared styles ── */
 .stat-item,
 .big-card,
 .sobre-big,
@@ -37,15 +35,14 @@
   line-height: 1.1;
 }
 
-/* ── Section label ── */
 .sec-label {
-  margin: 24px 0 10px;
+  margin: 28px 0 10px;
   scroll-margin-top: 96px;
   font-family: var(--mono);
-  color: var(--gray-light);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .3px;
   text-transform: uppercase;
 }
 
@@ -59,32 +56,49 @@
   margin-bottom: 0;
 }
 
-/* ── Contact list ── */
+.audience-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 0 0 30px;
+  list-style: none;
+}
+
+.audience-list li {
+  min-height: 150px;
+  padding: 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.audience-list strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.audience-list span,
+.sobre-p,
+.post-body p,
+.art-desc,
+.cv-content p {
+  color: var(--gray);
+}
+
 .contact-list {
   display: grid;
-  grid-template-columns: 140px minmax(0, 1fr);
-  gap: 0;
-  padding: 0;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 10px 14px;
+  padding: 20px;
   margin: 0;
   border: 1.5px solid var(--border);
   border-radius: 14px;
   background: var(--white);
   box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-.contact-list dt,
-.contact-list dd {
-  padding: 14px 20px;
-  border-bottom: 1px solid #f0f0f0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
-
-.contact-list dt:last-of-type,
-.contact-list dd:last-of-type {
-  border-bottom: none;
 }
 
 .contact-list dt {
@@ -93,37 +107,25 @@
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .5px;
-  border-right: 1px solid #f0f0f0;
-  background: #fafafa;
 }
 
 .contact-list dd {
+  min-width: 0;
+  margin: 0;
   font-weight: 700;
-  font-size: 14px;
   overflow-wrap: anywhere;
 }
 
 .contact-list a {
-  text-decoration: none;
-  color: var(--black);
-  border-bottom: 1.5px solid var(--black);
-  padding-bottom: 1px;
-  transition: color .15s, border-color .15s;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
-.contact-list a:hover {
-  color: var(--gray);
-  border-color: var(--gray);
-}
-
-/* ── Sobre / page wrapper ── */
 .sobre-h1,
 .sobre-big h1 {
   margin: 0 0 12px;
   font-size: 28px;
   line-height: 1.15;
-  font-weight: 800;
 }
 
 .sobre-big h2 {
@@ -135,31 +137,9 @@
 .sobre-big p,
 .sobre-big li {
   font-size: 14px;
-  color: var(--gray);
-  line-height: 1.7;
 }
 
 .sobre-big ul,
 .sobre-big ol {
   padding-left: 22px;
-}
-
-.sobre-p {
-  color: var(--gray);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* ── Post navigation cards ── */
-.post-nav-link {
-  display: block;
-  padding: 16px 20px;
-  text-decoration: none;
-  color: inherit;
-  transition: transform .15s, box-shadow .15s;
-}
-
-.post-nav-link:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0 var(--black);
 }

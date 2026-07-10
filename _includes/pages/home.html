@@ -4,81 +4,37 @@
 
 <div class="home-wrap">
 
-  <div class="profile-hero">
-    <div class="profile-hero__left">
-      <p class="profile-hero__kicker">{{ home.kicker }}</p>
-      <h1 class="profile-hero__name">{{ site.author }}</h1>
-      <p class="profile-hero__role">{{ home.subtitle }}</p>
-      <p class="profile-hero__intro">{{ home.intro }}</p>
-      <div class="profile-hero__badges">
-        <span class="profile-badge profile-badge--yellow">Bug Bounty</span>
-        <span class="profile-badge profile-badge--mint">Pentesting</span>
-        <span class="profile-badge profile-badge--blue">CVE Research</span>
-        <span class="profile-badge profile-badge--mono">Jakarta, ID</span>
+  <div class="hero-section">
+    <div>
+      <p class="hero-subtitle">{{ home.kicker }}</p>
+      <div class="hero-tags">
+        {% for stat in home.stats %}
+        <span class="tag">{{ stat.number }} {{ stat.label }}</span>
+        {% endfor %}
       </div>
-    </div>
-    <div class="profile-hero__stats">
-      <div class="profile-stat profile-stat--yellow">
-        <div class="profile-stat__val">{{ home.stats[0].number }}</div>
-        <div class="profile-stat__lbl">{{ home.stats[0].label }}</div>
-      </div>
-      <div class="profile-stat profile-stat--mint">
-        <div class="profile-stat__val">{{ home.stats[1].number }}</div>
-        <div class="profile-stat__lbl">{{ home.stats[1].label }}</div>
-      </div>
-      <div class="profile-stat profile-stat--blue">
-        <div class="profile-stat__val">{{ home.stats[2].number }}</div>
-        <div class="profile-stat__lbl">{{ home.stats[2].label }}</div>
-      </div>
+      <h1>{{ home.subtitle }}</h1>
     </div>
   </div>
 
-  <div class="sec-label" id="about">{{ home.about_heading }}</div>
-  <div class="about-card">
+  <p class="home-intro">{{ home.intro }}</p>
+
+  <div class="stats-grid">
+    {% for stat in home.stats %}
+    <div class="stat-item">
+      <div class="stat-lbl">{{ stat.label }}</div>
+      <div class="stat-val">{{ stat.number }}</div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="sec-label">{{ home.about_heading }}</div>
+  <div class="big-card">
     {% for paragraph in home.about %}
     <p>{{ paragraph }}</p>
     {% endfor %}
   </div>
 
-  {% if home.expertise %}
-  <div class="sec-label" id="expertise">{{ home.expertise_heading }}</div>
-  <div class="expertise-grid">
-    {% for area in home.expertise %}
-    <div class="expertise-card">
-      <div class="expertise-card__title">{{ area.title }}</div>
-      <ul class="expertise-card__list">
-        {% for item in area.items %}
-        <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  <div class="sec-label" id="highlights">{{ home.highlights_heading }}</div>
+<div class="sec-label">{{ home.highlights_heading }}</div>
   {% if home.highlights_context %}<p class="highlights-context">{{ home.highlights_context }}</p>{% endif %}
-
-  <div class="highlights-grid">
-    {% assign top_awards = site.data.achievements.awards | slice: 0, 4 %}
-    {% for award in top_awards %}
-    <div class="highlight-card {% cycle 'highlight-card--yellow', 'highlight-card--mono', 'highlight-card--mint', 'highlight-card--blue' %}">
-      <div class="highlight-card__tags">
-        {% for tag in award.tags limit: 2 %}
-        <span class="highlight-tag">{{ tag }}</span>
-        {% endfor %}
-      </div>
-      <div class="highlight-card__title">{{ award.title }}</div>
-      <div class="highlight-card__venue">{{ award.venue }}</div>
-      <p class="highlight-card__desc">{{ award.description | truncatewords: 24 }}</p>
-      <div class="highlight-card__footer">
-        <span class="highlight-card__date">{{ award.date }}</span>
-        {% if award.url %}
-        <a class="highlight-card__link" href="{{ award.url }}" target="_blank" rel="noopener">View →</a>
-        {% endif %}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
 
 </div>

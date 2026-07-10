@@ -11,34 +11,10 @@
     .home-wrap,
     .content-wrap {
         width: min(100% - 24px, var(--page-w));
-        padding-top: 24px;
-        padding-bottom: 48px;
-    }
-
-    .profile-hero {
-        grid-template-columns: 1fr;
-        padding: 22px;
-        gap: 18px;
-    }
-
-    .profile-hero__name {
-        font-size: 26px;
-    }
-
-    .profile-hero__stats {
-        flex-direction: row;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .profile-stat {
-        min-width: auto;
-        text-align: left;
+        padding-top: 20px;
     }
 
     .hero-section,
-    .about-card,
     .big-card,
     .sobre-big {
         padding: 18px;
@@ -46,11 +22,11 @@
 
     .hero h1,
     .post-header h1 {
-        font-size: 24px;
+        font-size: 25px;
     }
 
     .stats-grid,
-    .expertise-grid {
+    .audience-list {
         grid-template-columns: 1fr;
     }
 
@@ -60,25 +36,11 @@
     }
 
     .art-thumb {
-        min-height: 90px;
+        min-height: 110px;
     }
 
     .contact-list {
         grid-template-columns: 1fr;
-    }
-
-    .contact-list dt,
-    .contact-list dd {
-        border-right: none;
-    }
-
-    .contact-list dt {
-        padding-bottom: 4px;
-        border-bottom: none;
-    }
-
-    .contact-list dd {
-        padding-top: 4px;
     }
 
     .post-nav {

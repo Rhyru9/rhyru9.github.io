@@ -6,10 +6,5 @@ main {
 .content-wrap {
   width: min(100% - 32px, var(--page-w));
   margin: 0 auto;
-  padding: 28px 0 64px;
-}
-
-/* sobre-big top: align first sec-label flush */
-.sobre-big > .sec-label:first-child {
-  margin-top: 0;
+  padding: 28px 0 56px;
 }

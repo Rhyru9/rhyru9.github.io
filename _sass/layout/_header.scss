@@ -8,7 +8,7 @@
 .site-header__bar {
   background: var(--yellow);
   border-bottom: 1.5px solid var(--border);
-  box-shadow: 0 1px 0 rgba(21, 21, 21, 0.08);
+  box-shadow: 0 2px 0 rgba(21, 21, 21, 0.12);
 }
 
 .site-header__inner {
@@ -71,14 +71,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 34px;
-  padding: 7px 14px;
+  min-height: 36px;
+  padding: 8px 14px;
   border: 1.5px solid var(--border);
   border-radius: 8px;
   background: var(--white);
   box-shadow: var(--shadow);
   color: var(--black);
-  font-family: var(--sans);
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
@@ -93,7 +92,7 @@
 
 .ds-tabs__tab:hover,
 .ds-tabs__tab:focus-visible {
-  background: rgba(255,255,255,.7);
+  background: #f7f7f7;
   box-shadow: 1px 1px 0 rgba(21, 21, 21, 0.9);
   transform: translate(2px, 2px);
   outline: none;
