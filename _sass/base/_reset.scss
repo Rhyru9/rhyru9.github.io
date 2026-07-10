@@ -12,8 +12,9 @@ body {
   font-family: var(--sans);
   font-size: 15px;
   line-height: 1.6;
-  background: linear-gradient(180deg, var(--lavender) 0, #fff 420px);
+  background: #f7f5f2;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -23,6 +24,10 @@ a {
 img,
 svg {
   max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
 }
 
 ::selection {
