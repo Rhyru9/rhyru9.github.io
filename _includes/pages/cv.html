@@ -53,7 +53,7 @@
     <div class="cv-section">
       {% for group in cv.skills %}
       <div class="cv-item">
-        <div class="cv-year">{{ group.category }}</div>
+        <div class="cv-year">{% if lang == 'id' and group.category_id %}{{ group.category_id }}{% else %}{{ group.category }}{% endif %}</div>
         <div class="cv-content">
           <div class="tags-row">
             {% for skill in group.items %}<span class="tag">{{ skill }}</span>{% endfor %}

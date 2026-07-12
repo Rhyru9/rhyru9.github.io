@@ -89,7 +89,8 @@ skills:
         Gobuster,
       ]
 
-  - category: "Programming"
+  - category: "Scripting & Tooling"
+    category_id: "Scripting & Automasi"
     items: [Python, JavaScript, Go, PHP, SQL]
 
   - category: "Platforms & Technologies"
