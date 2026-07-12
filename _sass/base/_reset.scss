@@ -12,7 +12,11 @@ body {
   font-family: var(--sans);
   font-size: 15px;
   line-height: 1.6;
-  background: #f7f5f2;
+  background-color: #e8e4dc;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
