@@ -43,3 +43,65 @@
   line-height: 1.6;
   margin: 4px 0 0;
 }
+
+/* Profile hero */
+.cv-hero {
+  margin-bottom: 28px;
+  padding: 18px 20px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.cv-hero__role {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 6px;
+}
+
+.cv-hero__bio {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Social links */
+.cv-socials {
+  display: grid;
+  gap: 8px;
+}
+
+.cv-social-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  color: var(--black);
+  transition: border-color .15s;
+}
+
+.cv-social-link:hover {
+  border-color: var(--black);
+}
+
+.cv-social-link__platform {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cv-social-link__desc {
+  font-size: 12px;
+  color: var(--gray-light);
+}

@@ -7,7 +7,13 @@
     <span class="tag tag--header">{{ t.cv.label }}</span>
     <h1 class="sobre-h1">{{ t.cv.title }}</h1>
 
-    <div class="sec-label">{{ t.cv.education }}</div>
+    <!-- Profile header -->
+    <div class="cv-hero">
+      <div class="cv-hero__role">{{ cv.role }}</div>
+      <p class="cv-hero__bio">{% if lang == 'id' and cv.bio_id %}{{ cv.bio_id }}{% else %}{{ cv.bio }}{% endif %}</p>
+    </div>
+
+    <div class="sec-label">{% include icons/education.html %}{{ t.cv.education }}</div>
     <div class="cv-section">
       {% for item in cv.education %}
       <div class="cv-item">
@@ -23,7 +29,7 @@
     </div>
 
     {% if cv.certifications %}
-    <div class="sec-label">{{ t.cv.certifications }}</div>
+    <div class="sec-label">{% include icons/certificate.html %}{{ t.cv.certifications }}</div>
     <div class="cv-section">
       {% for cert in cv.certifications %}
       <div class="cv-item">
@@ -34,9 +40,9 @@
     </div>
     {% endif %}
 
-    <div class="sec-label">{{ t.cv.experience }}</div>
-    <div class="cv-section">
-      {% for item in cv.experience %}
+    <div class="sec-label">{% include icons/briefcase.html %}{{ t.cv.experience }}</div>
+        <div class="cv-section">
+          {% for item in cv.experience %}
       <div class="cv-item">
         <div class="cv-year">{{ item.period }}</div>
         <div class="cv-content">
@@ -49,9 +55,9 @@
       {% endfor %}
     </div>
 
-    <div class="sec-label">{{ t.cv.skills }}</div>
-    <div class="cv-section">
-      {% for group in cv.skills %}
+    <div class="sec-label">{% include icons/wrench.html %}{{ t.cv.skills }}</div>
+        <div class="cv-section">
+          {% for group in cv.skills %}
       <div class="cv-item">
         <div class="cv-year">{% if lang == 'id' and group.category_id %}{{ group.category_id }}{% else %}{{ group.category }}{% endif %}</div>
         <div class="cv-content">
@@ -62,5 +68,17 @@
       </div>
       {% endfor %}
     </div>
+
+    {% if cv.socials %}
+    <div class="sec-label">{% include icons/link.html %}Links</div>
+        <div class="cv-socials">
+      {% for s in cv.socials %}
+      <a href="{{ s.url }}" class="cv-social-link" target="_blank" rel="noopener">
+        <span class="cv-social-link__platform">{{ s.platform }}</span>
+        <span class="cv-social-link__desc">{% if lang == 'id' and s.description_id %}{{ s.description_id }}{% else %}{{ s.description }}{% endif %}</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
 </div>

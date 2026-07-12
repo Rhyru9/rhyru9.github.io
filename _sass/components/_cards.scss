@@ -39,6 +39,9 @@
 
 /* ── Section label ── */
 .sec-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   margin: 24px 0 10px;
   scroll-margin-top: 96px;
   font-family: var(--mono);
@@ -47,6 +50,11 @@
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.sec-label .ico {
+  width: 13px;
+  height: 13px;
 }
 
 .big-card,
