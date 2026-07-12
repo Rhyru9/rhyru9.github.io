@@ -66,6 +66,7 @@ Beberapa endpoint `404` justru menarik karena sering menunjukkan route tersembun
 <div align="center">
     <img src="https://images7.memedroid.com/images/UPLOADED577/61b6add70a737.jpeg"
          alt="404"
+         loading="lazy" decoding="async"
          style="width: 200px; height: auto;">
 </div>
 

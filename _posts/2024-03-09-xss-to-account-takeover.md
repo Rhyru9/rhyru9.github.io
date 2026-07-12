@@ -46,6 +46,7 @@ Got: "prod-xxxx.customer-chats.s3.amazonaws.com"
 <div align="center">
     <img src="https://i.pinimg.com/736x/da/ef/e4/daefe4a61442bcbd656e3f13adfae32e.jpg" 
          alt="S3 Domain Revealed" 
+         loading="lazy" decoding="async"
          style="width: 300px; height: auto;">
 </div>
 Wait... an S3 bucket domain? 🤔

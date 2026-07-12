@@ -76,6 +76,7 @@ The results were quite revealing:
 <div align="center">
     <img src="https://images7.memedroid.com/images/UPLOADED577/61b6add70a737.jpeg" 
          alt="404" 
+         loading="lazy" decoding="async"
          style="width: 200px; height: auto;">
 </div>
 *When you see suspicious 404 endpoints*
@@ -115,7 +116,7 @@ python main.py -f domains.txt
 
 ## The Fuzzing Journey
 
-![Fuzzing Meme](https://miro.medium.com/v2/resize:fit:1000/format:webp/0*oPApgjOALQq77gym.jpg)
+![Fuzzing Meme](https://miro.medium.com/v2/resize:fit:1000/format:webp/0*oPApgjOALQq77gym.jpg){: loading="lazy" decoding="async"}
 *"Let's just send a few queries" - Famous last words*
 
 ### Step 4: Operation Discovery & Enumeration
@@ -307,6 +308,7 @@ An attacker could:
 <div align="center">
     <img src="https://media1.tenor.com/m/2vHljP-diQQAAAAC/rich-king.gif" 
          alt="S3 Domain Revealed" 
+         loading="lazy" decoding="async"
          style="width: 300px; height: auto;">
 </div>
 *When the bounty hits your account*

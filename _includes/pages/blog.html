@@ -13,6 +13,7 @@
     </div>
 
     {% assign localized_posts = site.posts | where: "lang", lang %}
+    {% if lang == 'id' %}{% assign idmonth = "Jan,Feb,Mar,Apr,Mei,Jun,Jul,Agu,Sep,Okt,Nov,Des" | split: ',' %}{% endif %}
     <div id="posts-list">
       {% for post in localized_posts %}
       <a href="{{ post.url | relative_url }}" class="article-item post-page-item" data-page="{{ forloop.index0 | divided_by: 5 | plus: 1 }}">
@@ -26,7 +27,7 @@
         <div>
           <div class="art-date">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            {% if lang == 'id' %}{% assign m = post.date | date: "%-m" | minus: 1 %}{% assign idmonth = "Jan,Feb,Mar,Apr,Mei,Jun,Jul,Agu,Sep,Okt,Nov,Des" | split: ',' %}{{ post.date | date: "%-d" }} {{ idmonth[m] }} {{ post.date | date: "%Y" }}{% else %}{{ post.date | date: "%b %-d, %Y" }}{% endif %}
+            {% if lang == 'id' %}{% assign m = post.date | date: "%-m" | minus: 1 %}{{ post.date | date: "%-d" }} {{ idmonth[m] }} {{ post.date | date: "%Y" }}{% else %}{{ post.date | date: "%b %-d, %Y" }}{% endif %}
             {% if post.read_time %}&middot; {{ post.read_time }} {{ t.ui.min_read }}{% endif %}
           </div>
           <div class="art-title">{{ post.title }}</div>
