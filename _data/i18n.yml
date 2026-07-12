@@ -56,7 +56,7 @@ en:
     stats:
       - number: "200+"
         label: "valid bugs"
-      - number: "5+"
+      - number: "7+"
         label: "hall of fame"
       - number: "10+"
         label: "gov recognitions"
@@ -143,7 +143,7 @@ id:
     stats:
       - number: "200+"
         label: "bug valid"
-      - number: "5+"
+      - number: "7+"
         label: "hall of fame"
       - number: "10+"
         label: "pengakuan gov"
@@ -156,7 +156,7 @@ id:
       github: "github"
       linkedin: "linkedin"
       hackerone: "hackerone"
-    footnote: "Terbuka untuk kolaborasi, diskusi riset keamanan, dan koordinasi responsible disclosure."
+    footnote: "Senang kalau bisa kolaborasi, ngobrol soal riset keamanan, atau koordinasi responsible disclosure bareng."
   blog:
     intro: "Writeup teknis dan studi kasus dari pekerjaan riset keamanan. Setiap tulisan membahas kerentanan nyata — bagaimana ditemukan, bagaimana cara kerjanya, dan apa artinya bagi defender."
   achievements:

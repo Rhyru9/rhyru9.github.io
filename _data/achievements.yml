@@ -74,92 +74,94 @@ awards:
 
   # Certifications
   - title: "Bug Bounty Hunter Certification"
-    date: "2023 - Present"
+    date: "2023"
     venue: "YesWeHack"
-    description: "Certified Bug Bounty Hunter dengan track record penemuan kerentanan keamanan pada berbagai platform."
+    description: "Certified Bug Bounty Hunter on YesWeHack with a track record of finding vulnerabilities across multiple programs."
+    description_id: "Certified Bug Bounty Hunter di YesWeHack dengan rekam jejak penemuan kerentanan di berbagai program."
     tags: [certification, bug-bounty]
     url: "https://www.yeswehack.com/rhyru9"
 
   - title: "Bug Bounty Hunter Certification"
-    date: "2023 - Present"
+    date: "2023"
     venue: "HackerOne"
-    description: "Certified Bug Bounty Hunter pada platform HackerOne dengan reputasi dalam menemukan kerentanan kritis."
+    description: "Certified Bug Bounty Hunter on HackerOne with a reputation for finding critical vulnerabilities."
+    description_id: "Certified Bug Bounty Hunter di HackerOne dengan reputasi dalam menemukan kerentanan kritis."
     tags: [certification, bug-bounty]
     url: "https://www.hackerone.com/rhyru9"
 
   # Achievement Certificates
-  - title: "Security Disclosure Certificate — Institut Teknologi Bandung"
-    date: "February 3, 2026"
+  - title: "Security Disclosure Certificate — Institut Teknologi Bandung (II)"
+    date: "3 Feb 2026"
     venue: "CSIRT ITB"
-    description: "Awarded certificate for responsible disclosure of security vulnerabilities in ITB's digital infrastructure."
+    description: "Awarded certificate for responsible disclosure of a second security vulnerability in ITB's digital infrastructure."
     tags: [certificate, education, indonesia]
     url: "https://spsi.itb.ac.id/verifikasi/577a2f9e-2c96-48be-a5d8-e53cb7d76455"
 
-  - title: "Security Disclosure Certificate — Institut Teknologi Bandung"
-    date: "October 3, 2025"
+  - title: "Security Disclosure Certificate — Institut Teknologi Bandung (I)"
+    date: "3 Oct 2025"
     venue: "CSIRT ITB"
-    description: "Awarded certificate for responsible disclosure of security vulnerabilities in ITB's digital infrastructure."
+    description: "Awarded certificate for responsible disclosure of a security vulnerability in ITB's digital infrastructure."
     tags: [certificate, education, indonesia]
     url: "https://spsi.itb.ac.id/verifikasi/3510200b-ad32-4ced-825f-a3784c827d97"
 
   - title: "Security Assessment Certificate — Pemerintah Kota Bekasi"
-    date: "July 11, 2025"
+    date: "11 Jul 2025"
     venue: "BekasiKota-CSIRT"
     description: "Recognized for security vulnerability assessment and disclosure for Bekasi City Government systems."
     tags: [certificate, government, indonesia]
     url: "https://k-cloud.bekasikota.go.id/s/prypnp7sgwcoenB"
 
   - title: "Vulnerability Report Certificate — Pemerintah DIY"
-    date: "November 12, 2025"
+    date: "12 Nov 2025"
     venue: "Diskominfo DIY"
     description: "Certificate for security vulnerability discovery and responsible disclosure for Yogyakarta Special Region Government."
     tags: [certificate, government, indonesia]
     url: "https://sadewa.jogjaprov.go.id/pdf?id=U2FsdGVkX19TOfAcz0VzZFePZ0Ep1L2u3SkDRsr2v5C3EoFSx4SMTpOHRtgsPbwhQbEo0cPbXDJARYGWSWn7DtJp1L2u3SS82we1Q2u3A4le1Q2u3A4l&document_type=targetedtte"
 
   - title: "Security Assessment Certificate — Pemerintah DIY"
-    date: "February 5, 2025"
+    date: "5 Feb 2025"
     venue: "Diskominfo DIY"
     description: "Certificate for comprehensive security assessment and vulnerability disclosure for DIY Government systems."
     tags: [certificate, government, indonesia]
     url: "https://sadewa.jogjaprov.go.id/pdf?id=U2FsdGVkX19tT6op1L2u3SypvOfAzRds1L2a3S4h8cvDB6R79Y63XbjOWWR283KeXoohuWqMOi7eq1LiJbTQ1GvoAZH3n6XvYvJQe1Q2u3A4le1Q2u3A4l&document_type=targetedtte"
 
   - title: "Security Disclosure Certificate — Bali Provincial Government"
-    date: "July 11, 2025"
+    date: "11 Jul 2025"
     venue: "Kominfo Bali Provincial Government"
     description: "Awarded for responsible disclosure of security vulnerabilities in Bali Provincial Government infrastructure."
     tags: [certificate, government, indonesia]
     url: "https://kanal.baliprov.go.id/short/1zN29DYrV7-ROLB"
 
   - title: "Vulnerability Assessment Certificate — Bali Provincial Government"
-    date: "November 7, 2024"
+    date: "7 Nov 2024"
     venue: "Kominfo Bali Provincial Government"
     description: "Certificate for security vulnerability assessment and remediation guidance for Bali Government systems."
     tags: [certificate, government, indonesia]
     url: "https://kanal.baliprov.go.id/short/YBNE2xg24G-nt1u"
 
   - title: "Security Report Certificate — Bali Provincial Government"
-    date: "November 1, 2024"
+    date: "1 Nov 2024"
     venue: "Kominfo Bali Provincial Government"
     description: "Certificate for comprehensive security report on vulnerabilities found in provincial systems."
     tags: [certificate, government, indonesia]
     url: "https://kanal.baliprov.go.id/short/WaV7EvZ341-wCNQ"
 
   - title: "Security Assessment Certificate — Bali Provincial Government"
-    date: "November 1, 2025"
+    date: "1 Nov 2025"
     venue: "Kominfo Bali Provincial Government"
     description: "Certificate for follow-up security assessment and vulnerability disclosure."
     tags: [certificate, government, indonesia]
     url: "https://kanal.baliprov.go.id/short/gk4xM1L9ey-aERc"
 
   - title: "Security Disclosure Certificate — Kabupaten Jombang"
-    date: "July 17, 2025"
+    date: "17 Jul 2025"
     venue: "Diskominfo Kabupaten Jombang"
     description: "Awarded for responsible disclosure of security vulnerabilities in Jombang Regency Government systems."
     tags: [certificate, government, indonesia]
     url: "https://srikandi.arsip.go.id/result-scan/3MiVttzgzPDqdYoCn9jMBA"
 
   - title: "Security Assessment Certificate — Pemerintah Kutai Kartanegara"
-    date: "July 22, 2025"
+    date: "22 Jul 2025"
     venue: "Kominfo KUKAR"
     description: "Certificate for security vulnerability discovery and disclosure for Kutai Kartanegara Government."
     tags: [certificate, government, indonesia]

@@ -1,22 +1,22 @@
 ---
 layout: post
-title: "Self-XSS Reveals S3 Bucket Domain - 12K+ Chat Sessions Exposed"
+title: "Self-XSS Reveals S3 Bucket Domain - 15,000+ Chat Sessions Exposed"
 date: 2024-03-09
 tags: [Web, XSS, High, S3]
-excerpt: "A self-XSS in an AI support chat led me to test document.domain, which unexpectedly revealed an S3 bucket. This discovery exposed 12.000+ customer conversations stored in a publicly accessible bucket."
+excerpt: "A self-XSS in an AI support chat led me to test document.domain, which unexpectedly revealed an S3 bucket. This discovery exposed 15,000+ customer conversations stored in a publicly accessible bucket."
 lang: en
 translation_key: xss-to-account-takeover
 translation_url: /id/blog/2024/03/09/xss-to-account-takeover/
 translations:
   en:
-    title: "Self-XSS Reveals S3 Bucket Domain - 12K+ Chat Sessions Exposed"
-    excerpt: "A self-XSS in an AI support chat led me to test document.domain, which unexpectedly revealed an S3 bucket. This discovery exposed 12.000+ customer conversations stored in a publicly accessible bucket."
+    title: "Self-XSS Reveals S3 Bucket Domain - 15,000+ Chat Sessions Exposed"
+    excerpt: "A self-XSS in an AI support chat led me to test document.domain, which unexpectedly revealed an S3 bucket. This discovery exposed 15,000+ customer conversations stored in a publicly accessible bucket."
   id:
-    title: "Self-XSS Mengungkap Domain S3 Bucket - 12K+ Sesi Chat Terekspos"
-    excerpt: "Self-XSS pada chat dukungan AI membuat saya menguji document.domain, yang ternyata mengungkap bucket S3. Temuan ini mengekspos 12.000+ percakapan pelanggan yang tersimpan di bucket publik."
+    title: "Self-XSS Mengungkap Domain S3 Bucket - 15.000+ Sesi Chat Terekspos"
+    excerpt: "Self-XSS pada chat dukungan AI membuat saya menguji document.domain, yang ternyata mengungkap bucket S3. Temuan ini mengekspos 15.000+ percakapan pelanggan yang tersimpan di bucket publik."
 ---
 
-A self-XSS in an AI support chat led me to test `document.domain`, which unexpectedly revealed an S3 bucket. This discovery exposed 12.000+ customer conversations stored in a publicly accessible bucket.
+A self-XSS in an AI support chat led me to test `document.domain`, which unexpectedly revealed an S3 bucket. This discovery exposed 15,000+ customer conversations stored in a publicly accessible bucket.
 
 ---
 
@@ -286,7 +286,7 @@ Without testing `document.domain`, I would have reported a low-severity self-XSS
 **Availability**: None (A:N)
 
 **Business Impact**:
-- 12.000+ private customer conversations exposed
+- 15,000+ private customer conversations exposed
 - Customer PII accessible without authentication
 - API keys and sensitive data leaked in conversations
 - Long-term exposure (months of data)

@@ -6,17 +6,11 @@ bio_id: "Senang nyari hal-hal yang harusnya nggak ada. Spesialisasi saya di keam
 
 # Education & Certifications
 education:
-  - degree: "TryHackMe Complete Beginner Path"
-    institution: "HackTheBok"
-    period: "2022"
-    description: "Hands-on cybersecurity training covering Linux, networking, web exploitation, and privilege escalation."
-    description_id: "Pelatihan cybersecurity hands-on yang meyeluruh — dari Linux, networking, web exploitation, sampai privilege escalation."
-
   - degree: "PortSwigger Web Security Academy"
     institution: "PortSwigger"
-    period: "2021 - Present"
-    description: "PortSwigger's learning platform for web security — OWASP Top 10, modern vulnerabilities, and hands-on labs."
-    description_id: "Platform belajar web security dari PortSwigger — OWASP Top 10, celah-celah modern, dan lab praktik."
+    period: "2021 – ongoing"
+    description: "Self-study platform for web security. Covers OWASP Top 10, modern attack techniques, and hands-on labs — still a go-to reference."
+    description_id: "Platform belajar mandiri untuk web security. Mencakup OWASP Top 10, teknik serangan modern, dan lab praktik — masih jadi referensi utama sampai sekarang."
 
 # Professional Certifications
 certifications:
@@ -33,14 +27,14 @@ experience:
   - title: "Independent Security Researcher"
     company: "Bug Bounty Programs & Open Source Projects"
     period: "2022 - Present"
-    description: "Hunting bugs across public and private programs. Found 50+ valid vulnerabilities in web applications, kept a consistent presence on bug bounty platforms, and wrote up findings along the way."
-    description_id: "Nyari bug di program publik dan privat. Nemu 50+ kerentanan valid di aplikasi web, aktif di platform bug bounty, dan rutin nulis laporan dari temuan yang ada."
+    description: "Hunting bugs across public and private programs. Found 100+ valid vulnerabilities in web applications, kept a consistent presence on bug bounty platforms, and wrote up findings along the way."
+    description_id: "Nyari bug di program publik dan privat. Nemu 100+ kerentanan valid di aplikasi web, aktif di platform bug bounty, dan rutin nulis laporan dari temuan yang ada."
 
   - title: "Security Research & Self-Development"
     company: "CTF Competitions & Learning Platforms"
     period: "2020 - 2022"
-    description: "Built technical foundations through hands-on practice. Competed in 20+ CTFs (HackTheBox, TryHackMe, etc.), finished advanced web security courses, and built scripts to automate the boring parts."
-    description_id: "Bangun kemampuan teknis lewat banyak praktik. Ikut 20+ CTF (HackTheBox, TryHackMe, dll.), selesaikan kursus web security lanjutan, dan bikin tool buat otomasi yang repetitif."
+    description: "Built technical foundations through hands-on practice. Competed in 20+ CTFs on HackTheBox and similar platforms, worked through advanced web security courses, and built scripts to automate the boring parts."
+    description_id: "Bangun kemampuan teknis lewat banyak praktik. Ikut 20+ CTF di HackTheBox dan platform serupa, dalami kursus web security lanjutan, dan bikin tool buat otomasi yang repetitif."
 
   - title: "Technical Foundations"
     company: "Self-Study & Personal Projects"
@@ -51,6 +45,7 @@ experience:
 # Technical Skills
 skills:
   - category: "Security Testing"
+    category_id: "Pengujian Keamanan"
     items:
       [
         OWASP Top 10,
@@ -62,6 +57,7 @@ skills:
       ]
 
   - category: "Vulnerabilities"
+    category_id: "Kerentanan"
     items:
       [
         SQL Injection,
@@ -76,6 +72,7 @@ skills:
       ]
 
   - category: "Tools & Frameworks"
+    category_id: "Tools & Framework"
     items:
       [
         Burp Suite,
@@ -94,9 +91,11 @@ skills:
     items: [Python, JavaScript, Go, PHP, SQL]
 
   - category: "Platforms & Technologies"
+    category_id: "Platform & Teknologi"
     items: [Linux, Docker, Git, REST API, GraphQL]
 
   - category: "Bug Bounty Platforms"
+    category_id: "Platform Bug Bounty"
     items: [HackerOne, YesWeHack, Bugcrowd]
 
 # Social Links
