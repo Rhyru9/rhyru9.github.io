@@ -161,7 +161,7 @@ id:
     intro: "Writeup teknis dan studi kasus dari pekerjaan riset keamanan. Setiap tulisan membahas kerentanan nyata — bagaimana ditemukan, bagaimana cara kerjanya, dan apa artinya bagi defender."
   achievements:
     label: "Pencapaian"
-    title: "Pencapaian Keamanan"
+    title: "Rekam Jejak Keamanan"
     intro: "Catatan kerentanan yang ditemukan, program yang memberikan pengakuan, dan kontribusi terhadap komunitas keamanan melalui responsible disclosure."
     awards: "Penghargaan & Pengakuan"
     profiles: "Profil Bug Bounty"
