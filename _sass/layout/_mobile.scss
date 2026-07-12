@@ -77,7 +77,6 @@
 }
 
 .drawer__nav a,
-.drawer__language a,
 .drawer__social a {
   display: block;
   padding: 12px 14px;
@@ -96,7 +95,23 @@
 }
 
 .drawer__language {
+  display: flex;
+  justify-content: flex-end;
   margin-bottom: 14px;
+}
+
+.drawer__language a {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: none;
 }
 
 .drawer__social {
