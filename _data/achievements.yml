@@ -1,14 +1,14 @@
 platforms:
-  - title: "HackerOne"
-    username: "rhyru9"
-    profile_url: "https://hackerone.com/rhyru9"
-    description: "Active bug bounty hunter on HackerOne platform, discovering and reporting security vulnerabilities across various programs."
-    tags: [bug-bounty, platform]
-
   - title: "YesWeHack"
     username: "rhyru9"
     profile_url: "https://yeswehack.com/hunters/rhyru9"
     description: "Certified Bug Bounty Hunter on YesWeHack platform with track record in responsible vulnerability disclosure."
+    tags: [bug-bounty, platform]
+
+  - title: "HackerOne"
+    username: "rhyru9"
+    profile_url: "https://hackerone.com/rhyru9"
+    description: "Active bug bounty hunter on HackerOne platform, discovering and reporting security vulnerabilities across various programs."
     tags: [bug-bounty, platform]
 
 awards:
