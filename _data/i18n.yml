@@ -47,6 +47,12 @@ en:
         items: ["REST & GraphQL APIs", "IDOR & Privilege Escalation", "Data Exposure", "Rate Limiting Bypass"]
       - title: "Vulnerability Research"
         items: ["Responsible Disclosure", "CVE Discovery", "PoC Development", "Security Writeups"]
+    badges:
+      - "Bug Bounty"
+      - "Pentesting"
+      - "CVE Research"
+      - "Jakarta, ID"
+    view_link: "View →"
     stats:
       - number: "200+"
         label: "valid bugs"
@@ -128,6 +134,12 @@ id:
         items: ["REST & GraphQL API", "IDOR & Privilege Escalation", "Paparan Data", "Rate Limiting Bypass"]
       - title: "Riset Kerentanan"
         items: ["Responsible Disclosure", "Penemuan CVE", "Pengembangan PoC", "Security Writeup"]
+    badges:
+      - "Bug Bounty"
+      - "Pentesting"
+      - "CVE Research"
+      - "Jakarta, ID"
+    view_link: "Lihat →"
     stats:
       - number: "200+"
         label: "bug valid"

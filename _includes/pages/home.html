@@ -11,10 +11,9 @@
       <p class="profile-hero__role">{{ home.subtitle }}</p>
       <p class="profile-hero__intro">{{ home.intro }}</p>
       <div class="profile-hero__badges">
-        <span class="profile-badge profile-badge--yellow">Bug Bounty</span>
-        <span class="profile-badge profile-badge--mint">Pentesting</span>
-        <span class="profile-badge profile-badge--blue">CVE Research</span>
-        <span class="profile-badge profile-badge--mono">Jakarta, ID</span>
+        {% for badge in home.badges %}
+        <span class="profile-badge {% cycle 'profile-badge--yellow', 'profile-badge--mint', 'profile-badge--blue', 'profile-badge--mono' %}">{{ badge }}</span>
+        {% endfor %}
       </div>
     </div>
     <div class="profile-hero__stats">
@@ -74,7 +73,7 @@
       <div class="highlight-card__footer">
         <span class="highlight-card__date">{{ award.date }}</span>
         {% if award.url %}
-        <a class="highlight-card__link" href="{{ award.url }}" target="_blank" rel="noopener">View →</a>
+        <a class="highlight-card__link" href="{{ award.url }}" target="_blank" rel="noopener">{{ home.view_link }}</a>
         {% endif %}
       </div>
     </div>
