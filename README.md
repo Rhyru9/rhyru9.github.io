@@ -23,9 +23,10 @@ bundle exec jekyll serve
 │   └── post.html            # Blog post layout
 ├── _includes/
 │   ├── head.html
-│   ├── topbar.html          # Desktop navigation
+│   ├── topbar.html          # Desktop navigation + logo
 │   ├── mobile-nav.html      # Mobile drawer menu
 │   ├── footer.html
+│   ├── icons/               # Inline SVG icons
 │   └── pages/
 │       ├── home.html        # Homepage
 │       ├── blog.html        # Blog listing
@@ -33,13 +34,14 @@ bundle exec jekyll serve
 │       ├── cv.html
 │       └── contact.html
 ├── _posts/                  # Blog posts (EN + ID versions)
-├── _sass/                   # SCSS partials
+├── _sass/                   # SCSS partials (base, components, layout, utils)
 ├── assets/
 │   ├── css/
-│   ├── js/
-│   │   ├── main.js
-│   │   └── typewriter.js    # Logo animation
-│   └── images/
+│   ├── documents/           # PDFs (certificates, letters)
+│   ├── images/
+│   └── js/
+│       ├── main.js
+│       └── typewriter.js    # Logo typewriter animation
 ├── id/                      # Indonesian pages
 │   ├── index.md
 │   ├── blog.md
@@ -47,11 +49,15 @@ bundle exec jekyll serve
 │   ├── cv.md
 │   └── contact.md
 ├── index.md                 # Homepage (EN)
-├── blog.md
-├── achievements.md
-├── cv.md
-├── contact.md
-└── search.json              # Client-side search index
+├── blog.md                  # Blog listing (EN)
+├── achievements.md          # Achievements page (EN)
+├── cv.md                    # CV page (EN)
+├── contact.md               # Contact page (EN)
+├── search.json              # Client-side search index
+├── .github/workflows/       # GitHub Pages deploy action
+├── Gemfile
+├── _config.yml
+└── CNAME
 ```
 
 ## Customization
