@@ -1,114 +1,154 @@
-# Jekyll Portfolio
+# Rhyru9 — Portfolio
 
-Academic Pages-inspired professional portfolio. Clean, serif typography, sidebar layout.
+Personal security research portfolio built with Jekyll. Bilingual (EN/ID), responsive, with a clean terminal-inspired design.
 
 ## Quick Start
 
 ```bash
-# Install dependencies
 bundle install
-
-# Run locally
 bundle exec jekyll serve
-
 # Open http://localhost:4000
 ```
-
-## Customize
-
-### 1. Edit `_config.yml`
-```yaml
-title: "Your Name"
-author: "Your Name"
-email: "you@example.com"
-github_username: yourusername
-linkedin_username: yourusername
-twitter_username: yourusername
-bio: "Your role · Your title<br>Location"
-```
-
-### 2. Add your photo
-Replace the dummy avatar by adding your photo to `assets/images/profile.jpg`
-and setting in `_config.yml`:
-```yaml
-profile_image: "/assets/images/profile.jpg"
-```
-
-### 3. Edit content pages
-- **About** → `index.md`
-- **Blog posts** → `_posts/YYYY-MM-DD-title.md`
-- **Achievements** → `_data/achievements.yml`
-- **CV** → `_data/cv.yml`
-
-### 4. Blog post format
-```markdown
----
-layout: post
-title: "Your Post Title"
-date: 2025-01-01
-read_time: 5
-tags: [tag1, tag2]
-excerpt: "One-line summary shown in listing."
----
-
-Your content here...
-```
-
-## Deployment (GitHub Pages)
-
-1. Push to a repo named `yourusername.github.io`
-2. Go to Settings → Pages → Source: main branch
-3. Your site is live at `https://yourusername.github.io`
 
 ## Structure
 
 ```
-├── _config.yml          # Site settings
-├── _layouts/
-│   ├── default.html     # Base layout (sidebar + nav)
-│   ├── post.html        # Blog post layout
-│   └── page.html        # Generic page
-├── _includes/
-│   └── icons/           # SVG icon includes
-├── _posts/              # Blog posts (YYYY-MM-DD-title.md)
+├── _config.yml              # Site settings & author info
 ├── _data/
-│   ├── achievements.yml # Awards, publications, talks
-│   └── cv.yml           # Education, experience, skills
+│   ├── i18n.yml             # Bilingual translation strings
+│   ├── achievements.yml     # Awards, recognitions, bug bounty profiles
+│   └── cv.yml               # Education, certifications, experience, skills
+├── _layouts/
+│   ├── default.html         # Base layout
+│   └── post.html            # Blog post layout
+├── _includes/
+│   ├── head.html
+│   ├── topbar.html          # Desktop navigation
+│   ├── mobile-nav.html      # Mobile drawer menu
+│   ├── footer.html
+│   └── pages/
+│       ├── home.html        # Homepage
+│       ├── blog.html        # Blog listing
+│       ├── achievements.html
+│       ├── cv.html
+│       └── contact.html
+├── _posts/                  # Blog posts (EN + ID versions)
+├── _sass/                   # SCSS partials
 ├── assets/
-│   ├── css/main.css
-│   └── js/main.js
-├── index.md             # About/home page
-├── blog.md              # Blog listing page
-├── achievements.md      # Achievements page
-├── cv.md                # CV page
-└── search.json          # Search index (auto-generated)
+│   ├── css/
+│   ├── js/
+│   │   ├── main.js
+│   │   └── typewriter.js    # Logo animation
+│   └── images/
+├── id/                      # Indonesian pages
+│   ├── index.md
+│   ├── blog.md
+│   ├── achievements.md
+│   ├── cv.md
+│   └── contact.md
+├── index.md                 # Homepage (EN)
+├── blog.md
+├── achievements.md
+├── cv.md
+├── contact.md
+└── search.json              # Client-side search index
 ```
+
+## Customization
+
+### Site settings (`_config.yml`)
+```yaml
+title: "Rhyru9"
+author: "Rhyru9"
+email: "contact@rhyru9.xyz"
+url: "https://rhyru9.xyz"
+github_username: rhyru9
+linkedin_username: rhyru9
+twitter_username: rhyru9
+hackerone_username: rhyru9
+```
+
+### Blog post (bilingual)
+
+Create two files — one for each language, linked by `translation_key`:
+
+**EN** (`_posts/2026-01-01-my-post.md`):
+```yaml
+---
+layout: post
+title: "My Post Title"
+date: 2026-01-01
+tags: [tag1, tag2]
+excerpt: "Short summary."
+lang: en
+translation_key: my-post
+translation_url: /id/blog/2026/01/01/my-post/
+translations:
+  en:
+    title: "My Post Title"
+    excerpt: "Short summary."
+  id:
+    title: "Judul Post Saya"
+    excerpt: "Ringkasan singkat."
+---
+```
+
+**ID** (`_posts/2026-01-01-id-my-post.md`):
+```yaml
+---
+layout: post
+title: "Judul Post Saya"
+date: 2026-01-01
+tags: [tag1, tag2]
+excerpt: "Ringkasan singkat."
+lang: id
+translation_key: my-post
+translation_url: /blog/2026/01/01/my-post/
+permalink: /id/blog/2026/01/01/my-post/
+translations:
+  en:
+    title: "My Post Title"
+    excerpt: "Short summary."
+  id:
+    title: "Judul Post Saya"
+    excerpt: "Ringkasan singkat."
+---
+```
+
+### Achievements (`_data/achievements.yml`)
+
+```yaml
+awards:
+  - title: "Award Title"
+    date: "2026"
+    venue: "Organization"
+    description: "English description."
+    description_id: "Deskripsi bahasa Indonesia."   # optional
+    tags: [tag1, tag2]
+    url: "https://example.com"
+```
+
+### i18n (`_data/i18n.yml`)
+
+All UI text lives here — `en` and `id` top-level keys with mirrored structure. Templates pull from `site.data.i18n[page.lang]`.
 
 ## Features
 
-- ✅ Responsive design with mobile menu
-- ✅ Clean serif typography (EB Garamond)
-- ✅ Blog with search functionality
-- ✅ CV and achievements pages
-- ✅ Social media links
-- ✅ SEO optimized
-- ✅ RSS feed
-- ✅ Fast and lightweight
+- Bilingual EN/ID with language switcher
+- Responsive — mobile drawer menu
+- Typewriter logo animation
+- Client-side search (JSON index)
+- Achievement highlights with translated descriptions
+- Grid dot background
+- CV with i18n-aware skill categories
+- RSS feed, SEO tags, sitemap
 
-## Troubleshooting
+## Deployment (GitHub Pages)
 
-**Issue**: Pages not showing up
-- Make sure file names in `_posts/` follow format: `YYYY-MM-DD-title.md`
-- Check that YAML front matter is correct
-
-**Issue**: Sidebar not showing
-- Check browser width (sidebar hides on mobile)
-- Check CSS is loading properly
-
-**Issue**: Search not working
-- Make sure `search.json` is being generated
-- Check browser console for errors
+1. Push to `yourusername.github.io`
+2. Go to Settings → Pages → Source: `main` branch (GitHub Actions)
+3. Site is live at `https://yourusername.github.io`
 
 ## License
 
-MIT License - feel free to use for your own portfolio!
+MIT
