@@ -10,21 +10,36 @@
 
     {% if a.awards %}
     <div class="sec-label">{{ t.achievements.awards }}</div>
-    {% for item in a.awards %}
-    <div class="dv-item">
-      <div class="item-title item-title--tight">
-        {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
+    <div id="awards-list">
+      {% for item in a.awards %}
+      <div class="dv-item award-page-item" data-page="{{ forloop.index0 | divided_by: 6 | plus: 1 }}">
+        <div class="item-title item-title--tight">
+          {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
+        </div>
+        <div class="art-date">{{ item.date }}{% if item.venue %} &middot; {{ item.venue }}{% endif %}</div>
+        {% assign d = item.description %}{% if lang == 'id' and item.description_id %}{% assign d = item.description_id %}{% endif %}
+        {% if d %}<p class="text-xs text-xs--award">{{ d }}</p>{% endif %}
+        {% if item.tags %}
+        <div class="tags-row">
+          {% for tag in item.tags %}<span class="tag tag-sm">{{ tag | replace: '-', ' ' }}</span>{% endfor %}
+        </div>
+        {% endif %}
       </div>
-      <div class="art-date">{{ item.date }}{% if item.venue %} &middot; {{ item.venue }}{% endif %}</div>
-      {% assign d = item.description %}{% if lang == 'id' and item.description_id %}{% assign d = item.description_id %}{% endif %}
-      {% if d %}<p class="text-xs text-xs--award">{{ d }}</p>{% endif %}
-      {% if item.tags %}
-      <div class="tags-row">
-        {% for tag in item.tags %}<span class="tag tag-sm">{{ tag | replace: '-', ' ' }}</span>{% endfor %}
-      </div>
-      {% endif %}
+      {% endfor %}
     </div>
-    {% endfor %}
+
+    {% assign total_pages = a.awards.size | divided_by: 6.0 | ceil %}
+    {% if total_pages > 1 %}
+    <nav class="pagination" id="awards-pagination" aria-label="Awards pagination" data-total="{{ total_pages }}" data-prev="{{ t.ui.previous }}" data-next="{{ t.ui.next }}">
+      <button class="pagination__btn pagination__prev" disabled aria-label="{{ t.ui.previous }}">&#8592; {{ t.ui.previous }}</button>
+      <div class="pagination__pages">
+        {% for i in (1..total_pages) %}
+        <button class="pagination__page{% if i == 1 %} is-active{% endif %}" data-page="{{ i }}" aria-label="Page {{ i }}">{{ i }}</button>
+        {% endfor %}
+      </div>
+      <button class="pagination__btn pagination__next" aria-label="{{ t.ui.next }}">{{ t.ui.next }} &#8594;</button>
+    </nav>
+    {% endif %}
     {% endif %}
 
     {% if a.platforms %}
