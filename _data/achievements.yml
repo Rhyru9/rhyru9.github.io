@@ -14,15 +14,15 @@ platforms:
 awards:
   # Hall of Fame
   - title: "Security Advisory Credit — Apple (CVE-2026-43735)"
-    date: "2026-06-29"
-    venue: "Apple Product Security"
+    date: "29 Jun 2026"
+        venue: "Apple Product Security"
     description: "Credited by Apple in iOS 26.5.2 / iPadOS 26.5.2 security advisory for discovering a WebKit cross-origin data exfiltration vulnerability (CVE-2026-43735). Listed alongside researchers from Sentry and other security professionals."
     tags: [cve, apple, webkit, safari, cross-origin]
     url: "https://support.apple.com/en-us/127594"
 
   - title: "Letter of Appreciation — National Aeronautics and Space Administration (NASA)"
-    date: "2026-03-31"
-    venue: "NASA Vulnerability Disclosure Program (VDP)"
+    date: "31 Mar 2026"
+        venue: "NASA Vulnerability Disclosure Program (VDP)"
     description: "Received an official Letter of Appreciation from NASA's Senior Agency Information Security Officer (SAISO) for independently identifying and responsibly disclosing an unknown security vulnerability through NASA's Vulnerability Disclosure Policy (VDP), contributing to the protection of NASA's information systems."
     tags:
       [

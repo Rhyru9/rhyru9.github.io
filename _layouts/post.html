@@ -15,7 +15,7 @@ layout: default
           {% if page.read_time %}&middot; {{ page.read_time }} {{ t.ui.min_read }}{% endif %}
         </div>
         {% if page.tags %}
-        <div class="tags-row">{% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>
+        <div class="tags-row">{% for tag in page.tags %}<span class="tag">{{ tag | replace: '-', ' ' }}</span>{% endfor %}</div>
         {% endif %}
       </header>
       <div class="post-body">{{ content }}</div>

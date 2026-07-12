@@ -64,7 +64,7 @@
     <div class="highlight-card {% cycle 'highlight-card--yellow', 'highlight-card--mono', 'highlight-card--mint', 'highlight-card--blue' %}">
       <div class="highlight-card__tags">
         {% for tag in award.tags limit: 2 %}
-        <span class="highlight-tag">{{ tag }}</span>
+        <span class="highlight-tag">{{ tag | replace: '-', ' ' }}</span>
         {% endfor %}
       </div>
       <div class="highlight-card__title">{{ award.title }}</div>

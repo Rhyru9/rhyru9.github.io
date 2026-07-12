@@ -20,7 +20,7 @@
       {% if d %}<p class="text-xs text-xs--award">{{ d }}</p>{% endif %}
       {% if item.tags %}
       <div class="tags-row">
-        {% for tag in item.tags %}<span class="tag tag-sm">{{ tag }}</span>{% endfor %}
+        {% for tag in item.tags %}<span class="tag tag-sm">{{ tag | replace: '-', ' ' }}</span>{% endfor %}
       </div>
       {% endif %}
     </div>
