@@ -2,7 +2,7 @@
 layout: post
 title: "Akses Tidak Sah ke PII melalui User Search pada Website BDF"
 date: 2026-01-05
-tags: [responsible-disclosure, broken-access-control, cve, javlo-cms]
+tags: [responsible-disclosure, broken-access-control, CVE, javlo-cms]
 excerpt: "Menemukan kerentanan broken access control kritis pada fitur pencarian pengguna yang mengekspos informasi sensitif tanpa autentikasi. Kerentanan ditemukan melalui analisis source code CMS open source."
 lang: id
 translation_key: unauthorized-access-pii

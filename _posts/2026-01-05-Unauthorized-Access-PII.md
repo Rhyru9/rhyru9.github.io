@@ -2,7 +2,7 @@
 layout: post
 title: "Unauthorized Access to PII via User Search on BDF Website"
 date: 2026-01-05
-tags: [responsible-disclosure, broken-access-control, cve, javlo-cms]
+tags: [responsible-disclosure, broken-access-control, CVE, javlo-cms]
 excerpt: "Discovered a critical broken access control vulnerability in bdf.belgium.be that exposed sensitive user information including emails and phone numbers of military personnel without authentication. The vulnerability was found through source code analysis of the open-source Javlo CMS."
 lang: en
 translation_key: unauthorized-access-pii
