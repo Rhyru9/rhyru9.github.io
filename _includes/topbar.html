@@ -7,11 +7,10 @@
       {% assign switch_url = page.translation_url | default: t.home_url %}
 
       <a class="site-header__brand site-header__brand--logo" aria-label="{{ site.title }} - Home" href="{{ t.home_url | relative_url }}">
-        <span class="site-wordmark" aria-label="{{ site.title }}">
-          <span class="site-wordmark__line">{{ site.title | slice: 0, 4 | upcase }}</span>
-          <span class="site-wordmark__line"><span>{{ site.title | slice: 4, 6 | upcase }}</span><span class="site-wordmark__cursor" aria-hidden="true"></span></span>
-        </span>
-      </a>
+              <span class="site-wordmark" aria-label="{{ site.title }}" data-text="{{ site.title | upcase }}">
+                <span class="site-wordmark__text" id="logo-text"></span><span class="site-wordmark__cursor" aria-hidden="true"></span>
+              </span>
+            </a>
 
       <nav class="ds-tabs site-header__nav" aria-label="Main navigation">
         <div class="ds-tabs__list" role="tablist" aria-label="Main navigation">
