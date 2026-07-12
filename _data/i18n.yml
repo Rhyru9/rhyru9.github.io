@@ -32,13 +32,13 @@ en:
   home:
     title: "{{ site.title }}"
     kicker: "// bug bounty · security research · jakarta, id"
-    subtitle: "Security researcher focused on web applications, APIs, and responsible vulnerability disclosure."
-    intro: "Recognized by NASA, Apple, Ferrari, Belgian Government, and international companies for responsible security research."
+    subtitle: "Security researcher into web apps, APIs, and responsible vulnerability disclosure."
+    intro: "Recognized by NASA, Apple, Ferrari, the Belgian Government, and others for responsible security research."
     about_heading: "About"
     about:
-      - "I'm a self-taught security researcher and bug bounty hunter based in Jakarta, Indonesia. My work focuses on identifying vulnerabilities in web applications, APIs, and business-critical systems through manual testing and deep technical analysis."
-      - "I started with CTF competitions and self-study, building a foundation in web exploitation, networking, and programming. Over time, that foundation turned into a track record of responsible disclosures to organizations ranging from local governments to globally recognized companies."
-      - "Every disclosure is approached with care — findings are documented clearly, impact is scoped properly, and production systems are never disrupted. That discipline comes from years of working within responsible disclosure frameworks and public bug bounty programs."
+      - "I'm a self-taught security researcher and bug bounty hunter based in Jakarta, Indonesia. I focus on finding vulnerabilities in web apps, APIs, and business-critical systems — through manual testing and careful technical analysis."
+      - "It started with CTF competitions and a lot of self-study. That foundation slowly turned into a real track record — responsible disclosures to organizations ranging from local governments to globally recognized companies."
+      - "Every report is written with care. Findings are documented clearly, impact is scoped honestly, and production systems are never touched. That's a discipline I've built over years of working within responsible disclosure frameworks and public bug bounty programs."
     expertise_heading: "Areas of Focus"
     expertise:
       - title: "Web Application Security"
@@ -61,7 +61,7 @@ en:
       - number: "10+"
         label: "gov certs"
     highlights_heading: "Research Highlights"
-    highlights_context: "200+ valid vulnerabilities disclosed across public and private programs — including systems operated by government agencies, universities, and international companies."
+    highlights_context: "200+ valid vulnerabilities across public and private programs — including systems run by government agencies, universities, and international companies."
     contact_heading: "Contact"
     contact_labels:
       email: "email"
@@ -69,13 +69,13 @@ en:
       github: "github"
       linkedin: "linkedin"
       hackerone: "hackerone"
-    footnote: "Open to collaboration, security research discussions, and responsible disclosure coordination."
+    footnote: "Happy to collaborate, chat about security research, or work through responsible disclosure together."
   blog:
-    intro: "Technical writeups and case studies from security research work. Each post covers a real vulnerability — how it was found, how it works, and what it means for defenders."
+    intro: "Technical writeups from real security research. Each post covers an actual vulnerability — how I found it, how it works, and what it means for defenders."
   achievements:
     label: "Achievements"
     title: "Security Achievements"
-    intro: "A record of vulnerabilities discovered, programs recognized, and contributions to the security community through responsible disclosure."
+    intro: "A running record of vulnerabilities found, programs that recognized the work, and contributions to the security community through responsible disclosure."
     awards: "Awards & Recognition"
     profiles: "Bug Bounty Profiles"
   cv:
@@ -119,13 +119,13 @@ id:
   home:
     title: "{{ site.title }}"
     kicker: "// bug bounty · riset keamanan · jakarta, id"
-    subtitle: "Security researcher yang berfokus pada aplikasi web, API, dan responsible vulnerability disclosure."
-    intro: "Diakui oleh NASA, Apple, Ferrari, Pemerintah Belgia, dan berbagai perusahaan internasional atas kontribusi riset keamanan."
+    subtitle: "Security researcher yang ngulik aplikasi web, API, dan responsible vulnerability disclosure."
+    intro: "Pernah diakui oleh NASA, Apple, Ferrari, Pemerintah Belgia, dan sejumlah perusahaan internasional atas riset keamanan yang dilakukan."
     about_heading: "Tentang"
     about:
-      - "Saya adalah security researcher dan bug bounty hunter otodidak yang berbasis di Jakarta, Indonesia. Fokus pekerjaan saya adalah menemukan kerentanan pada aplikasi web, API, dan sistem bisnis kritis melalui pengujian manual dan analisis teknis mendalam."
-      - "Perjalanan saya dimulai dari kompetisi CTF dan belajar mandiri, membangun fondasi dalam web exploitation, networking, dan programming. Seiring waktu, fondasi itu berkembang menjadi track record responsible disclosure ke berbagai organisasi — dari pemerintah daerah hingga perusahaan yang dikenal secara global."
-      - "Setiap disclosure dilakukan dengan teliti — temuan didokumentasikan dengan jelas, dampak diidentifikasi secara akurat, dan sistem production tidak pernah terganggu. Disiplin ini lahir dari pengalaman bekerja dalam kerangka responsible disclosure dan program bug bounty publik selama bertahun-tahun."
+      - "Saya security researcher dan bug bounty hunter otodidak, berbasis di Jakarta. Kerjaan utama saya ya nyari celah — di aplikasi web, API, dan sistem-sistem yang sifatnya kritis — lewat pengujian manual dan analisis teknis yang teliti."
+      - "Semuanya berawal dari kompetisi CTF dan banyak belajar sendiri. Pelan-pelan fondasi itu jadi track record nyata — mulai dari disclosure ke pemerintah daerah sampai ke perusahaan yang dikenal secara global."
+      - "Setiap laporan ditulis dengan serius. Temuan dijelaskan dengan jelas, dampaknya diukur jujur, dan sistem production tidak pernah disentuh. Kebiasaan ini terbentuk dari bertahun-tahun kerja dalam kerangka responsible disclosure dan program bug bounty publik."
     expertise_heading: "Area Keahlian"
     expertise:
       - title: "Keamanan Aplikasi Web"
@@ -148,7 +148,7 @@ id:
       - number: "10+"
         label: "sertifikat gov"
     highlights_heading: "Sorotan Riset"
-    highlights_context: "200+ kerentanan valid yang diungkap di program publik dan privat — termasuk sistem yang dioperasikan oleh lembaga pemerintah, universitas, dan perusahaan internasional."
+    highlights_context: "200+ kerentanan valid di program publik dan privat — termasuk sistem milik lembaga pemerintah, universitas, dan perusahaan internasional."
     contact_heading: "Kontak"
     contact_labels:
       email: "email"
@@ -156,13 +156,13 @@ id:
       github: "github"
       linkedin: "linkedin"
       hackerone: "hackerone"
-    footnote: "Terbuka untuk kolaborasi, diskusi riset keamanan, dan koordinasi responsible disclosure."
+    footnote: "Terbuka buat kolaborasi, ngobrol soal riset keamanan, atau koordinasi responsible disclosure."
   blog:
-    intro: "Writeup teknis dan studi kasus dari pekerjaan riset keamanan. Setiap tulisan membahas kerentanan nyata — bagaimana ditemukan, bagaimana cara kerjanya, dan apa artinya bagi defender."
+    intro: "Writeup teknis dari riset keamanan nyata. Tiap tulisan bahas satu kerentanan — gimana ketemu, gimana cara kerjanya, dan apa artinya buat para defender."
   achievements:
     label: "Pencapaian"
     title: "Pencapaian Keamanan"
-    intro: "Catatan kerentanan yang ditemukan, program yang memberikan pengakuan, dan kontribusi terhadap komunitas keamanan melalui responsible disclosure."
+    intro: "Catatan kerentanan yang pernah ditemukan, program-program yang memberi pengakuan, dan kontribusi ke komunitas keamanan lewat responsible disclosure."
     awards: "Penghargaan & Pengakuan"
     profiles: "Profil Bug Bounty"
   cv:

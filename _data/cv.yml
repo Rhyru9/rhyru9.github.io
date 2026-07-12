@@ -1,28 +1,22 @@
 # Personal Information
 name: "Rhyru9"
 role: "Security Researcher & Bug Bounty Hunter"
-bio: "Passionate about finding vulnerabilities and securing applications. I specialize in web application security, API testing, and helping companies improve their security posture through responsible disclosure."
-bio_id: "Berfokus pada pencarian kerentanan dan pengamanan aplikasi. Spesialisasi saya mencakup keamanan aplikasi web, pengujian API, dan membantu perusahaan meningkatkan postur keamanan melalui responsible disclosure."
+bio: "I like finding things that aren't supposed to be there. I specialize in web application security, API testing, and helping organizations actually fix what's broken — through responsible disclosure."
+bio_id: "Senang nyari hal-hal yang harusnya nggak ada. Spesialisasi saya di keamanan aplikasi web, pengujian API, dan bantu perusahaan benerin yang perlu diperbaiki — lewat responsible disclosure."
 
 # Education & Certifications
 education:
-  - degree: "eLearnSecurity Web Application Penetration Tester (eWPT)"
-    institution: "eLearnSecurity"
-    period: "2023"
-    description: "Industry-recognized web application penetration testing certification focusing on practical exploitation techniques."
-    description_id: "Sertifikasi penetration testing aplikasi web yang diakui industri, berfokus pada teknik eksploitasi praktis."
-
   - degree: "TryHackMe Complete Beginner Path"
     institution: "HackTheBok"
     period: "2022"
-    description: "Comprehensive hands-on cybersecurity training covering Linux, networking, web exploitation, and privilege escalation."
-    description_id: "Pelatihan cybersecurity hands-on yang komprehensif, mencakup Linux, networking, web exploitation, dan privilege escalation."
+    description: "Hands-on cybersecurity training covering Linux, networking, web exploitation, and privilege escalation."
+    description_id: "Pelatihan cybersecurity hands-on yang meyeluruh — dari Linux, networking, web exploitation, sampai privilege escalation."
 
   - degree: "PortSwigger Web Security Academy"
     institution: "PortSwigger"
     period: "2021 - Present"
-    description: "Advanced web security training platform covering OWASP Top 10 and modern web vulnerabilities with hands-on labs."
-    description_id: "Platform pelatihan keamanan web tingkat lanjut yang mencakup OWASP Top 10 dan kerentanan web modern melalui lab hands-on."
+    description: "PortSwigger's learning platform for web security — OWASP Top 10, modern vulnerabilities, and hands-on labs."
+    description_id: "Platform belajar web security dari PortSwigger — OWASP Top 10, celah-celah modern, dan lab praktik."
 
 # Professional Certifications
 certifications:
@@ -39,20 +33,20 @@ experience:
   - title: "Independent Security Researcher"
     company: "Bug Bounty Programs & Open Source Projects"
     period: "2022 - Present"
-    description: "Focused on improving security of open source projects and participating in bug bounty programs. Discovered 50+ security vulnerabilities in web applications and maintained a consistent presence on bug bounty platforms. Published technical writeups and security research findings."
-    description_id: "Berfokus meningkatkan keamanan proyek open source dan berpartisipasi dalam program bug bounty. Menemukan 50+ kerentanan keamanan pada aplikasi web dan aktif secara konsisten di platform bug bounty. Menerbitkan writeup teknis dan hasil riset keamanan."
+    description: "Hunting bugs across public and private programs. Found 50+ valid vulnerabilities in web applications, kept a consistent presence on bug bounty platforms, and wrote up findings along the way."
+    description_id: "Nyari bug di program publik dan privat. Nemu 50+ kerentanan valid di aplikasi web, aktif di platform bug bounty, dan rutin nulis laporan dari temuan yang ada."
 
   - title: "Security Research & Self-Development"
     company: "CTF Competitions & Learning Platforms"
     period: "2020 - 2022"
-    description: "Building technical skills through hands-on practice and continuous learning. Participated in 20+ CTF competitions (HackTheBox, TryHackMe, etc.), completed advanced web security courses, and built custom tools and scripts for security automation."
-    description_id: "Membangun kemampuan teknis melalui praktik hands-on dan pembelajaran berkelanjutan. Mengikuti 20+ kompetisi CTF (HackTheBox, TryHackMe, dan lainnya), menyelesaikan kursus keamanan web tingkat lanjut, serta membangun tool dan script khusus untuk otomasi keamanan."
+    description: "Built technical foundations through hands-on practice. Competed in 20+ CTFs (HackTheBox, TryHackMe, etc.), finished advanced web security courses, and built scripts to automate the boring parts."
+    description_id: "Bangun kemampuan teknis lewat banyak praktik. Ikut 20+ CTF (HackTheBox, TryHackMe, dll.), selesaikan kursus web security lanjutan, dan bikin tool buat otomasi yang repetitif."
 
   - title: "Technical Foundations"
     company: "Self-Study & Personal Projects"
     period: "2018 - 2020"
-    description: "Developed core technical skills in web development and networking. Learned full-stack web development (HTML/PHP/JS, Python, SQL), built multiple web applications to understand development process, studied networking fundamentals and system administration, and started learning security basics through online resources."
-    description_id: "Mengembangkan kemampuan teknis dasar dalam web development dan networking. Mempelajari full-stack web development (HTML/PHP/JS, Python, SQL), membangun beberapa aplikasi web untuk memahami proses development, mempelajari fundamental networking dan administrasi sistem, lalu mulai belajar dasar keamanan melalui sumber online."
+    description: "Started from zero — learned web dev (HTML/PHP/JS, Python, SQL), built small apps to understand how they work, then shifted focus to breaking them."
+    description_id: "Mulai dari nol — belajar web dev (HTML/PHP/JS, Python, SQL), bikin aplikasi kecil buat ngerti cara kerjanya, lalu beralih fokus ke ngebongkar sistem yang sama."
 
 # Technical Skills
 skills:
@@ -108,13 +102,13 @@ skills:
 socials:
   - platform: "Twitter"
     url: "https://twitter.com/rhyru9"
-    description: "Security insights and updates"
-    description_id: "Insight dan update keamanan"
+    description: "Security takes and updates"
+    description_id: "Obrolan dan update soal keamanan"
 
   - platform: "GitHub"
     url: "https://github.com/rhyru9"
-    description: "Security tools and research code"
-    description_id: "Tool keamanan dan kode riset"
+    description: "Tools, scripts, and research code"
+    description_id: "Tool, script, dan kode riset"
 
   - platform: "LinkedIn"
     url: "https://www.linkedin.com/in/rhyru-2714a5277/"
@@ -123,5 +117,5 @@ socials:
 
   - platform: "Email"
     url: "mailto:contact@rhyru9.xyz"
-    description: "For security disclosures and collaboration"
-    description_id: "Untuk security disclosure dan kolaborasi"
+    description: "For security disclosures and collabs"
+    description_id: "Buat security disclosure dan kolaborasi"
