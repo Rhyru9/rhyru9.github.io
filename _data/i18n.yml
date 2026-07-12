@@ -124,7 +124,7 @@ id:
     about_heading: "Tentang"
     about:
       - "Saya security researcher dan bug bounty hunter otodidak, berbasis di Jakarta. Fokus saya adalah menemukan kerentanan pada aplikasi web, API, dan sistem-sistem kritis melalui pengujian manual dan analisis teknis mendalam."
-      - "Semuanya berawal dari kompetisi CTF dan belajar mandiri. Perlahan fondasi itu berkembang menjadi track record nyata — mulai dari disclosure ke pemerintah daerah hingga perusahaan yang dikenal secara global."
+      - "Semuanya berawal dari kompetisi CTF dan banyak belajar mandiri. Perlahan fondasi itu berkembang menjadi track record nyata — mulai dari responsible disclosure ke pemerintah daerah hingga perusahaan yang dikenal secara global."
       - "Setiap laporan ditulis dengan serius. Temuan dijelaskan dengan jelas, dampaknya dinilai secara objektif, dan sistem production tidak pernah disentuh. Disiplin ini terbentuk dari bertahun-tahun bekerja dalam kerangka responsible disclosure dan program bug bounty publik."
     expertise_heading: "Area Keahlian"
     expertise:
