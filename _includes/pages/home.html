@@ -69,7 +69,7 @@
       </div>
       <div class="highlight-card__title">{{ award.title }}</div>
       <div class="highlight-card__venue">{{ award.venue }}</div>
-      <p class="highlight-card__desc">{{ award.description | truncatewords: 24 }}</p>
+      <p class="highlight-card__desc">{% if lang == 'id' and award.description_id %}{{ award.description_id | truncatewords: 24 }}{% else %}{{ award.description | truncatewords: 24 }}{% endif %}</p>
       <div class="highlight-card__footer">
         <span class="highlight-card__date">{{ award.date }}</span>
         {% if award.url %}

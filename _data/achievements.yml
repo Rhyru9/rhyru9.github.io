@@ -15,15 +15,17 @@ awards:
   # Hall of Fame
   - title: "Security Advisory Credit — Apple (CVE-2026-43735)"
     date: "29 Jun 2026"
-        venue: "Apple Product Security"
+    venue: "Apple Product Security"
     description: "Credited by Apple in iOS 26.5.2 / iPadOS 26.5.2 security advisory for discovering a WebKit cross-origin data exfiltration vulnerability (CVE-2026-43735). Listed alongside researchers from Sentry and other security professionals."
+    description_id: "Diberi kredit oleh Apple dalam advisory keamanan iOS 26.5.2 / iPadOS 26.5.2 atas penemuan kerentanan WebKit cross-origin data exfiltration (CVE-2026-43735). Tercatat bersama peneliti dari Sentry dan profesional keamanan lainnya."
     tags: [cve, apple, webkit, safari, cross-origin]
     url: "https://support.apple.com/en-us/127594"
 
   - title: "Letter of Appreciation — National Aeronautics and Space Administration (NASA)"
     date: "31 Mar 2026"
-        venue: "NASA Vulnerability Disclosure Program (VDP)"
+    venue: "NASA Vulnerability Disclosure Program (VDP)"
     description: "Received an official Letter of Appreciation from NASA's Senior Agency Information Security Officer (SAISO) for independently identifying and responsibly disclosing an unknown security vulnerability through NASA's Vulnerability Disclosure Policy (VDP), contributing to the protection of NASA's information systems."
+    description_id: "Menerima Letter of Appreciation resmi dari Senior Agency Information Security Officer (SAISO) NASA atas penemuan dan pelaporan mandiri kerentanan keamanan yang belum diketahui sebelumnya melalui program Vulnerability Disclosure Policy (VDP) NASA, berkontribusi pada perlindungan sistem informasi NASA."
     tags:
       [
         "Bug Bounty",
@@ -37,6 +39,7 @@ awards:
     date: "2026"
     venue: "CCB Belgium"
     description: "Recognized for responsible disclosure of security vulnerabilities in Belgian government systems."
+    description_id: "Diakui atas pelaporan bertanggung jawab terhadap kerentanan keamanan pada sistem pemerintah Belgia."
     tags: [hall-of-fame, government, international]
     url: "https://ccb.belgium.be/nl/cert/bekendmaking-van-kwetsbaarheden-aan-het-ccb/wall-of-fame"
 
@@ -44,6 +47,7 @@ awards:
     date: "2026"
     venue: "BlackBerry Security"
     description: "Acknowledged for discovering and reporting security vulnerabilities in BlackBerry products."
+    description_id: "Diakui atas penemuan dan pelaporan kerentanan keamanan pada produk BlackBerry."
     tags: [hall-of-fame, mobile, security]
     url: "https://www.blackberry.com/us/en/services/blackberry-product-security-incident-response"
 
